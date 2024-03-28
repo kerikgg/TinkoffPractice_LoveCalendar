@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
+		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
+		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
+		BA7ABE882BB57F34009ED03E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE872BB57F34009ED03E /* FirebaseFirestore */; };
+		BA7ABE8B2BB58088009ED03E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE8A2BB58088009ED03E /* Alamofire */; };
+		BA7ABE8D2BB58088009ED03E /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE8C2BB58088009ED03E /* AlamofireDynamic */; };
+		BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13212BB573D6001F5526 /* SnapKit */; };
+		BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */; };
+		BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */; };
 		BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26F92BB36E2500AC96BA /* AppDelegate.swift */; };
 		BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */; };
 		BADB26FE2BB36E2500AC96BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* ViewController.swift */; };
@@ -15,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BADB26F62BB36E2500AC96BA /* LoveCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB26F92BB36E2500AC96BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +39,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */,
+				BA7ABE8B2BB58088009ED03E /* Alamofire in Frameworks */,
+				BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */,
+				BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */,
+				BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */,
+				BA7ABE8D2BB58088009ED03E /* AlamofireDynamic in Frameworks */,
+				BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */,
+				BA7ABE882BB57F34009ED03E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +77,7 @@
 				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
 				BADB27042BB36E2600AC96BA /* LaunchScreen.storyboard */,
 				BADB27072BB36E2600AC96BA /* Info.plist */,
+				BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */,
 			);
 			path = LoveCalendar;
 			sourceTree = "<group>";
@@ -89,6 +108,16 @@
 			dependencies = (
 			);
 			name = LoveCalendar;
+			packageProductDependencies = (
+				BA8F13212BB573D6001F5526 /* SnapKit */,
+				BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */,
+				BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */,
+				BA7ABE832BB57F34009ED03E /* FirebaseAuth */,
+				BA7ABE852BB57F34009ED03E /* FirebaseDatabase */,
+				BA7ABE872BB57F34009ED03E /* FirebaseFirestore */,
+				BA7ABE8A2BB58088009ED03E /* Alamofire */,
+				BA7ABE8C2BB58088009ED03E /* AlamofireDynamic */,
+			);
 			productName = LoveCalendar;
 			productReference = BADB26F62BB36E2500AC96BA /* LoveCalendar.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +146,11 @@
 				Base,
 			);
 			mainGroup = BADB26ED2BB36E2500AC96BA;
+			packageReferences = (
+				BA8F13202BB573D6001F5526 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = BADB26F72BB36E2500AC96BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +167,7 @@
 			files = (
 				BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */,
 				BADB27062BB36E2600AC96BA /* Base in Resources */,
+				BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +420,76 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
+		BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
+		BA8F13202BB573D6001F5526 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BA7ABE832BB57F34009ED03E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BA7ABE852BB57F34009ED03E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		BA7ABE872BB57F34009ED03E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BA7ABE8A2BB58088009ED03E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BA7ABE8C2BB58088009ED03E /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+		BA8F13212BB573D6001F5526 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA8F13202BB573D6001F5526 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA8F13202BB573D6001F5526 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BADB26EE2BB36E2500AC96BA /* Project object */;
 }
