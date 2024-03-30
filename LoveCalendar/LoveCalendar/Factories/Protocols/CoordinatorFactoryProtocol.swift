@@ -18,4 +18,10 @@ protocol CoordinatorFactoryProtocol {
         coordinatorFactory: CoordinatorFactoryProtocol,
         moduleFactory: ModuleFactoryProtocol
     ) -> AuthFlowCoordinator
+
+    func makeRegistrationFlowCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> RegistrationFlowCoordinator
 }

@@ -24,6 +24,15 @@ class AuthFlowCoordinator: Coordinator {
 
     private func showAuth() {
         let authController = moduleFactory.makeAuthModule()
+        authController.completionHandler = { [weak self] state in
+            guard let self else { return }
+            switch state {
+            case .signIn:
+                self.runSignInFlow()
+            case .signUp:
+                self.runSignUpFlow()
+            }
+        }
         router.push(authController, animated: true)
     }
 
@@ -34,6 +43,18 @@ class AuthFlowCoordinator: Coordinator {
 
     private func runSignUpFlow() {
         print("SignUp")
-        // TODO: сделать регистрацию
+        let registrationFlowCoordinator = coordinatorFactory.makeRegistrationFlowCoordinator(
+            router: router,
+            coordinatorFactory: coordinatorFactory,
+            moduleFactory: moduleFactory
+        )
+        registrationFlowCoordinator.start()
+        addCoordinatorDependency(registrationFlowCoordinator)
+        registrationFlowCoordinator.flowCompletionHandler = { [weak self] in
+            guard let self else { return }
+            self.router.popToRootController(animated: false)
+            self.runSignInFlow()
+            self.deleteCoordinatorDependency(registrationFlowCoordinator)
+        }
     }
 }

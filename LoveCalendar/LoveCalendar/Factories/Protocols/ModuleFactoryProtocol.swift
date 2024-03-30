@@ -9,4 +9,6 @@ import Foundation
 
 protocol ModuleFactoryProtocol {
     func makeAuthModule() -> AuthViewController
+
+    func makeRegistrationModule(viewModel: RegistrationViewModel) -> RegistrationViewController
 }

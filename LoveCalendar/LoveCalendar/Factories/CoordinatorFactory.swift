@@ -29,4 +29,16 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
             moduleFactory: moduleFactory
         )
     }
+
+    func makeRegistrationFlowCoordinator(
+        router: any RouterProtocol,
+        coordinatorFactory: any CoordinatorFactoryProtocol,
+        moduleFactory: any ModuleFactoryProtocol
+    ) -> RegistrationFlowCoordinator {
+        RegistrationFlowCoordinator(
+            router: router,
+            coordinatorFactory: coordinatorFactory,
+            moduleFactory: moduleFactory
+        )
+    }
 }

@@ -16,6 +16,9 @@
 		BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13212BB573D6001F5526 /* SnapKit */; };
 		BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */; };
 		BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */; };
+		BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */; };
+		BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */; };
+		BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */; };
 		BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26F92BB36E2500AC96BA /* AppDelegate.swift */; };
 		BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */; };
 		BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
+		BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		BADB26F62BB36E2500AC96BA /* LoveCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB26F92BB36E2500AC96BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BABB7A9C2BB85AA000BAC60C /* Screen */,
+				BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		BABB7A9C2BB85AA000BAC60C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */,
+				BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		BADB26ED2BB36E2500AC96BA = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +193,7 @@
 		BAF7C0452BB746BA00581F33 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BABB7A9B2BB85A8200BAC60C /* Registration */,
 				BAF7C0462BB746C400581F33 /* Auth */,
 			);
 			path = Flows;
@@ -302,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
@@ -309,7 +335,9 @@
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
+				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,

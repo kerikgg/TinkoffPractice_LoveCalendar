@@ -14,6 +14,14 @@ enum AuthStates {
 }
 
 class AuthViewController: UIViewController, FlowControllerWithValue {
+    private lazy var welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Добро пожаловать!"
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textColor = UIColor(named: "LabelTextColor")
+        return label
+    }()
+
     private lazy var logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "logo"))
         imageView.contentMode = .scaleAspectFill
@@ -23,6 +31,7 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signInButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 8
+        button.titleLabel?.font = .systemFont(ofSize: 18)
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: "ButtonTextColor")
@@ -32,9 +41,16 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
     private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 8
-        button.setTitle("Зарегестрироваться", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18)
+        button.setTitle("Зарегистрироваться", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: "ButtonTextColor")
+
+        let action = UIAction { [weak self] _ in
+            self?.completionHandler?(.signUp)
+        }
+        button.addAction(action, for: .touchDown)
+        
         return button
     }()
 
@@ -53,19 +69,24 @@ extension AuthViewController {
         stackView.axis = .vertical
         stackView.spacing = 20
 
-        addSubviews(logoImage, stackView)
+        addSubviews(welcomeLabel, logoImage, stackView)
+
+        welcomeLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(view.frame.height * 0.2)
+        }
 
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(250)
-            make.height.equalTo(150)
-            make.top.equalToSuperview().offset(view.frame.height * 0.3)
+            make.height.equalTo(170)
+            make.top.equalTo(welcomeLabel).offset(view.frame.height * 0.09)
         }
 
         stackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
-            make.top.equalTo(logoImage).offset(180)
+            make.top.equalTo(logoImage).offset(200)
         }
     }
 }
