@@ -24,6 +24,8 @@
 		BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */; };
 		BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADB27022BB36E2600AC96BA /* Assets.xcassets */; };
 		BADB27062BB36E2600AC96BA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BADB27052BB36E2600AC96BA /* Base */; };
+		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
+		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
 		BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0342BB7401C00581F33 /* CoordinatorProtocol.swift */; };
 		BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0362BB740BA00581F33 /* Coordinator.swift */; };
 		BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0382BB7427200581F33 /* FlowController.swift */; };
@@ -50,6 +52,8 @@
 		BADB27022BB36E2600AC96BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BADB27052BB36E2600AC96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADB27072BB36E2600AC96BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BAF7C0342BB7401C00581F33 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		BAF7C0362BB740BA00581F33 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BAF7C0382BB7427200581F33 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BAE90FA12BB9649500526899 /* Services */,
 				BAF7C0452BB746BA00581F33 /* Flows */,
 				BAF7C0412BB7461800581F33 /* Factories */,
 				BAF7C03C2BB7431D00581F33 /* Router */,
@@ -141,6 +146,15 @@
 				BAF7C04C2BB7481200581F33 /* AppCoordinator.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		BAE90FA12BB9649500526899 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BAE90FA22BB964B200526899 /* ValidationService.swift */,
+				BAE90FA42BB9712600526899 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BAF7C0322BB73FF900581F33 /* Coordinator */ = {
@@ -333,7 +347,9 @@
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
+				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
+				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,

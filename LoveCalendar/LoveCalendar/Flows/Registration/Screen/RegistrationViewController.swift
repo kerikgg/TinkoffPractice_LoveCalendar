@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class RegistrationViewController: UIViewController, FlowController {
     private lazy var regLabel: UILabel = {
@@ -52,6 +53,14 @@ class RegistrationViewController: UIViewController, FlowController {
         return textField
     }()
 
+    private lazy var errorsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .red
+        label.numberOfLines = 0
+        return label
+    }()
+
     private lazy var regButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 8
@@ -59,11 +68,19 @@ class RegistrationViewController: UIViewController, FlowController {
         button.setTitle("Зарегестрироваться", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: "ButtonTextColor")
+
+        let action = UIAction { [weak self] _ in
+            guard let self else { return }
+            self.viewModel.signUpUser(emailTextField.text, passwordTextField.text, passwordConfirmationTextField.text)
+        }
+        button.addAction(action, for: .touchUpInside)
+
         return button
     }()
 
     var completionHandler: (() -> Void)?
     private let viewModel: RegistrationViewModel
+    var cancellables = Set<AnyCancellable>()
 
     init(viewModel: RegistrationViewModel) {
         self.viewModel = viewModel
@@ -78,6 +95,7 @@ class RegistrationViewController: UIViewController, FlowController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setLayout()
+        setBindings()
     }
 }
 
@@ -90,8 +108,8 @@ extension RegistrationViewController {
         ])
         stackView.axis = .vertical
         stackView.spacing = 20
-        
-        addSubviews(regLabel, stackView, regButton)
+
+        addSubviews(regLabel, stackView, errorsLabel, regButton)
 
         regLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -104,11 +122,38 @@ extension RegistrationViewController {
             make.top.equalTo(regLabel).offset(view.frame.height * 0.1)
         }
 
+        errorsLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(stackView).offset(view.frame.height * 0.2)
+            make.left.right.equalTo(stackView)
+        }
+
         regButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(200)
-            make.top.equalTo(stackView).offset(view.frame.height * 0.2)
+            make.top.equalTo(errorsLabel).offset(view.frame.height * 0.1)
         }
+    }
+}
+
+extension RegistrationViewController {
+    private func setBindings() {
+        viewModel.$isSuccessfulRegistered
+            .sink { [weak self] isSuccessfulRegistered in
+                guard let self = self else { return }
+                if isSuccessfulRegistered {
+                    self.completionHandler?()
+                }
+            }
+            .store(in: &cancellables)
+
+        viewModel.$errorStringFormatted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] errorStringFormatted in
+                guard let self = self else { return }
+                self.errorsLabel.text = errorStringFormatted
+            }
+            .store(in: &cancellables)
     }
 }
 
