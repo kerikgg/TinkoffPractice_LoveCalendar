@@ -35,6 +35,12 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
         button.setTitle("Войти", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(named: "ButtonTextColor")
+
+        let action = UIAction { [weak self] _ in
+            self?.completionHandler?(.signIn)
+        }
+        button.addAction(action, for: .touchDown)
+
         return button
     }()
 

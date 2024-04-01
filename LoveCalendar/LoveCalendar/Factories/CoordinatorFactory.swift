@@ -41,4 +41,16 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
             moduleFactory: moduleFactory
         )
     }
+
+    func makeSignInFlowCoordinator(
+        router: any RouterProtocol,
+        coordinatorFactory: any CoordinatorFactoryProtocol,
+        moduleFactory: any ModuleFactoryProtocol
+    ) -> SignInFlowCoordinator {
+        SignInFlowCoordinator(
+            router: router,
+            coordinatorFactory: coordinatorFactory,
+            moduleFactory: moduleFactory
+        )
+    }
 }

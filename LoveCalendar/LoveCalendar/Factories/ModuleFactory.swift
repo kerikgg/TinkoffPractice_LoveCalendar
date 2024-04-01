@@ -15,4 +15,8 @@ class ModuleFactory: ModuleFactoryProtocol {
     func makeRegistrationModule(viewModel: RegistrationViewModel) -> RegistrationViewController {
         RegistrationViewController(viewModel: viewModel)
     }
+
+    func makeSignInModule(viewModel: SignInViewModel) -> SignInViewController {
+        SignInViewController(viewModel: viewModel)
+    }
 }
