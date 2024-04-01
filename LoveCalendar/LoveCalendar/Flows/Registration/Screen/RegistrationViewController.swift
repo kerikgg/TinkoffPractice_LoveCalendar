@@ -124,7 +124,7 @@ extension RegistrationViewController {
 
         errorsLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(stackView).offset(view.frame.height * 0.2)
+            make.top.equalTo(stackView.snp_bottomMargin).offset(50)
             make.left.right.equalTo(stackView)
         }
 

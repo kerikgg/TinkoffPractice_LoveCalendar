@@ -7,10 +7,12 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class SignInViewController: UIViewController, FlowController {
     var completionHandler: (() -> Void)?
     private let viewModel: SignInViewModel
+    var cancellables = Set<AnyCancellable>()
 
     private lazy var signInLabel: UILabel = {
         let label = UILabel()
@@ -62,7 +64,7 @@ class SignInViewController: UIViewController, FlowController {
 
         let action = UIAction { [weak self] _ in
             guard let self else { return }
-            print("test")
+            self.viewModel.signInUser(email: emailTextField.text, password: passwordTextField.text)
         }
         button.addAction(action, for: .touchUpInside)
 
@@ -81,6 +83,38 @@ class SignInViewController: UIViewController, FlowController {
     override func viewDidLoad() {
         view.backgroundColor = .white
         setLayout()
+        setBindings()
+    }
+}
+
+extension SignInViewController {
+    private func setBindings() {
+        viewModel.$validationError
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] validationError in
+                guard let self = self else { return }
+                self.errorsLabel.text = validationError
+            }
+            .store(in: &cancellables)
+
+        viewModel.$isSuccessfullyLoggedIn
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isSuccessfullyLoggedIn in
+                if isSuccessfullyLoggedIn {
+                    guard let self else { return }
+                    self.completionHandler?()
+                    print("работает, но дальше переход пока не сделал")
+                }
+            }
+            .store(in: &cancellables)
+
+        viewModel.$firebaseError
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] firebaseError in
+                guard let self = self else { return }
+                self.errorsLabel.text = firebaseError
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -105,7 +139,7 @@ extension SignInViewController {
 
         errorsLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(stackView).offset(view.frame.height * 0.2)
+            make.top.equalTo(stackView.snp_bottomMargin).offset(50)
             make.left.right.equalTo(stackView)
         }
 
