@@ -151,12 +151,6 @@ extension SignInViewController {
     }
 }
 
-extension SignInViewController {
-    func addSubviews(_ subviews: UIView...) {
-        subviews.forEach { view.addSubview($0) }
-    }
-}
-
 extension SignInViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

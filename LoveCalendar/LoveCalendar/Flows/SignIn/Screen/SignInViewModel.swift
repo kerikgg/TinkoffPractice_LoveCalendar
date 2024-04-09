@@ -11,7 +11,7 @@ class SignInViewModel {
     @Published var isSuccessfullyLoggedIn = false
     @Published var validationError: String = ""
     @Published var firebaseError: String = ""
-    private let authService = AuthService()
+    private let authService = AuthService.shared
 
     func signInUser(email: String?, password: String?) {
         guard let email, let password else { return }

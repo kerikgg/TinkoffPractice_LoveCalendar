@@ -157,12 +157,6 @@ extension RegistrationViewController {
     }
 }
 
-extension RegistrationViewController {
-    func addSubviews(_ subviews: UIView...) {
-        subviews.forEach { view.addSubview($0) }
-    }
-}
-
 extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

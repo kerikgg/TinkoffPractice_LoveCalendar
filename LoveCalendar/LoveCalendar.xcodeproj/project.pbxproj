@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
 		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
 		BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA4FBE612BC567410066CFE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BA4FBE612BC567410066CFE7 /* Extensions */,
 				BAE90FA12BB9649500526899 /* Services */,
 				BAF7C0452BB746BA00581F33 /* Flows */,
 				BAF7C0412BB7461800581F33 /* Factories */,
@@ -381,6 +392,7 @@
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,

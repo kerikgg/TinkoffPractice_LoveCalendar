@@ -96,9 +96,3 @@ extension AuthViewController {
         }
     }
 }
-
-extension AuthViewController {
-    func addSubviews(_ subviews: UIView...) {
-        subviews.forEach { view.addSubview($0) }
-    }
-}
