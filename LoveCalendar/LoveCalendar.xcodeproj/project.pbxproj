@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
+		BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */; };
+		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
 		BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
@@ -45,6 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */,
+				BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */,
+				BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */,
+				BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
@@ -392,6 +402,8 @@
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
+				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
 				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
