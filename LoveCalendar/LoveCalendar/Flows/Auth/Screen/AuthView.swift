@@ -14,16 +14,7 @@ protocol AuthViewDelegate: AnyObject {
 
 class AuthView: UIView {
     weak var delegate: AuthViewDelegate?
-
     private let backgroundView = BackgroundView(frame: .zero)
-
-//    private lazy var welcomeLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = "Добро пожаловать!"
-//        label.font = .systemFont(ofSize: 20, weight: .bold)
-//        label.textColor = UIColor(named: "LabelTextColor")
-//        return label
-//    }()
 
     private lazy var logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "logo"))
@@ -44,7 +35,6 @@ class AuthView: UIView {
         button.backgroundColor = UIColor(named: "ButtonTextColor")
 
         let action = UIAction { [weak self] _ in
-            // self?.completionHandler?(.signIn)
             self?.delegate?.didPressSignIn()
         }
         button.addAction(action, for: .touchDown)
@@ -61,7 +51,6 @@ class AuthView: UIView {
         button.backgroundColor = .systemGray3
 
         let action = UIAction { [weak self] _ in
-            // self?.completionHandler?(.signUp)
             self?.delegate?.didPressSignUp()
         }
         button.addAction(action, for: .touchDown)

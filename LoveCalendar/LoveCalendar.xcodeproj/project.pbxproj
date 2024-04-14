@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */; };
+		BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D332BCC459E00C02D07 /* SignInView.swift */; };
 		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
 		BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */; };
 		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BA0F4D332BCC459E00C02D07 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */,
 				BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */,
+				BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				BAE90FAA2BBA9B0F00526899 /* SignInViewController.swift */,
 				BAE90FAC2BBA9B2300526899 /* SignInViewModel.swift */,
+				BA0F4D332BCC459E00C02D07 /* SignInView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -388,10 +394,12 @@
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
 				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
+				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
