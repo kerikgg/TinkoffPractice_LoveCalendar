@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  LoveCalendar
+
+  Created by kerik on 16.04.2024.
+  
+*/
+
+// Buttons
+"buttons.signIn" = "Вход";
+"buttons.signUp" = "Регистрация";
+
+// Labels
+"labels.signInLabel" = "Вход";
+"labels.signUpLabel" = "Регистрация";
+
+// TextFields
+"textFields.emailPlaceholder" = "Почта";
+"textFields.passwordPlaceholder" = "Пароль";
+"textFields.passwordConfirmationPlaceholder" = "Подтверждение пароля";

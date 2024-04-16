@@ -16,44 +16,44 @@ class RegistrationView: UIView {
 
     private lazy var regLabel: UILabel = {
         let label = UILabel()
-        label.text = "Регистрация"
+        label.text = Strings.Labels.signUpLabel
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = UIColor(named: "LabelTextColor")
+        label.textColor = UIColor.labelText
         return label
     }()
 
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Почта"
+        textField.placeholder = Strings.TextFields.emailPlaceholder
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
         textField.delegate = self
-        textField.textColor = UIColor(named: "LabelTextColor")
+        textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
         return textField
     }()
 
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Пароль"
+        textField.placeholder = Strings.TextFields.passwordPlaceholder
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
         textField.delegate = self
-        textField.textColor = UIColor(named: "LabelTextColor")
+        textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
         return textField
     }()
 
     private lazy var passwordConfirmationTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Подтвердите пароль"
+        textField.placeholder = Strings.TextFields.passwordConfirmationPlaceholder
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
         textField.delegate = self
-        textField.textColor = UIColor(named: "LabelTextColor")
+        textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
         return textField
     }()
@@ -70,9 +70,9 @@ class RegistrationView: UIView {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 20
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.setTitle("Зарегестрироваться", for: .normal)
+        button.setTitle(Strings.Buttons.signUp, for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = UIColor(named: "ButtonTextColor")
+        button.backgroundColor = UIColor.buttonText
 
         let action = UIAction { [weak self] _ in
             guard let self else { return }

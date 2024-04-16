@@ -29,10 +29,11 @@ class AuthView: UIView {
     private lazy var signInButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 20
-        button.setTitle("Войти", for: .normal)
+        button.setTitle(Strings.Buttons.signIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.backgroundColor = UIColor(named: "ButtonTextColor")
+        // button.backgroundColor = UIColor(named: "ButtonTextColor")
+        button.backgroundColor = UIColor.buttonText
 
         let action = UIAction { [weak self] _ in
             self?.delegate?.didPressSignIn()
@@ -45,7 +46,7 @@ class AuthView: UIView {
     private lazy var signUpButton: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 20
-        button.setTitle("Зарегистрироваться", for: .normal)
+        button.setTitle(Strings.Buttons.signUp, for: .normal)
         button.setTitleColor(UIColor(named: "LabelTextColor"), for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.backgroundColor = .systemGray3
