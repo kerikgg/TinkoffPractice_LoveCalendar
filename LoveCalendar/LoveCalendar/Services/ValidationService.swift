@@ -14,30 +14,30 @@ class ValidationService {
         validationErrors = []
 
         if email.isEmpty {
-            validationErrors.append("Почта не может быть пустой")
+            validationErrors.append(Strings.ValidationErrors.emptyEmail)
         }
 
         if password.isEmpty {
-            validationErrors.append("Пароль не может быть пустой")
+            validationErrors.append(Strings.ValidationErrors.emptyPassword)
         }
 
         if !validationErrors.isEmpty {
             return validationErrors
         } else {
             if !isValidEmail(email) {
-                validationErrors.append("Почта не удовлетворяет формату")
+                validationErrors.append(Strings.ValidationErrors.emailFormatError)
             }
 
             if !isPasswordHasDigit(password) {
-                validationErrors.append("Пароль должен содержать хотя бы 1 цифру")
+                validationErrors.append(Strings.ValidationErrors.passwordDigitError)
             }
 
             if !isPasswordHasRequireLength(password) {
-                validationErrors.append("Длина пароля минимум 8 символов")
+                validationErrors.append(Strings.ValidationErrors.passwordLengthError)
             }
 
             if password != passwordConfirmation {
-                validationErrors.append("Пароли не совпадают")
+                validationErrors.append(Strings.ValidationErrors.passwordsDontMatch)
             }
 
             return validationErrors

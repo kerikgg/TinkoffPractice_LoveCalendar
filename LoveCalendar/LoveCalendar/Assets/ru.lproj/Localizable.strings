@@ -18,3 +18,12 @@
 "textFields.emailPlaceholder" = "Почта";
 "textFields.passwordPlaceholder" = "Пароль";
 "textFields.passwordConfirmationPlaceholder" = "Подтверждение пароля";
+
+// ValidationErrors
+"validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
+"validationErrors.emptyEmail" = "Почта не может быть пустой";
+"validationErrors.emptyPassword" = "Пароль не может быть пустой";
+"validationErrors.emailFormatError" = "Почта не удовлетворяет формату";
+"validationErrors.passwordDigitError" = "Пароль должен содержать хотя бы 1 цифру";
+"validationErrors.passwordLengthError" = "Длина пароля минимум 8 символов";
+"validationErrors.passwordsDontMatch" = "Пароли не совпадают";

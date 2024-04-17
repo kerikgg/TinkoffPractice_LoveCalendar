@@ -17,7 +17,7 @@ class SignInViewModel {
         guard let email, let password else { return }
         validationError = ""
         if email.isEmpty || password.isEmpty {
-            validationError = "Поля не должны быть пустыми"
+            validationError = Strings.ValidationErrors.emptyEmailAndPassword
         } else {
             authService.signIn(email: email, password: password) { [weak self] result in
                 guard let self else { return }
