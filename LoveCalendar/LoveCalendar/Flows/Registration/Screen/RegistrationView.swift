@@ -11,7 +11,7 @@ protocol RegistrationViewDelegate: AnyObject {
     func didPressSignUpButton(_ email: String?, _ password: String?, _ passwordConfirmation: String?)
 }
 
-class RegistrationView: UIView {
+final class RegistrationView: UIView {
     weak var delegate: RegistrationViewDelegate?
 
     private lazy var regLabel: UILabel = {
@@ -19,6 +19,7 @@ class RegistrationView: UIView {
         label.text = Strings.Labels.signUpLabel
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = UIColor.labelText
+
         return label
     }()
 
@@ -31,6 +32,7 @@ class RegistrationView: UIView {
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
+
         return textField
     }()
 
@@ -43,6 +45,7 @@ class RegistrationView: UIView {
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
+
         return textField
     }()
 
@@ -55,6 +58,7 @@ class RegistrationView: UIView {
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
+
         return textField
     }()
 
@@ -63,6 +67,7 @@ class RegistrationView: UIView {
         label.font = .systemFont(ofSize: 14)
         label.textColor = .red
         label.numberOfLines = 0
+
         return label
     }()
 
@@ -85,12 +90,22 @@ class RegistrationView: UIView {
         return button
     }()
 
-    private lazy var stackView: UIStackView = createStackView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            emailTextField,
+            passwordTextField,
+            passwordConfirmationTextField
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+
+        return stackView
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews(regLabel, stackView, errorsLabel, regButton)
-        setLayout()
+        makeConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -105,22 +120,10 @@ extension RegistrationView {
 }
 
 extension RegistrationView {
-    private func createStackView() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [
-            emailTextField,
-            passwordTextField,
-            passwordConfirmationTextField
-        ])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-
-        return stackView
-    }
-
-    private func setLayout() {
+    private func makeConstraints() {
         regLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(150)
+            make.top.equalToSuperview().inset(150)
         }
 
         stackView.snp.makeConstraints { make in
@@ -136,9 +139,8 @@ extension RegistrationView {
         }
 
         regButton.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 250, height: 45))
             make.centerX.equalToSuperview()
-            make.height.equalTo(45)
-            make.width.equalTo(250)
             make.top.equalTo(errorsLabel).offset(100)
         }
     }

@@ -11,7 +11,7 @@ protocol SignViewDelegate: AnyObject {
     func didPressSignInButton(_ email: String?, _ password: String?)
 }
 
-class SignInView: UIView {
+final class SignInView: UIView {
     weak var delegate: SignViewDelegate?
 
     private lazy var signInLabel: UILabel = {
@@ -19,6 +19,7 @@ class SignInView: UIView {
         label.text = Strings.Labels.signInLabel
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textColor = UIColor.labelText
+
         return label
     }()
 
@@ -31,6 +32,7 @@ class SignInView: UIView {
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
+
         return textField
     }()
 
@@ -43,6 +45,7 @@ class SignInView: UIView {
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
+
         return textField
     }()
 
@@ -51,6 +54,7 @@ class SignInView: UIView {
         label.font = .systemFont(ofSize: 14)
         label.textColor = .red
         label.numberOfLines = 0
+
         return label
     }()
 
@@ -71,12 +75,18 @@ class SignInView: UIView {
         return button
     }()
 
-    private lazy var stackView: UIStackView = createStackView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+
+        return stackView
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubviews(signInLabel, stackView, errorsLabel, signInButton)
-        setLayout()
+        makeConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -91,17 +101,10 @@ extension SignInView {
 }
 
 extension SignInView {
-    private func createStackView() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-
-        return stackView
-    }
-    private func setLayout() {
+    private func makeConstraints() {
         signInLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(150)
+            make.top.equalToSuperview().inset(150)
         }
 
         stackView.snp.makeConstraints { make in
@@ -113,13 +116,12 @@ extension SignInView {
         errorsLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(stackView.snp_bottomMargin).offset(50)
-            make.left.right.equalTo(stackView)
+            make.leading.trailing.equalTo(stackView)
         }
 
         signInButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(45)
-            make.width.equalTo(250)
+            make.size.equalTo(CGSize(width: 250, height: 45))
             make.top.equalTo(errorsLabel).offset(100)
         }
     }

@@ -9,9 +9,10 @@ import UIKit
 
 class BackgroundView: UIView {
     private lazy var background: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "background"))
+        let image = UIImageView(image: UIImage.background)
         image.contentMode = .scaleAspectFill
         image.backgroundColor = .clear
+
         return image
     }()
 

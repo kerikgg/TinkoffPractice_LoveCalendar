@@ -12,17 +12,18 @@ protocol AuthViewDelegate: AnyObject {
     func didPressSignUp()
 }
 
-class AuthView: UIView {
+final class AuthView: UIView {
     weak var delegate: AuthViewDelegate?
     private let backgroundView = BackgroundView(frame: .zero)
 
     private lazy var logoImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "logo"))
+        let imageView = UIImageView(image: UIImage.logo)
         imageView.layer.cornerRadius = 30
         imageView.layer.borderWidth = 5
-        imageView.layer.borderColor = UIColor(named: "ButtonTextColor")?.cgColor
+        imageView.layer.borderColor = UIColor.buttonText.cgColor
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
+
         return imageView
     }()
 
@@ -32,7 +33,6 @@ class AuthView: UIView {
         button.setTitle(Strings.Buttons.signIn, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        // button.backgroundColor = UIColor(named: "ButtonTextColor")
         button.backgroundColor = UIColor.buttonText
 
         let action = UIAction { [weak self] _ in
@@ -47,7 +47,7 @@ class AuthView: UIView {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 20
         button.setTitle(Strings.Buttons.signUp, for: .normal)
-        button.setTitleColor(UIColor(named: "LabelTextColor"), for: .normal)
+        button.setTitleColor(UIColor.labelText, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.backgroundColor = .systemGray3
 
@@ -59,7 +59,13 @@ class AuthView: UIView {
         return button
     }()
 
-    private lazy var stackView: UIStackView = createStackView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [signInButton, signUpButton])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+
+        return stackView
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,23 +79,14 @@ class AuthView: UIView {
 }
 
 extension AuthView {
-    private func createStackView() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [signInButton, signUpButton])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-
-        return stackView
-    }
-
     private func makeConstraints() {
         backgroundView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
         }
 
         logoImage.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 230, height: 170))
             make.centerX.equalToSuperview()
-            make.width.equalTo(230)
-            make.height.equalTo(170)
             make.top.equalToSuperview().offset(220)
         }
 
@@ -104,8 +101,8 @@ extension AuthView {
         stackView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(logoImage.snp_bottomMargin).offset(80)
-            make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-30)
+            make.leading.equalToSuperview().inset(30)
+            make.trailing.equalToSuperview().inset(30)
         }
     }
 }
