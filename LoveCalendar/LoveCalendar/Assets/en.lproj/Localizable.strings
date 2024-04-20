@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  LoveCalendar
+
+  Created by kerik on 16.04.2024.
+  
+*/
+
+// Buttons
+"buttons.signIn" = "Sign In";
+"buttons.signUp" = "Sign Up";
+
+// Labels
+"labels.signInLabel" = "Sign In";
+"labels.signUpLabel" = "Registration";
+
+// TextFields
+"textFields.emailPlaceholder" = "Email";
+"textFields.passwordPlaceholder" = "Password";
+"textFields.passwordConfirmationPlaceholder" = "Password confirmation";
+
+// ValidationErrors
+"validationErrors.emptyEmailAndPassword" = "The fields should not be empty";
+"validationErrors.emptyEmail" = "Email can not be empty";
+"validationErrors.emptyPassword" = "Password can not be empty";
+"validationErrors.emailFormatError" = "Invalid email format";
+"validationErrors.passwordDigitError" = "Password must contain at least 1 digit";
+"validationErrors.passwordLengthError" = "Password length is at least 8 characters";
+"validationErrors.passwordsDontMatch" = "Passwords don't match";

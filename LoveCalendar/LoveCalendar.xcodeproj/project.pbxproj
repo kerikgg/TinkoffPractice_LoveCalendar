@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */; };
+		BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D332BCC459E00C02D07 /* SignInView.swift */; };
+		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
+		BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */; };
+		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
+		BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA21E4BD2BCE86F800F9916F /* Localizable.strings */; };
+		BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */; };
+		BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
 		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
@@ -44,6 +52,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BA0F4D332BCC459E00C02D07 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		BA21E4BE2BCE86F800F9916F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
+		BA21E4C32BCE883F00F9916F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
 		BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +110,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA21E4BC2BCE85AD00F9916F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E4C02BCE873A00F9916F /* SwiftGenGenerated */,
+				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
+				BA21E4BD2BCE86F800F9916F /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BA21E4C02BCE873A00F9916F /* SwiftGenGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */,
+			);
+			path = SwiftGenGenerated;
+			sourceTree = "<group>";
+		};
+		BA4FBE612BC567410066CFE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */,
+				BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +151,7 @@
 			children = (
 				BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */,
 				BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */,
+				BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -130,13 +175,14 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BA21E4BC2BCE85AD00F9916F /* Assets */,
+				BA4FBE612BC567410066CFE7 /* Extensions */,
 				BAE90FA12BB9649500526899 /* Services */,
 				BAF7C0452BB746BA00581F33 /* Flows */,
 				BAF7C0412BB7461800581F33 /* Factories */,
 				BAF7C03C2BB7431D00581F33 /* Router */,
 				BAF7C0322BB73FF900581F33 /* Coordinator */,
 				BADB270D2BB36ED500AC96BA /* App */,
-				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
 				BADB27042BB36E2600AC96BA /* LaunchScreen.storyboard */,
 				BADB27072BB36E2600AC96BA /* Info.plist */,
 				BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */,
@@ -177,6 +223,7 @@
 			children = (
 				BAE90FAA2BBA9B0F00526899 /* SignInViewController.swift */,
 				BAE90FAC2BBA9B2300526899 /* SignInViewModel.swift */,
+				BA0F4D332BCC459E00C02D07 /* SignInView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -251,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */,
+				BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */,
+				BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -308,6 +357,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = BADB26ED2BB36E2500AC96BA;
 			packageReferences = (
@@ -330,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */,
+				BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */,
 				BADB27062BB36E2600AC96BA /* Base in Resources */,
 				BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */,
 			);
@@ -365,12 +416,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
 				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
+				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
@@ -381,8 +435,12 @@
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
+				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
+				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
+				BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,
 				BAF7C03B2BB742BF00581F33 /* FlowControllerWithValue.swift in Sources */,
@@ -394,6 +452,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BA21E4BD2BCE86F800F9916F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA21E4BE2BCE86F800F9916F /* en */,
+				BA21E4C32BCE883F00F9916F /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BADB27042BB36E2600AC96BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -410,6 +477,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -473,6 +541,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

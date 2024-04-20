@@ -11,13 +11,13 @@ class SignInViewModel {
     @Published var isSuccessfullyLoggedIn = false
     @Published var validationError: String = ""
     @Published var firebaseError: String = ""
-    private let authService = AuthService()
+    private let authService = AuthService.shared
 
     func signInUser(email: String?, password: String?) {
         guard let email, let password else { return }
         validationError = ""
         if email.isEmpty || password.isEmpty {
-            validationError = "Поля не должны быть пустыми"
+            validationError = Strings.ValidationErrors.emptyEmailAndPassword
         } else {
             authService.signIn(email: email, password: password) { [weak self] result in
                 guard let self else { return }

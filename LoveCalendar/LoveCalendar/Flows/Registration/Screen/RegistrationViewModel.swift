@@ -14,7 +14,7 @@ class RegistrationViewModel {
     @Published var errorStringFormatted: String = ""
     private var email: String = ""
     private var password: String = ""
-    private var authService = AuthService()
+    private var authService = AuthService.shared
     private var validationService = ValidationService()
     private var cancellables = Set<AnyCancellable>()
 
