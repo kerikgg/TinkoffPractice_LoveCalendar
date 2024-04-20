@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  LoveCalendar
+
+  Created by kerik on 16.04.2024.
+  
+*/
+
+// Buttons
+"buttons.signIn" = "Вход";
+"buttons.signUp" = "Регистрация";
+
+// Labels
+"labels.signInLabel" = "Вход";
+"labels.signUpLabel" = "Регистрация";
+
+// TextFields
+"textFields.emailPlaceholder" = "Почта";
+"textFields.passwordPlaceholder" = "Пароль";
+"textFields.passwordConfirmationPlaceholder" = "Подтверждение пароля";
+
+// ValidationErrors
+"validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
+"validationErrors.emptyEmail" = "Почта не может быть пустой";
+"validationErrors.emptyPassword" = "Пароль не может быть пустой";
+"validationErrors.emailFormatError" = "Почта не удовлетворяет формату";
+"validationErrors.passwordDigitError" = "Пароль должен содержать хотя бы 1 цифру";
+"validationErrors.passwordLengthError" = "Длина пароля минимум 8 символов";
+"validationErrors.passwordsDontMatch" = "Пароли не совпадают";

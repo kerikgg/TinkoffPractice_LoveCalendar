@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */; };
+		BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D332BCC459E00C02D07 /* SignInView.swift */; };
+		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
+		BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */; };
+		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
+		BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA21E4BD2BCE86F800F9916F /* Localizable.strings */; };
+		BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */; };
+		BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
 		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
@@ -16,22 +24,71 @@
 		BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13212BB573D6001F5526 /* SnapKit */; };
 		BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */; };
 		BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */; };
+		BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */; };
+		BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */; };
+		BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */; };
 		BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26F92BB36E2500AC96BA /* AppDelegate.swift */; };
 		BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */; };
-		BADB26FE2BB36E2500AC96BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* ViewController.swift */; };
+		BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */; };
 		BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADB27022BB36E2600AC96BA /* Assets.xcassets */; };
 		BADB27062BB36E2600AC96BA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BADB27052BB36E2600AC96BA /* Base */; };
+		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
+		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
+		BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */; };
+		BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FAA2BBA9B0F00526899 /* SignInViewController.swift */; };
+		BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FAC2BBA9B2300526899 /* SignInViewModel.swift */; };
+		BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0342BB7401C00581F33 /* CoordinatorProtocol.swift */; };
+		BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0362BB740BA00581F33 /* Coordinator.swift */; };
+		BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0382BB7427200581F33 /* FlowController.swift */; };
+		BAF7C03B2BB742BF00581F33 /* FlowControllerWithValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C03A2BB742BF00581F33 /* FlowControllerWithValue.swift */; };
+		BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C03D2BB7433000581F33 /* RouterProtocol.swift */; };
+		BAF7C0402BB7437F00581F33 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C03F2BB7437F00581F33 /* Router.swift */; };
+		BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0432BB7466600581F33 /* ModuleFactoryProtocol.swift */; };
+		BAF7C0492BB7475900581F33 /* AuthFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0482BB7475900581F33 /* AuthFlowCoordinator.swift */; };
+		BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C04A2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift */; };
+		BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C04C2BB7481200581F33 /* AppCoordinator.swift */; };
+		BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C04E2BB750F900581F33 /* ModuleFactory.swift */; };
+		BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF7C0502BB7514900581F33 /* CoordinatorFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BA0F4D332BCC459E00C02D07 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		BA21E4BE2BCE86F800F9916F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
+		BA21E4C32BCE883F00F9916F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
+		BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		BADB26F62BB36E2500AC96BA /* LoveCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADB26F92BB36E2500AC96BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BADB26FD2BB36E2500AC96BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		BADB27022BB36E2600AC96BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BADB27052BB36E2600AC96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADB27072BB36E2600AC96BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
+		BAE90FAA2BBA9B0F00526899 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BAE90FAC2BBA9B2300526899 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		BAF7C0342BB7401C00581F33 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		BAF7C0362BB740BA00581F33 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BAF7C0382BB7427200581F33 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		BAF7C03A2BB742BF00581F33 /* FlowControllerWithValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerWithValue.swift; sourceTree = "<group>"; };
+		BAF7C03D2BB7433000581F33 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		BAF7C03F2BB7437F00581F33 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BAF7C0432BB7466600581F33 /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		BAF7C0482BB7475900581F33 /* AuthFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoordinator.swift; sourceTree = "<group>"; };
+		BAF7C04A2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
+		BAF7C04C2BB7481200581F33 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		BAF7C04E2BB750F900581F33 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		BAF7C0502BB7514900581F33 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +110,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA21E4BC2BCE85AD00F9916F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E4C02BCE873A00F9916F /* SwiftGenGenerated */,
+				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
+				BA21E4BD2BCE86F800F9916F /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BA21E4C02BCE873A00F9916F /* SwiftGenGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */,
+			);
+			path = SwiftGenGenerated;
+			sourceTree = "<group>";
+		};
+		BA4FBE612BC567410066CFE7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */,
+				BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BABB7A9C2BB85AA000BAC60C /* Screen */,
+				BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		BABB7A9C2BB85AA000BAC60C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */,
+				BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */,
+				BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		BADB26ED2BB36E2500AC96BA = {
 			isa = PBXGroup;
 			children = (
@@ -72,9 +175,14 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BA21E4BC2BCE85AD00F9916F /* Assets */,
+				BA4FBE612BC567410066CFE7 /* Extensions */,
+				BAE90FA12BB9649500526899 /* Services */,
+				BAF7C0452BB746BA00581F33 /* Flows */,
+				BAF7C0412BB7461800581F33 /* Factories */,
+				BAF7C03C2BB7431D00581F33 /* Router */,
+				BAF7C0322BB73FF900581F33 /* Coordinator */,
 				BADB270D2BB36ED500AC96BA /* App */,
-				BADB26FD2BB36E2500AC96BA /* ViewController.swift */,
-				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
 				BADB27042BB36E2600AC96BA /* LaunchScreen.storyboard */,
 				BADB27072BB36E2600AC96BA /* Info.plist */,
 				BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */,
@@ -87,8 +195,113 @@
 			children = (
 				BADB26F92BB36E2500AC96BA /* AppDelegate.swift */,
 				BADB26FB2BB36E2500AC96BA /* SceneDelegate.swift */,
+				BAF7C04C2BB7481200581F33 /* AppCoordinator.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		BAE90FA12BB9649500526899 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BAE90FA22BB964B200526899 /* ValidationService.swift */,
+				BAE90FA42BB9712600526899 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BAE90FA62BBA9AC200526899 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BAE90FA72BBA9ADF00526899 /* Screen */,
+				BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		BAE90FA72BBA9ADF00526899 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BAE90FAA2BBA9B0F00526899 /* SignInViewController.swift */,
+				BAE90FAC2BBA9B2300526899 /* SignInViewModel.swift */,
+				BA0F4D332BCC459E00C02D07 /* SignInView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BAF7C0322BB73FF900581F33 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C0332BB7400700581F33 /* Protocols */,
+				BAF7C0362BB740BA00581F33 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		BAF7C0332BB7400700581F33 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C0342BB7401C00581F33 /* CoordinatorProtocol.swift */,
+				BAF7C0382BB7427200581F33 /* FlowController.swift */,
+				BAF7C03A2BB742BF00581F33 /* FlowControllerWithValue.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BAF7C03C2BB7431D00581F33 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C03D2BB7433000581F33 /* RouterProtocol.swift */,
+				BAF7C03F2BB7437F00581F33 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BAF7C0412BB7461800581F33 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C0422BB7464A00581F33 /* Protocols */,
+				BAF7C04E2BB750F900581F33 /* ModuleFactory.swift */,
+				BAF7C0502BB7514900581F33 /* CoordinatorFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		BAF7C0422BB7464A00581F33 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C0432BB7466600581F33 /* ModuleFactoryProtocol.swift */,
+				BAF7C04A2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BAF7C0452BB746BA00581F33 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				BAE90FA62BBA9AC200526899 /* SignIn */,
+				BABB7A9B2BB85A8200BAC60C /* Registration */,
+				BAF7C0462BB746C400581F33 /* Auth */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BAF7C0462BB746C400581F33 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7C0472BB7472C00581F33 /* Screen */,
+				BAF7C0482BB7475900581F33 /* AuthFlowCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BAF7C0472BB7472C00581F33 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */,
+				BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */,
+				BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +357,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = BADB26ED2BB36E2500AC96BA;
 			packageReferences = (
@@ -166,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */,
+				BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */,
 				BADB27062BB36E2600AC96BA /* Base in Resources */,
 				BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */,
 			);
@@ -201,15 +416,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADB26FE2BB36E2500AC96BA /* ViewController.swift in Sources */,
+				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
+				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
+				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
+				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
+				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
+				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
+				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
+				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
+				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
+				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
+				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
+				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
+				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
+				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
+				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
+				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
+				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
+				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
+				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
+				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
+				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
+				BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */,
+				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,
+				BAF7C03B2BB742BF00581F33 /* FlowControllerWithValue.swift in Sources */,
+				BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */,
+				BAF7C0492BB7475900581F33 /* AuthFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		BA21E4BD2BCE86F800F9916F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA21E4BE2BCE86F800F9916F /* en */,
+				BA21E4C32BCE883F00F9916F /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		BADB27042BB36E2600AC96BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -226,6 +477,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -289,6 +541,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
