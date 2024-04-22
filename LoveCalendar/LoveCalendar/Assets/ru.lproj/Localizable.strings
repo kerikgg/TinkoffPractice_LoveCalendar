@@ -27,3 +27,10 @@
 "validationErrors.passwordDigitError" = "Пароль должен содержать хотя бы 1 цифру";
 "validationErrors.passwordLengthError" = "Длина пароля минимум 8 символов";
 "validationErrors.passwordsDontMatch" = "Пароли не совпадают";
+
+// Titles
+"titles.calendar" = "Календарь";
+"titles.wishlist" = "Вишлист";
+"titles.main" = "Мы вместе";
+"titles.album" = "Альбом";
+"titles.profile" = "Профиль";

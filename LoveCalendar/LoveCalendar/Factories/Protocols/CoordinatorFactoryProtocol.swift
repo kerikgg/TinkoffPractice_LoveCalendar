@@ -10,7 +10,8 @@ import Foundation
 protocol CoordinatorFactoryProtocol {
     func makeAppCoordinator(
         router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
     ) -> AppCoordinator
 
     func makeAuthFlowCoordinator(
@@ -30,4 +31,41 @@ protocol CoordinatorFactoryProtocol {
         coordinatorFactory: CoordinatorFactoryProtocol,
         moduleFactory: ModuleFactoryProtocol
     ) -> SignInFlowCoordinator
+
+    func makeTabBarCoordinator(
+        controller: TabBarDelegate,
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> TabBarFlowCoordinator
+
+    func makeCalendarCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> CalendarFlowCoordinator
+
+    func makeWishlistCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> WishlistCoordinator
+
+    func makeMainCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> MainCoordinator
+
+    func makeAlbumCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> AlbumCoordinator
+
+    func makeProfileCoordinator(
+        router: RouterProtocol,
+        coordinatorFactory: CoordinatorFactoryProtocol,
+        moduleFactory: ModuleFactoryProtocol
+    ) -> ProfileCoordinator
 }

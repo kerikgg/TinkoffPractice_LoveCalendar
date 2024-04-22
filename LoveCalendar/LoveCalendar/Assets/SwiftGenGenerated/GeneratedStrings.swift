@@ -33,6 +33,18 @@ public enum Strings {
     /// Password
     public static let passwordPlaceholder = Strings.tr("Localizable", "textFields.passwordPlaceholder", fallback: "Password")
   }
+  public enum Titles {
+    /// Album
+    public static let album = Strings.tr("Localizable", "titles.album", fallback: "Album")
+    /// Calendar
+    public static let calendar = Strings.tr("Localizable", "titles.calendar", fallback: "Calendar")
+    /// We together
+    public static let main = Strings.tr("Localizable", "titles.main", fallback: "We together")
+    /// Profile
+    public static let profile = Strings.tr("Localizable", "titles.profile", fallback: "Profile")
+    /// Wishlist
+    public static let wishlist = Strings.tr("Localizable", "titles.wishlist", fallback: "Wishlist")
+  }
   public enum ValidationErrors {
     /// Invalid email format
     public static let emailFormatError = Strings.tr("Localizable", "validationErrors.emailFormatError", fallback: "Invalid email format")

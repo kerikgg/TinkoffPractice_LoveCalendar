@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065ED22BD521CC0005EE39 /* TabBarDelegate.swift */; };
+		BA065EDC2BD524CB0005EE39 /* CalendarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EDB2BD524CB0005EE39 /* CalendarFlowCoordinator.swift */; };
+		BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EDD2BD528910005EE39 /* CalendarViewController.swift */; };
+		BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EE02BD528BE0005EE39 /* WishlistViewController.swift */; };
+		BA065EE42BD528D10005EE39 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EE32BD528D10005EE39 /* MainViewController.swift */; };
+		BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EE62BD528E00005EE39 /* AlbumViewController.swift */; };
+		BA065EEA2BD528F00005EE39 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EE92BD528F00005EE39 /* ProfileViewController.swift */; };
+		BA065EEC2BD529C20005EE39 /* WishlistCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EEB2BD529C20005EE39 /* WishlistCoordinator.swift */; };
+		BA065EEE2BD529D70005EE39 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EED2BD529D70005EE39 /* MainCoordinator.swift */; };
+		BA065EF02BD529EA0005EE39 /* AlbumCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EEF2BD529EA0005EE39 /* AlbumCoordinator.swift */; };
+		BA065EF22BD52A050005EE39 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EF12BD52A050005EE39 /* ProfileCoordinator.swift */; };
+		BA065EF42BD52F5A0005EE39 /* TabBarFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EF32BD52F5A0005EE39 /* TabBarFlowCoordinator.swift */; };
+		BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA065EF52BD530B10005EE39 /* TabBarViewController.swift */; };
 		BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */; };
 		BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0F4D332BCC459E00C02D07 /* SignInView.swift */; };
 		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
@@ -52,6 +65,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA065ED22BD521CC0005EE39 /* TabBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarDelegate.swift; sourceTree = "<group>"; };
+		BA065EDB2BD524CB0005EE39 /* CalendarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarFlowCoordinator.swift; sourceTree = "<group>"; };
+		BA065EDD2BD528910005EE39 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		BA065EE02BD528BE0005EE39 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		BA065EE32BD528D10005EE39 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BA065EE62BD528E00005EE39 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		BA065EE92BD528F00005EE39 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BA065EEB2BD529C20005EE39 /* WishlistCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCoordinator.swift; sourceTree = "<group>"; };
+		BA065EED2BD529D70005EE39 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		BA065EEF2BD529EA0005EE39 /* AlbumCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCoordinator.swift; sourceTree = "<group>"; };
+		BA065EF12BD52A050005EE39 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		BA065EF32BD52F5A0005EE39 /* TabBarFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlowCoordinator.swift; sourceTree = "<group>"; };
+		BA065EF52BD530B10005EE39 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BA0F4D312BCC2F7E00C02D07 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		BA0F4D332BCC459E00C02D07 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -110,6 +136,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA065ED12BD521650005EE39 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BA065ED42BD522300005EE39 /* Tabs */,
+				BA065ED22BD521CC0005EE39 /* TabBarDelegate.swift */,
+				BA065EF32BD52F5A0005EE39 /* TabBarFlowCoordinator.swift */,
+				BA065EF52BD530B10005EE39 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BA065ED42BD522300005EE39 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				BA065ED52BD5225B0005EE39 /* Calendar */,
+				BA065ED62BD522B80005EE39 /* Wishlist */,
+				BA065ED72BD522E80005EE39 /* Main */,
+				BA065ED82BD522FA0005EE39 /* Album */,
+				BA065ED92BD523020005EE39 /* Profile */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		BA065ED52BD5225B0005EE39 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EDA2BD524B20005EE39 /* Screen */,
+				BA065EDB2BD524CB0005EE39 /* CalendarFlowCoordinator.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		BA065ED62BD522B80005EE39 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EDF2BD528A90005EE39 /* Screen */,
+				BA065EEB2BD529C20005EE39 /* WishlistCoordinator.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		BA065ED72BD522E80005EE39 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE22BD528C40005EE39 /* Screen */,
+				BA065EED2BD529D70005EE39 /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BA065ED82BD522FA0005EE39 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE52BD528D60005EE39 /* Screen */,
+				BA065EEF2BD529EA0005EE39 /* AlbumCoordinator.swift */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		BA065ED92BD523020005EE39 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE82BD528E60005EE39 /* Screen */,
+				BA065EF12BD52A050005EE39 /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BA065EDA2BD524B20005EE39 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EDD2BD528910005EE39 /* CalendarViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BA065EDF2BD528A90005EE39 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE02BD528BE0005EE39 /* WishlistViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BA065EE22BD528C40005EE39 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE32BD528D10005EE39 /* MainViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BA065EE52BD528D60005EE39 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE62BD528E00005EE39 /* AlbumViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		BA065EE82BD528E60005EE39 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BA065EE92BD528F00005EE39 /* ProfileViewController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		BA21E4BC2BCE85AD00F9916F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +412,7 @@
 		BAF7C0452BB746BA00581F33 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BA065ED12BD521650005EE39 /* TabBar */,
 				BAE90FA62BBA9AC200526899 /* SignIn */,
 				BABB7A9B2BB85A8200BAC60C /* Registration */,
 				BAF7C0462BB746C400581F33 /* Auth */,
@@ -416,24 +551,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA065EF42BD52F5A0005EE39 /* TabBarFlowCoordinator.swift in Sources */,
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
+				BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */,
 				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
 				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
+				BA065EF22BD52A050005EE39 /* ProfileCoordinator.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
 				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
+				BA065EEE2BD529D70005EE39 /* MainCoordinator.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
+				BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
+				BA065EE42BD528D10005EE39 /* MainViewController.swift in Sources */,
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
+				BA065EDC2BD524CB0005EE39 /* CalendarFlowCoordinator.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
+				BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
+				BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
 				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
 				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
@@ -443,8 +588,11 @@
 				BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,
+				BA065EEC2BD529C20005EE39 /* WishlistCoordinator.swift in Sources */,
 				BAF7C03B2BB742BF00581F33 /* FlowControllerWithValue.swift in Sources */,
+				BA065EEA2BD528F00005EE39 /* ProfileViewController.swift in Sources */,
 				BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */,
+				BA065EF02BD529EA0005EE39 /* AlbumCoordinator.swift in Sources */,
 				BAF7C0492BB7475900581F33 /* AuthFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

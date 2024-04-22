@@ -22,7 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let router = Router(rootController: UINavigationController())
         let coordinatorFactory = CoordinatorFactory()
-        appCoordinator = AppCoordinator(router: router, coordinatorFactory: coordinatorFactory)
+        let moduleFactory = ModuleFactory()
+
+        appCoordinator = AppCoordinator(
+            router: router,
+            coordinatorFactory: coordinatorFactory,
+            moduleFactory: moduleFactory
+        )
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)

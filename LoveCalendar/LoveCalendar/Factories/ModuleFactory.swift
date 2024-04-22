@@ -19,4 +19,28 @@ class ModuleFactory: ModuleFactoryProtocol {
     func makeSignInModule(viewModel: SignInViewModel) -> SignInViewController {
         SignInViewController(viewModel: viewModel)
     }
+
+    func makeTabBarModule() -> TabBarViewController {
+        TabBarViewController()
+    }
+
+    func makeCalendarModule() -> CalendarViewController {
+        CalendarViewController()
+    }
+
+    func makeWishlistModule() -> WishlistViewController {
+        WishlistViewController()
+    }
+
+    func makeMainModule() -> MainViewController {
+        MainViewController()
+    }
+
+    func makeAlbumModule() -> AlbumViewController {
+        AlbumViewController()
+    }
+
+    func makeProfileModule() -> ProfileViewController {
+        ProfileViewController()
+    }
 }

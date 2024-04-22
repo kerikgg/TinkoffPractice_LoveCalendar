@@ -52,7 +52,6 @@ extension SignInViewController {
                 if isSuccessfullyLoggedIn {
                     guard let self else { return }
                     self.completionHandler?()
-                    print("работает, но дальше переход пока не сделал")
                 }
             }
             .store(in: &cancellables)
