@@ -99,6 +99,12 @@ class TabBarFlowCoordinator: Coordinator {
                     router: routerWithNC,
                     coordinatorFactory: coordinatorFactory,
                     moduleFactory: moduleFactory)
+                profileCoordinator.flowCompletionHandler = { [weak self] in
+                    guard let self else { return }
+                    self.flowCompletionHandler?()
+                    self.deleteCoordinatorDependency(profileCoordinator)
+                }
+
                 self.addCoordinatorDependency(profileCoordinator)
                 profileCoordinator.start()
             }

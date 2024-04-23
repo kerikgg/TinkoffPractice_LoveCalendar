@@ -23,7 +23,10 @@ class ProfileCoordinator: Coordinator {
     }
 
     private func showProfile() {
-        let profileViewController = moduleFactory.makeProfileModule()
+        let profileViewController = moduleFactory.makeProfileModule(viewModel: ProfileViewModel())
+        profileViewController.completionHandler = { [weak self] in
+            self?.flowCompletionHandler?()
+        }
         router.setViewController(profileViewController)
     }
 }

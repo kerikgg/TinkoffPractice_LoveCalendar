@@ -11,19 +11,20 @@ class AppCoordinator: Coordinator {
     private var router: RouterProtocol
     private var coordinatorFactory: CoordinatorFactoryProtocol
     private var moduleFactory: ModuleFactoryProtocol
-    private var isLogged = true // mock
+    private let authService: AuthService
 
     init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, moduleFactory: ModuleFactoryProtocol) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
         self.moduleFactory = moduleFactory
+        self.authService = AuthService.shared
     }
 
     override func start() {
-        if isLogged {
-            runMainFlow()
-        } else {
+        if authService.currentUser == nil {
             runAuthFlow()
+        } else {
+            runMainFlow()
         }
     }
 

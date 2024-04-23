@@ -20,5 +20,5 @@ protocol ModuleFactoryProtocol {
     func makeWishlistModule() -> WishlistViewController
     func makeMainModule() -> MainViewController
     func makeAlbumModule() -> AlbumViewController
-    func makeProfileModule() -> ProfileViewController
+    func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController
 }

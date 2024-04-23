@@ -40,7 +40,7 @@ class ModuleFactory: ModuleFactoryProtocol {
         AlbumViewController()
     }
 
-    func makeProfileModule() -> ProfileViewController {
-        ProfileViewController()
+    func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController {
+        ProfileViewController(viewModel: viewModel)
     }
 }

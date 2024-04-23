@@ -27,6 +27,7 @@
 		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
 		BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA21E4BD2BCE86F800F9916F /* Localizable.strings */; };
 		BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */; };
+		BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B4C842BD7D89F0009E006 /* SystemImages.swift */; };
 		BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
@@ -37,6 +38,7 @@
 		BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13212BB573D6001F5526 /* SnapKit */; };
 		BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BA8F13232BB573D6001F5526 /* SnapKit-Dynamic */; };
 		BA8F13282BB57A35001F5526 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */; };
+		BA95BB452BD7140A00B458B4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */; };
 		BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */; };
 		BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */; };
 		BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */; };
@@ -86,8 +88,10 @@
 		BA21E4BE2BCE86F800F9916F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
 		BA21E4C32BCE883F00F9916F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA3B4C842BD7D89F0009E006 /* SystemImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImages.swift; sourceTree = "<group>"; };
 		BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
 		BABB7A9F2BB85AE400BAC60C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BABB7AA12BB85AF300BAC60C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				BA065EE92BD528F00005EE39 /* ProfileViewController.swift */,
+				BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				BA21E4C02BCE873A00F9916F /* SwiftGenGenerated */,
 				BADB27022BB36E2600AC96BA /* Assets.xcassets */,
 				BA21E4BD2BCE86F800F9916F /* Localizable.strings */,
+				BA3B4C842BD7D89F0009E006 /* SystemImages.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
+				BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */,
 				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
 				BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */,
 				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
@@ -569,6 +576,7 @@
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
 				BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
+				BA95BB452BD7140A00B458B4 /* ProfileViewModel.swift in Sources */,
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
 				BA065EE42BD528D10005EE39 /* MainViewController.swift in Sources */,
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
