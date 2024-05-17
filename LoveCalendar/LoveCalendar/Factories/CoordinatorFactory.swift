@@ -8,125 +8,43 @@
 import Foundation
 
 class CoordinatorFactory: CoordinatorFactoryProtocol {
-    func makeAppCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> AppCoordinator {
-        AppCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    func makeAppCoordinator(router: any RouterProtocol) -> AppCoordinator {
+        AppCoordinator(router: router)
     }
     
-    func makeAuthFlowCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> AuthFlowCoordinator {
-        AuthFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
-    }
-
-    func makeRegistrationFlowCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> RegistrationFlowCoordinator {
-        RegistrationFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
-    }
-
-    func makeSignInFlowCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> SignInFlowCoordinator {
-        SignInFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    func makeAuthFlowCoordinator(router: any RouterProtocol) -> AuthFlowCoordinator {
+        AuthFlowCoordinator(router: router)
     }
     
-    func makeTabBarCoordinator(
-        controller: TabBarDelegate,
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> TabBarFlowCoordinator {
-        TabBarFlowCoordinator(
-            controller: controller,
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    func makeRegistrationFlowCoordinator(router: any RouterProtocol) -> RegistrationFlowCoordinator {
+        RegistrationFlowCoordinator(router: router)
     }
-
-    func makeCalendarCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> CalendarFlowCoordinator {
-        CalendarFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    
+    func makeSignInFlowCoordinator(router: any RouterProtocol) -> SignInFlowCoordinator {
+        SignInFlowCoordinator(router: router)
     }
-
-    func makeWishlistCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> WishlistCoordinator {
-        WishlistCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    
+    func makeTabBarCoordinator(controller: any TabBarDelegate) -> TabBarFlowCoordinator {
+        TabBarFlowCoordinator(controller: controller)
     }
-
-    func makeMainCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> MainCoordinator {
-        MainCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    
+    func makeCalendarCoordinator(router: any RouterProtocol) -> CalendarFlowCoordinator {
+        CalendarFlowCoordinator(router: router)
     }
-
-    func makeAlbumCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> AlbumCoordinator {
-        AlbumCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    
+    func makeWishlistCoordinator(router: any RouterProtocol) -> WishlistCoordinator {
+        WishlistCoordinator(router: router)
     }
-
-    func makeProfileCoordinator(
-        router: any RouterProtocol,
-        coordinatorFactory: any CoordinatorFactoryProtocol,
-        moduleFactory: any ModuleFactoryProtocol
-    ) -> ProfileCoordinator {
-        ProfileCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
-        )
+    
+    func makeMainCoordinator(router: any RouterProtocol) -> MainCoordinator {
+        MainCoordinator(router: router)
+    }
+    
+    func makeAlbumCoordinator(router: any RouterProtocol) -> AlbumCoordinator {
+        AlbumCoordinator(router: router)
+    }
+    
+    func makeProfileCoordinator(router: any RouterProtocol) -> ProfileCoordinator {
+        ProfileCoordinator(router: router)
     }
 }

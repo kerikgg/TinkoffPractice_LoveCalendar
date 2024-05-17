@@ -8,64 +8,23 @@
 import Foundation
 
 protocol CoordinatorFactoryProtocol {
-    func makeAppCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> AppCoordinator
+    func makeAppCoordinator(router: RouterProtocol) -> AppCoordinator
 
-    func makeAuthFlowCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> AuthFlowCoordinator
+    func makeAuthFlowCoordinator(router: RouterProtocol) -> AuthFlowCoordinator
 
-    func makeRegistrationFlowCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> RegistrationFlowCoordinator
+    func makeRegistrationFlowCoordinator(router: RouterProtocol) -> RegistrationFlowCoordinator
 
-    func makeSignInFlowCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> SignInFlowCoordinator
+    func makeSignInFlowCoordinator(router: RouterProtocol) -> SignInFlowCoordinator
 
-    func makeTabBarCoordinator(
-        controller: TabBarDelegate,
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> TabBarFlowCoordinator
+    func makeTabBarCoordinator(controller: TabBarDelegate) -> TabBarFlowCoordinator
 
-    func makeCalendarCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> CalendarFlowCoordinator
+    func makeCalendarCoordinator(router: RouterProtocol) -> CalendarFlowCoordinator
 
-    func makeWishlistCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> WishlistCoordinator
+    func makeWishlistCoordinator(router: RouterProtocol) -> WishlistCoordinator
 
-    func makeMainCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> MainCoordinator
+    func makeMainCoordinator(router: RouterProtocol) -> MainCoordinator
 
-    func makeAlbumCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> AlbumCoordinator
+    func makeAlbumCoordinator(router: RouterProtocol) -> AlbumCoordinator
 
-    func makeProfileCoordinator(
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) -> ProfileCoordinator
+    func makeProfileCoordinator(router: RouterProtocol) -> ProfileCoordinator
 }

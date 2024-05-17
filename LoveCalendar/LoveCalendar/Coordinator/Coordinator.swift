@@ -10,9 +10,13 @@ import Foundation
 class Coordinator: CoordinatorProtocol {
     var flowCompletionHandler: (() -> Void)?
     var childCoordinators: [CoordinatorProtocol]
+    let coordinatorFactory: CoordinatorFactoryProtocol
+    let moduleFactory: ModuleFactory
 
     init() {
         childCoordinators = []
+        coordinatorFactory = CoordinatorFactory()
+        moduleFactory = ModuleFactory()
     }
 
     func start() {

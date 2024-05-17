@@ -9,13 +9,9 @@ import Foundation
 
 class AuthFlowCoordinator: Coordinator {
     private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var moduleFactory: ModuleFactoryProtocol
 
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, moduleFactory: ModuleFactoryProtocol) {
+    init(router: RouterProtocol) {
         self.router = router
-        self.coordinatorFactory = coordinatorFactory
-        self.moduleFactory = moduleFactory
     }
 
     override func start() {
@@ -39,9 +35,7 @@ class AuthFlowCoordinator: Coordinator {
     private func runSignInFlow() {
         print("SignIn")
         let signInFlowCoordinator = coordinatorFactory.makeSignInFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
+            router: router
         )
         addCoordinatorDependency(signInFlowCoordinator)
         signInFlowCoordinator.flowCompletionHandler = { [weak self] in
@@ -55,9 +49,7 @@ class AuthFlowCoordinator: Coordinator {
     private func runSignUpFlow() {
         print("SignUp")
         let registrationFlowCoordinator = coordinatorFactory.makeRegistrationFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory
+            router: router
         )
         registrationFlowCoordinator.start()
         addCoordinatorDependency(registrationFlowCoordinator)

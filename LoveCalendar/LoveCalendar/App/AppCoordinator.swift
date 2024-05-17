@@ -9,14 +9,10 @@ import Foundation
 
 class AppCoordinator: Coordinator {
     private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var moduleFactory: ModuleFactoryProtocol
     private let authService: AuthService
 
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, moduleFactory: ModuleFactoryProtocol) {
+    init(router: RouterProtocol) {
         self.router = router
-        self.coordinatorFactory = coordinatorFactory
-        self.moduleFactory = moduleFactory
         self.authService = AuthService.shared
     }
 
@@ -30,9 +26,8 @@ class AppCoordinator: Coordinator {
 
     private func runAuthFlow() {
         let authFlowCoordinator = coordinatorFactory.makeAuthFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory)
+            router: router
+        )
         addCoordinatorDependency(authFlowCoordinator)
         authFlowCoordinator.start()
         authFlowCoordinator.flowCompletionHandler = { [weak self] in
@@ -45,10 +40,8 @@ class AppCoordinator: Coordinator {
     private func runMainFlow() {
         let tabBarViewController = moduleFactory.makeTabBarModule()
         let tabBarFlowCoordinator = coordinatorFactory.makeTabBarCoordinator(
-            controller: tabBarViewController,
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: moduleFactory)
+            controller: tabBarViewController
+        )
         addCoordinatorDependency(tabBarFlowCoordinator)
         tabBarFlowCoordinator.flowCompletionHandler = { [weak self] in
             guard let self else { return }

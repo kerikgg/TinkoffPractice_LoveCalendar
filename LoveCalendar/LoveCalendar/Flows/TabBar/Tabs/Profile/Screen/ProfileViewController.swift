@@ -43,5 +43,4 @@ extension ProfileViewController {
 
         return button
     }
-
 }

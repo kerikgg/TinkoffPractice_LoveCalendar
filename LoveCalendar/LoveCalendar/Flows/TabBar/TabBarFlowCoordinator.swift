@@ -10,19 +10,7 @@ import UIKit
 class TabBarFlowCoordinator: Coordinator {
     private var tabBarDelegate: TabBarDelegate
 
-    private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var moduleFactory: ModuleFactoryProtocol
-
-    init(
-        controller: TabBarDelegate,
-        router: RouterProtocol,
-        coordinatorFactory: CoordinatorFactoryProtocol,
-        moduleFactory: ModuleFactoryProtocol
-    ) {
-        self.router = router
-        self.coordinatorFactory = coordinatorFactory
-        self.moduleFactory = moduleFactory
+    init(controller: TabBarDelegate) {
         self.tabBarDelegate = controller
     }
 
@@ -40,9 +28,8 @@ class TabBarFlowCoordinator: Coordinator {
             if navigationController.viewControllers.isEmpty {
                 let routerWithNC = Router(rootController: navigationController)
                 let calendarCoordinator = coordinatorFactory.makeCalendarCoordinator(
-                    router: routerWithNC,
-                    coordinatorFactory: coordinatorFactory,
-                    moduleFactory: moduleFactory)
+                    router: routerWithNC
+                )
                 self.addCoordinatorDependency(calendarCoordinator)
                 calendarCoordinator.start()
             }
@@ -54,9 +41,8 @@ class TabBarFlowCoordinator: Coordinator {
             if navigationController.viewControllers.isEmpty {
                 let routerWithNC = Router(rootController: navigationController)
                 let wishlistCoordinator = coordinatorFactory.makeWishlistCoordinator(
-                    router: routerWithNC,
-                    coordinatorFactory: coordinatorFactory,
-                    moduleFactory: moduleFactory)
+                    router: routerWithNC
+                )
                 self.addCoordinatorDependency(wishlistCoordinator)
                 wishlistCoordinator.start()
             }
@@ -68,9 +54,8 @@ class TabBarFlowCoordinator: Coordinator {
             if navigationController.viewControllers.isEmpty {
                 let routerWithNC = Router(rootController: navigationController)
                 let mainCoordinator = coordinatorFactory.makeMainCoordinator(
-                    router: routerWithNC,
-                    coordinatorFactory: coordinatorFactory,
-                    moduleFactory: moduleFactory)
+                    router: routerWithNC
+                )
                 self.addCoordinatorDependency(mainCoordinator)
                 mainCoordinator.start()
             }
@@ -82,9 +67,8 @@ class TabBarFlowCoordinator: Coordinator {
             if navigationController.viewControllers.isEmpty {
                 let routerWithNC = Router(rootController: navigationController)
                 let albumCoordinator = coordinatorFactory.makeAlbumCoordinator(
-                    router: routerWithNC,
-                    coordinatorFactory: coordinatorFactory,
-                    moduleFactory: moduleFactory)
+                    router: routerWithNC
+                )
                 self.addCoordinatorDependency(albumCoordinator)
                 albumCoordinator.start()
             }
@@ -96,9 +80,8 @@ class TabBarFlowCoordinator: Coordinator {
             if navigationController.viewControllers.isEmpty {
                 let routerWithNC = Router(rootController: navigationController)
                 let profileCoordinator = coordinatorFactory.makeProfileCoordinator(
-                    router: routerWithNC,
-                    coordinatorFactory: coordinatorFactory,
-                    moduleFactory: moduleFactory)
+                    router: routerWithNC
+                )
                 profileCoordinator.flowCompletionHandler = { [weak self] in
                     guard let self else { return }
                     self.flowCompletionHandler?()
