@@ -20,9 +20,14 @@ class RegistrationFlowCoordinator: Coordinator {
 
     private func showRegistration() {
         let registrationViewController = moduleFactory.makeRegistrationModule(viewModel: RegistrationViewModel())
-        registrationViewController.completionHandler = { [weak self] in
+        registrationViewController.completionHandler = { [weak self] registrationState in
             guard let self else { return }
-            self.flowCompletionHandler?()
+            switch registrationState {
+            case .back:
+                self.flowCompletionHandler?(.back)
+            case .register:
+                self.flowCompletionHandler?(.next)
+            }
         }
         router.push(registrationViewController, animated: true)
     }

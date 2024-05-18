@@ -20,9 +20,14 @@ class SignInFlowCoordinator: Coordinator {
 
     private func showSignIn() {
         let signInViewController = moduleFactory.makeSignInModule(viewModel: SignInViewModel())
-        signInViewController.completionHandler = { [weak self] in
+        signInViewController.completionHandler = { [weak self] signInState in
             guard let self else { return }
-            self.flowCompletionHandler?()
+            switch signInState {
+            case .back:
+                self.flowCompletionHandler?(.back)
+            case .login:
+                self.flowCompletionHandler?(.next)
+            }
         }
         router.push(signInViewController, animated: true)
     }

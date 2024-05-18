@@ -8,9 +8,13 @@
 import UIKit
 import Combine
 
-class RegistrationViewController: UIViewController, FlowController {
+enum RegistrationState {
+    case register, back
+}
+
+class RegistrationViewController: UIViewController, FlowControllerWithValue {
     private let registrationView = RegistrationView(frame: .zero)
-    var completionHandler: (() -> Void)?
+    var completionHandler: ((RegistrationState) -> Void)?
     private let viewModel: RegistrationViewModel
     var cancellables = Set<AnyCancellable>()
 
@@ -33,6 +37,13 @@ class RegistrationViewController: UIViewController, FlowController {
         registrationView.delegate = self
         setBindings()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            completionHandler?(.back)
+        }
+    }
 }
 
 extension RegistrationViewController: RegistrationViewDelegate {
@@ -47,7 +58,7 @@ extension RegistrationViewController {
             .sink { [weak self] isSuccessfulRegistered in
                 guard let self = self else { return }
                 if isSuccessfulRegistered {
-                    self.completionHandler?()
+                    self.completionHandler?(.register)
                 }
             }
             .store(in: &cancellables)

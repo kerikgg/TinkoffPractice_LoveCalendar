@@ -8,8 +8,12 @@
 import UIKit
 import SnapKit
 
-class ProfileViewController: UIViewController, FlowController {
-    var completionHandler: (() -> Void)?
+enum ProfileStates {
+    case logOut, settings
+}
+
+class ProfileViewController: UIViewController, FlowControllerWithValue {
+    var completionHandler: ((ProfileStates) -> Void)?
 
     private let viewModel: ProfileViewModel
 
@@ -35,7 +39,7 @@ extension ProfileViewController {
     private func customLeftBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
             self?.viewModel.logOut()
-            self?.completionHandler?()
+            self?.completionHandler?(.logOut)
         }
 
         let button = UIBarButtonItem(image: SystemImages.logOut, primaryAction: action)

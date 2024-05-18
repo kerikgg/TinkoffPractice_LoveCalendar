@@ -30,7 +30,7 @@ class AppCoordinator: Coordinator {
         )
         addCoordinatorDependency(authFlowCoordinator)
         authFlowCoordinator.start()
-        authFlowCoordinator.flowCompletionHandler = { [weak self] in
+        authFlowCoordinator.flowCompletionHandler = { [weak self, weak authFlowCoordinator] _ in
             guard let self else { return }
             self.runMainFlow()
             self.deleteCoordinatorDependency(authFlowCoordinator)
@@ -43,7 +43,7 @@ class AppCoordinator: Coordinator {
             controller: tabBarViewController
         )
         addCoordinatorDependency(tabBarFlowCoordinator)
-        tabBarFlowCoordinator.flowCompletionHandler = { [weak self] in
+        tabBarFlowCoordinator.flowCompletionHandler = { [weak self, weak tabBarFlowCoordinator] _ in
             guard let self else { return }
             deleteCoordinatorDependency(tabBarFlowCoordinator)
             runAuthFlow()

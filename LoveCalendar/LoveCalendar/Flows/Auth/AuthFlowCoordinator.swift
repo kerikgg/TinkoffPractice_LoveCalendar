@@ -34,30 +34,43 @@ class AuthFlowCoordinator: Coordinator {
 
     private func runSignInFlow() {
         print("SignIn")
-        let signInFlowCoordinator = coordinatorFactory.makeSignInFlowCoordinator(
-            router: router
-        )
-        addCoordinatorDependency(signInFlowCoordinator)
-        signInFlowCoordinator.flowCompletionHandler = { [weak self] in
-            guard let self else { return }
-            self.deleteCoordinatorDependency(signInFlowCoordinator)
-            self.flowCompletionHandler?()
-        }
+        let signInFlowCoordinator = coordinatorFactory.makeSignInFlowCoordinator(router: router)
         signInFlowCoordinator.start()
+        addCoordinatorDependency(signInFlowCoordinator)
+        signInFlowCoordinator.flowCompletionHandler = { [weak self, weak signInFlowCoordinator] flowCompletionState in
+            guard let self else { return }
+            switch flowCompletionState {
+            case .back:
+                self.deleteCoordinatorDependency(signInFlowCoordinator)
+            case .next:
+                self.flowCompletionHandler?(nil)
+                self.deleteCoordinatorDependency(signInFlowCoordinator)
+            case .none:
+                break
+            }
+            self.deleteCoordinatorDependency(signInFlowCoordinator)
+        }
     }
 
     private func runSignUpFlow() {
         print("SignUp")
-        let registrationFlowCoordinator = coordinatorFactory.makeRegistrationFlowCoordinator(
-            router: router
-        )
+        let registrationFlowCoordinator = coordinatorFactory.makeRegistrationFlowCoordinator(router: router)
         registrationFlowCoordinator.start()
         addCoordinatorDependency(registrationFlowCoordinator)
-        registrationFlowCoordinator.flowCompletionHandler = { [weak self] in
+        // swiftlint:disable:next line_length
+        registrationFlowCoordinator.flowCompletionHandler = { [weak self, weak registrationFlowCoordinator] flowCompletionState in
             guard let self else { return }
-            self.router.popToRootController(animated: false)
-            self.runSignInFlow()
-            self.deleteCoordinatorDependency(registrationFlowCoordinator)
+
+            switch flowCompletionState {
+            case .back:
+                self.deleteCoordinatorDependency(registrationFlowCoordinator)
+            case .next:
+                self.router.popToRootController(animated: false)
+                self.runSignInFlow()
+                self.deleteCoordinatorDependency(registrationFlowCoordinator)
+            case .none:
+                break
+            }
         }
     }
 }

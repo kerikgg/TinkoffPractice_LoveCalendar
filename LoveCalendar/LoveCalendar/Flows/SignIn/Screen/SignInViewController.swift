@@ -9,8 +9,12 @@ import UIKit
 import SnapKit
 import Combine
 
-class SignInViewController: UIViewController, FlowController {
-    var completionHandler: (() -> Void)?
+enum SignInState {
+    case login, back
+}
+
+class SignInViewController: UIViewController, FlowControllerWithValue {
+    var completionHandler: ((SignInState) -> Void)?
     private let signInView = SignInView(frame: .zero)
     private let viewModel: SignInViewModel
     var cancellables = Set<AnyCancellable>()
@@ -34,6 +38,13 @@ class SignInViewController: UIViewController, FlowController {
         signInView.delegate = self
         setBindings()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            completionHandler?(.back)
+        }
+    }
 }
 
 extension SignInViewController {
@@ -51,7 +62,7 @@ extension SignInViewController {
             .sink { [weak self] isSuccessfullyLoggedIn in
                 if isSuccessfullyLoggedIn {
                     guard let self else { return }
-                    self.completionHandler?()
+                    self.completionHandler?(.login)
                 }
             }
             .store(in: &cancellables)
