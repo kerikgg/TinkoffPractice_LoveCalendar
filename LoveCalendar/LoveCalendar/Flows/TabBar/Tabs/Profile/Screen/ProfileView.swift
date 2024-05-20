@@ -109,6 +109,7 @@ extension ProfileView {
 
         randomActivityButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.size.equalTo(CGSize(width: 220, height: 45))
             make.bottom.equalToSuperview().inset(150)
         }
     }

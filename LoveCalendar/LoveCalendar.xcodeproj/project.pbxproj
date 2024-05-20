@@ -54,6 +54,11 @@
 		BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADB26FD2BB36E2500AC96BA /* AuthViewController.swift */; };
 		BADB27032BB36E2600AC96BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADB27022BB36E2600AC96BA /* Assets.xcassets */; };
 		BADB27062BB36E2600AC96BA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BADB27052BB36E2600AC96BA /* Base */; };
+		BADDEEC32BFB8EC100288585 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC12BFB8EC100288585 /* CoreData.xcdatamodeld */; };
+		BADDEEC62BFB8F0500288585 /* UserCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC42BFB8F0500288585 /* UserCoreData+CoreDataClass.swift */; };
+		BADDEEC72BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC52BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift */; };
+		BADDEEC92BFB8F5D00288585 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */; };
+		BADDEECB2BFB8FD400288585 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEECA2BFB8FD400288585 /* CoreDataService.swift */; };
 		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
 		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
 		BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */; };
@@ -115,6 +120,11 @@
 		BADB27022BB36E2600AC96BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BADB27052BB36E2600AC96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADB27072BB36E2600AC96BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BADDEEC22BFB8EC100288585 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		BADDEEC42BFB8F0500288585 /* UserCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BADDEEC52BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
+		BADDEECA2BFB8FD400288585 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -269,6 +279,7 @@
 			children = (
 				BA20452E2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift */,
 				BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */,
+				BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -355,6 +366,7 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BADDEEC02BFB8E6F00288585 /* CoreData */,
 				BA2045302BFA491800C0B3BD /* Models */,
 				BA21E4BC2BCE85AD00F9916F /* Assets */,
 				BA4FBE612BC567410066CFE7 /* Extensions */,
@@ -381,6 +393,16 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		BADDEEC02BFB8E6F00288585 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BADDEEC42BFB8F0500288585 /* UserCoreData+CoreDataClass.swift */,
+				BADDEEC52BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift */,
+				BADDEEC12BFB8EC100288585 /* CoreData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		BAE90FA12BB9649500526899 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +411,7 @@
 				BAE90FA42BB9712600526899 /* AuthService.swift */,
 				BA2045332BFA4AA100C0B3BD /* FirestoreService.swift */,
 				BA2045372BFA503700C0B3BD /* StorageService.swift */,
+				BADDEECA2BFB8FD400288585 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -603,6 +626,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA065EF42BD52F5A0005EE39 /* TabBarFlowCoordinator.swift in Sources */,
+				BADDEEC62BFB8F0500288585 /* UserCoreData+CoreDataClass.swift in Sources */,
+				BADDEEC72BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift in Sources */,
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
@@ -618,14 +643,17 @@
 				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
 				BA065EEE2BD529D70005EE39 /* MainCoordinator.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
+				BADDEEC32BFB8EC100288585 /* CoreData.xcdatamodeld in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
 				BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
 				BA95BB452BD7140A00B458B4 /* ProfileViewModel.swift in Sources */,
 				BA2045322BFA493B00C0B3BD /* UserModel.swift in Sources */,
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
+				BADDEEC92BFB8F5D00288585 /* CoreDataServiceProtocol.swift in Sources */,
 				BA065EE42BD528D10005EE39 /* MainViewController.swift in Sources */,
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
+				BADDEECB2BFB8FD400288585 /* CoreDataService.swift in Sources */,
 				BA065EDC2BD524CB0005EE39 /* CalendarFlowCoordinator.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
@@ -955,6 +983,20 @@
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		BADDEEC12BFB8EC100288585 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BADDEEC22BFB8EC100288585 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = BADDEEC22BFB8EC100288585 /* CoreData.xcdatamodel */;
+			name = CoreData.xcdatamodeld;
+			path = /Users/kerik/Documents/GitHub/TinkoffPractice_LoveCalendar/LoveCalendar/LoveCalendar/CoreData/CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BADB26EE2BB36E2500AC96BA /* Project object */;
 }
