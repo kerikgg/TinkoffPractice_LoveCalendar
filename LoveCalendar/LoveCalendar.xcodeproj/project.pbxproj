@@ -25,6 +25,13 @@
 		BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */; };
 		BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */; };
 		BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */; };
+		BA20452C2BF9347000C0B3BD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20452B2BF9347000C0B3BD /* ProfileView.swift */; };
+		BA20452F2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA20452E2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift */; };
+		BA2045322BFA493B00C0B3BD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2045312BFA493B00C0B3BD /* UserModel.swift */; };
+		BA2045342BFA4AA100C0B3BD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2045332BFA4AA100C0B3BD /* FirestoreService.swift */; };
+		BA2045362BFA4FB100C0B3BD /* StorageServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */; };
+		BA2045382BFA503700C0B3BD /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2045372BFA503700C0B3BD /* StorageService.swift */; };
+		BA20453B2BFA53DB00C0B3BD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BA20453A2BFA53DB00C0B3BD /* FirebaseStorage */; };
 		BA21E4BF2BCE86F800F9916F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA21E4BD2BCE86F800F9916F /* Localizable.strings */; };
 		BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */; };
 		BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B4C842BD7D89F0009E006 /* SystemImages.swift */; };
@@ -85,6 +92,12 @@
 		BA0FDEC92BC9C82B0010D0FA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		BA0FDECD2BC9D48F0010D0FA /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		BA20452B2BF9347000C0B3BD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BA20452E2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreServiceProtocol.swift; sourceTree = "<group>"; };
+		BA2045312BFA493B00C0B3BD /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BA2045332BFA4AA100C0B3BD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceProtocol.swift; sourceTree = "<group>"; };
+		BA2045372BFA503700C0B3BD /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		BA21E4BE2BCE86F800F9916F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA21E4C12BCE87AE00F9916F /* GeneratedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedStrings.swift; sourceTree = "<group>"; };
 		BA21E4C32BCE883F00F9916F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -128,6 +141,7 @@
 			files = (
 				BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */,
 				BA7ABE8B2BB58088009ED03E /* Alamofire in Frameworks */,
+				BA20453B2BFA53DB00C0B3BD /* FirebaseStorage in Frameworks */,
 				BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */,
 				BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */,
 				BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */,
@@ -245,8 +259,33 @@
 			children = (
 				BA065EE92BD528F00005EE39 /* ProfileViewController.swift */,
 				BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */,
+				BA20452B2BF9347000C0B3BD /* ProfileView.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		BA20452D2BFA2EDF00C0B3BD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BA20452E2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift */,
+				BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BA2045302BFA491800C0B3BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA2045312BFA493B00C0B3BD /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BA2045392BFA53DB00C0B3BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA21E4BC2BCE85AD00F9916F /* Assets */ = {
@@ -301,6 +340,7 @@
 			children = (
 				BADB26F82BB36E2500AC96BA /* LoveCalendar */,
 				BADB26F72BB36E2500AC96BA /* Products */,
+				BA2045392BFA53DB00C0B3BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,6 +355,7 @@
 		BADB26F82BB36E2500AC96BA /* LoveCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				BA2045302BFA491800C0B3BD /* Models */,
 				BA21E4BC2BCE85AD00F9916F /* Assets */,
 				BA4FBE612BC567410066CFE7 /* Extensions */,
 				BAE90FA12BB9649500526899 /* Services */,
@@ -343,8 +384,11 @@
 		BAE90FA12BB9649500526899 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BA20452D2BFA2EDF00C0B3BD /* Protocols */,
 				BAE90FA22BB964B200526899 /* ValidationService.swift */,
 				BAE90FA42BB9712600526899 /* AuthService.swift */,
+				BA2045332BFA4AA100C0B3BD /* FirestoreService.swift */,
+				BA2045372BFA503700C0B3BD /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -471,6 +515,7 @@
 				BA7ABE872BB57F34009ED03E /* FirebaseFirestore */,
 				BA7ABE8A2BB58088009ED03E /* Alamofire */,
 				BA7ABE8C2BB58088009ED03E /* AlamofireDynamic */,
+				BA20453A2BFA53DB00C0B3BD /* FirebaseStorage */,
 			);
 			productName = LoveCalendar;
 			productReference = BADB26F62BB36E2500AC96BA /* LoveCalendar.app */;
@@ -577,6 +622,7 @@
 				BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
 				BA95BB452BD7140A00B458B4 /* ProfileViewModel.swift in Sources */,
+				BA2045322BFA493B00C0B3BD /* UserModel.swift in Sources */,
 				BAF7C0372BB740BA00581F33 /* Coordinator.swift in Sources */,
 				BA065EE42BD528D10005EE39 /* MainViewController.swift in Sources */,
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
@@ -585,10 +631,12 @@
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
 				BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
+				BA2045362BFA4FB100C0B3BD /* StorageServiceProtocol.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
 				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
+				BA20452F2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift in Sources */,
 				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
 				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
@@ -597,7 +645,10 @@
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,
 				BA065EEC2BD529C20005EE39 /* WishlistCoordinator.swift in Sources */,
+				BA2045342BFA4AA100C0B3BD /* FirestoreService.swift in Sources */,
+				BA20452C2BF9347000C0B3BD /* ProfileView.swift in Sources */,
 				BAF7C03B2BB742BF00581F33 /* FlowControllerWithValue.swift in Sources */,
+				BA2045382BFA503700C0B3BD /* StorageService.swift in Sources */,
 				BA065EEA2BD528F00005EE39 /* ProfileViewController.swift in Sources */,
 				BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */,
 				BA065EF02BD529EA0005EE39 /* AlbumCoordinator.swift in Sources */,
@@ -858,6 +909,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA20453A2BFA53DB00C0B3BD /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

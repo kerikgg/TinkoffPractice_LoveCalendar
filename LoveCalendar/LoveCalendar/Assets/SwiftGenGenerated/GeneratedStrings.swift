@@ -11,6 +11,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Strings {
   public enum Buttons {
+    /// Idea for meeting
+    public static let ideaForMeeting = Strings.tr("Localizable", "buttons.ideaForMeeting", fallback: "Idea for meeting")
     /// Localizable.strings
     ///   LoveCalendar
     /// 

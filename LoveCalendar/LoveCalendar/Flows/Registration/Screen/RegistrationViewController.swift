@@ -47,8 +47,8 @@ class RegistrationViewController: UIViewController, FlowControllerWithValue {
 }
 
 extension RegistrationViewController: RegistrationViewDelegate {
-    func didPressSignUpButton(_ email: String?, _ password: String?, _ passwordConfirmation: String?) {
-        self.viewModel.signUpUser(email, password, passwordConfirmation)
+    func didPressSignUpButton(_ name: String?, _ email: String?, _ password: String?, _ passwordConfirmation: String?) {
+        self.viewModel.signUpUser(name, email, password, passwordConfirmation)
     }
 }
 

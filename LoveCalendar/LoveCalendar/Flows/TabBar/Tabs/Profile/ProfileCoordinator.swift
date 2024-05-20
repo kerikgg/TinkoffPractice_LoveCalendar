@@ -19,7 +19,12 @@ class ProfileCoordinator: Coordinator {
     }
 
     private func showProfile() {
-        let profileViewController = moduleFactory.makeProfileModule(viewModel: ProfileViewModel())
+        let profileViewController = moduleFactory.makeProfileModule(
+            viewModel: ProfileViewModel(
+                firestoreService: FirestoreService.shared,
+                storageService: StorageService.shared
+            )
+        )
         profileViewController.completionHandler = { [weak self] profileStates in
             guard let self else { return }
             switch profileStates {

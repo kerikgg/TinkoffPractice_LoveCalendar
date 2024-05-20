@@ -9,6 +9,7 @@
 // Buttons
 "buttons.signIn" = "Sign In";
 "buttons.signUp" = "Sign Up";
+"buttons.ideaForMeeting" = "Idea for meeting";
 
 // Labels
 "labels.signInLabel" = "Sign In";

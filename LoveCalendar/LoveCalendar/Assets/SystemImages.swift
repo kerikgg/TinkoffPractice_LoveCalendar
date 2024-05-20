@@ -9,4 +9,5 @@ import UIKit
 
 enum SystemImages {
     static let logOut = UIImage(systemName: "rectangle.portrait.and.arrow.right")
+    static let gearShape = UIImage(systemName: "gearshape")
 }

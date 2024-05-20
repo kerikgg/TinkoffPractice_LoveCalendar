@@ -9,6 +9,7 @@
 // Buttons
 "buttons.signIn" = "Вход";
 "buttons.signUp" = "Регистрация";
+"buttons.ideaForMeeting" = "Идея для свидания";
 
 // Labels
 "labels.signInLabel" = "Вход";

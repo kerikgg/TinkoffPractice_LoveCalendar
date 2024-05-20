@@ -19,7 +19,9 @@ class RegistrationFlowCoordinator: Coordinator {
     }
 
     private func showRegistration() {
-        let registrationViewController = moduleFactory.makeRegistrationModule(viewModel: RegistrationViewModel())
+        let registrationViewController = moduleFactory.makeRegistrationModule(
+            viewModel: RegistrationViewModel(firestoreService: FirestoreService.shared)
+        )
         registrationViewController.completionHandler = { [weak self] registrationState in
             guard let self else { return }
             switch registrationState {
