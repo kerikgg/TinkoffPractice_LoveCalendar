@@ -17,7 +17,7 @@ final class CoreDataService: CoreDataServiceProtocol {
 
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoreData")
-        container.loadPersistentStores(completionHandler: { (_, error) in
+        container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 print(error, error.userInfo)
             }
@@ -29,11 +29,11 @@ final class CoreDataService: CoreDataServiceProtocol {
 
     func setUser(user: UserModel) {
         let userCD = UserCoreData(context: context)
+        userCD.uid = user.id
         userCD.email = user.email
         userCD.name = user.name
         userCD.avatarData = user.avatarData
         saveContext()
-
     }
     
     func getCachedUser() throws -> UserModel? {
@@ -43,9 +43,9 @@ final class CoreDataService: CoreDataServiceProtocol {
 
         guard let user = users.first else { return nil}
         if let avatarData = user.avatarData {
-            return UserModel(id: user.id, name: user.name, email: user.email, avatarData: avatarData)
+            return UserModel(id: user.uid, name: user.name, email: user.email, avatarData: avatarData)
         } else {
-            return UserModel(id: user.id, name: user.name, email: user.email)
+            return UserModel(id: user.uid, name: user.name, email: user.email)
         }
     }
 

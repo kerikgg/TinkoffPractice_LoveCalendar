@@ -9,7 +9,9 @@
 import Foundation
 import CoreData
 
+// swiftlint:disable all
 @objc(UserCoreData)
 public class UserCoreData: NSManagedObject {
 
 }
+// swiftlint:enable all

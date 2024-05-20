@@ -22,7 +22,8 @@ class ProfileCoordinator: Coordinator {
         let profileViewController = moduleFactory.makeProfileModule(
             viewModel: ProfileViewModel(
                 firestoreService: FirestoreService.shared,
-                storageService: StorageService.shared
+                storageService: StorageService.shared,
+                coreDataService: CoreDataService.shared
             )
         )
         profileViewController.completionHandler = { [weak self] profileStates in

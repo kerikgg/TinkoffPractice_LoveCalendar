@@ -3,7 +3,7 @@
     <entity name="UserCoreData" representedClassName="UserCoreData" syncable="YES">
         <attribute name="avatarData" optional="YES" attributeType="Binary"/>
         <attribute name="email" attributeType="String"/>
-        <attribute name="id" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="uid" attributeType="String"/>
     </entity>
 </model>

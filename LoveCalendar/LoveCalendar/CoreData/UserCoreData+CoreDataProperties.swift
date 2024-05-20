@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+// swiftlint:disable all
 extension UserCoreData {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<UserCoreData> {
@@ -19,10 +19,11 @@ extension UserCoreData {
     @NSManaged public var name: String
     @NSManaged public var email: String
     @NSManaged public var avatarData: Data?
-    @NSManaged public var id: String
+    @NSManaged public var uid: String
 
 }
 
 extension UserCoreData : Identifiable {
 
 }
+// swiftlint:enable all

@@ -11,12 +11,18 @@ class ProfileViewModel {
     private let authService = AuthService.shared
     private var firestoreService: FirestoreServiceProtocol
     private var storageService: StorageServiceProtocol
+    private var coreDataService: CoreDataServiceProtocol
     @Published var userModel: UserModel
 
-    init(firestoreService: FirestoreServiceProtocol, storageService: StorageServiceProtocol) {
+    init(
+        firestoreService: FirestoreServiceProtocol,
+        storageService: StorageServiceProtocol,
+        coreDataService: CoreDataServiceProtocol
+    ) {
         self.firestoreService = firestoreService
         self.storageService = storageService
-        self.userModel = UserModel(id: "", name: "", email: "")
+        self.coreDataService = coreDataService
+        self.userModel = UserModel(id: "", name: "", email: "", avatarData: nil)
     }
 
     func logOut() {
@@ -45,18 +51,39 @@ class ProfileViewModel {
 
     func getUserData() {
         guard let currentUser = authService.currentUser else { return }
-        firestoreService.getUserData(userId: currentUser.uid) { result in
-            switch result {
-            case .success(let user):
+
+        do {
+            if let user = try coreDataService.getCachedUser() {
                 self.userModel.email = user.email
                 self.userModel.name = user.name
                 self.userModel.id = user.id
-                self.getAvatar()
+                self.userModel.avatarData = user.avatarData
+            } else {
+                firestoreService.getUserData(userId: currentUser.uid) { result in
+                    switch result {
+                    case .success(let user):
+                        self.userModel.email = user.email
+                        self.userModel.name = user.name
+                        self.userModel.id = user.id
 
-            case .failure(let error):
-                print(error)
-                return
+                    case .failure(let error):
+                        print(error)
+                        return
+                    }
+
+                    self.storageService.getAvatar(userId: currentUser.uid) { result in
+                        switch result {
+                        case .success(let data):
+                            self.userModel.avatarData = data
+                            self.coreDataService.setUser(user: self.userModel)
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
             }
+        } catch {
+            print(error)
         }
     }
 
@@ -70,15 +97,12 @@ class ProfileViewModel {
         }
     }
 
-    private func getAvatar() {
-        guard let currentUser = authService.currentUser else { return }
-        storageService.getAvatar(userId: currentUser.uid) { result in
-            switch result {
-            case .success(let data):
-                self.userModel.avatarData = data
-            case .failure(let error):
-                print(error)
-            }
+    func getCachedUserData() -> UserModel? {
+        do {
+            return try coreDataService.getCachedUser()
+        } catch {
+            print(error.localizedDescription)
+            return nil
         }
     }
 }
