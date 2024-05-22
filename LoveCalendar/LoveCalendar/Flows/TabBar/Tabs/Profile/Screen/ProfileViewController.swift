@@ -61,7 +61,7 @@ extension ProfileViewController {
 
     private func customRightBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
-            // action
+            self?.completionHandler?(.settings)
         }
 
         let button = UIBarButtonItem(image: SystemImages.gearShape, primaryAction: action)

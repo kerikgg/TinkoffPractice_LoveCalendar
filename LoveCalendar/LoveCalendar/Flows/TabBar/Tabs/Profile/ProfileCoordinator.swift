@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileCoordinator: Coordinator {
     private var router: RouterProtocol
@@ -33,9 +34,18 @@ class ProfileCoordinator: Coordinator {
                 self.flowCompletionHandler?(.next)
             case .settings:
                 // TODO: флоу настроек
-                return
+                self.showSettings()
             }
         }
         router.setViewController(profileViewController)
+    }
+
+    private func showSettings() {
+        let settingsViewController = SettingsViewController(viewModel: SettingsViewModel())
+        router.push(settingsViewController, animated: true)
+//        settingsViewController.completionHandler = { [weak self] settingsStates in
+//            switch()
+//            self?.flowCompletionHandler?()
+//        }
     }
 }

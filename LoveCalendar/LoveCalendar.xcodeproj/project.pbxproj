@@ -59,6 +59,13 @@
 		BADDEEC72BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC52BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift */; };
 		BADDEEC92BFB8F5D00288585 /* CoreDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */; };
 		BADDEECB2BFB8FD400288585 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEECA2BFB8FD400288585 /* CoreDataService.swift */; };
+		BADDEECE2BFCEDF500288585 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEECD2BFCEDF500288585 /* SettingsViewController.swift */; };
+		BADDEED02BFCEE0400288585 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEECF2BFCEE0400288585 /* SettingsView.swift */; };
+		BADDEED22BFCEE1000288585 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */; };
+		BADDEED52BFD08E100288585 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */; };
+		BADDEED72BFD0F9700288585 /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */; };
+		BADDEED92BFD12BB00288585 /* SettingsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */; };
+		BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */; };
 		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
 		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
 		BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */; };
@@ -125,6 +132,13 @@
 		BADDEEC52BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServiceProtocol.swift; sourceTree = "<group>"; };
 		BADDEECA2BFB8FD400288585 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		BADDEECD2BFCEDF500288585 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BADDEECF2BFCEE0400288585 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDataSource.swift; sourceTree = "<group>"; };
+		BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -403,6 +417,28 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		BADDEECC2BFCED6C00288585 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BADDEED32BFCF32B00288585 /* TableView */,
+				BADDEECD2BFCEDF500288585 /* SettingsViewController.swift */,
+				BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */,
+				BADDEECF2BFCEE0400288585 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BADDEED32BFCF32B00288585 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */,
+				BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */,
+				BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */,
+				BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		BAE90FA12BB9649500526899 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +521,7 @@
 		BAF7C0452BB746BA00581F33 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BADDEECC2BFCED6C00288585 /* Settings */,
 				BA065ED12BD521650005EE39 /* TabBar */,
 				BAE90FA62BBA9AC200526899 /* SignIn */,
 				BABB7A9B2BB85A8200BAC60C /* Registration */,
@@ -628,15 +665,19 @@
 				BA065EF42BD52F5A0005EE39 /* TabBarFlowCoordinator.swift in Sources */,
 				BADDEEC62BFB8F0500288585 /* UserCoreData+CoreDataClass.swift in Sources */,
 				BADDEEC72BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift in Sources */,
+				BADDEED22BFCEE1000288585 /* SettingsViewModel.swift in Sources */,
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BAE90FAB2BBA9B0F00526899 /* SignInViewController.swift in Sources */,
+				BADDEECE2BFCEDF500288585 /* SettingsViewController.swift in Sources */,
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
 				BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */,
 				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
 				BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */,
+				BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */,
 				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
+				BADDEED52BFD08E100288585 /* SettingsSwitchTableViewCell.swift in Sources */,
 				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
 				BA065EF22BD52A050005EE39 /* ProfileCoordinator.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
@@ -669,8 +710,10 @@
 				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
+				BADDEED72BFD0F9700288585 /* SettingsCellModel.swift in Sources */,
 				BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
+				BADDEED02BFCEE0400288585 /* SettingsView.swift in Sources */,
 				BADB26FC2BB36E2500AC96BA /* SceneDelegate.swift in Sources */,
 				BA065EEC2BD529C20005EE39 /* WishlistCoordinator.swift in Sources */,
 				BA2045342BFA4AA100C0B3BD /* FirestoreService.swift in Sources */,
@@ -681,6 +724,7 @@
 				BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */,
 				BA065EF02BD529EA0005EE39 /* AlbumCoordinator.swift in Sources */,
 				BAF7C0492BB7475900581F33 /* AuthFlowCoordinator.swift in Sources */,
+				BADDEED92BFD12BB00288585 /* SettingsTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
