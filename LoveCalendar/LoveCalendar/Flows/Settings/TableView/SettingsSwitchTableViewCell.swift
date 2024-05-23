@@ -74,21 +74,16 @@ extension SettingsSwitchTableViewCell {
         self.switchAction = switchAction
         guard let isOn = cellModel.isOn else { return }
         cellSwitch.isOn = isOn
-//        self.switchAction = switchAction
+        self.switchAction = switchAction
     }
 
     func configureCell(cellModel: SettingsCellModel) {
         cellImageView.image = UIImage(systemName: cellModel.image)
         cellTitle.text = cellModel.title
-        // guard let action = cellModel.action else { return }
-        // self.switchAction = switchAction
     }
 
     @objc private func switchValueChanged() {
         switchAction?(cellSwitch.isOn)
     }
 
-    @objc private func printer() {
-        print("sdadad")
-    }
 }

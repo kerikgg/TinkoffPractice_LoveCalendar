@@ -11,11 +11,16 @@ import UIKit
 class SettingsViewModel {
     var firstSectionCellModels: [SettingsCellModel]
     var secondSectionCellModels: [SettingsCellModel]
+    private var themeService = ThemeService.shared
     var numberOfSection: Int
 
     init() {
         firstSectionCellModels = [
-            .init(image: "moon", title: "Темная тема", isOn: false)
+            .init(
+                image: "moon",
+                title: "Темная тема",
+                isOn: Bool(truncating: themeService.theme.rawValue as NSNumber)
+            )
         ]
 
         secondSectionCellModels = [
@@ -25,7 +30,20 @@ class SettingsViewModel {
     }
 
     func toggleDarkTheme(isOn: Bool) {
-        // Ваш код для переключения темной темы
-        print("Темная тема включена: \(isOn)")
+        setThemeValue(isOn)
+    }
+
+    // MARK: - Theme functions
+    func getTheme() -> Theme {
+        themeService.theme
+    }
+
+    func getThemeValue() -> Bool {
+        Bool(truncating: themeService.theme.rawValue as NSNumber)
+    }
+
+    func setThemeValue(_ value: Bool) {
+        let intValue = value ? 1 : 0
+        themeService.theme = Theme(rawValue: intValue) ?? .light
     }
 }
