@@ -8,8 +8,6 @@
 import UIKit
 
 protocol RouterProtocol {
-    var rootController: UINavigationController? { get set }
-
     func present(_ controller: UIViewController, animated: Bool)
 
     func push(_ controller: UIViewController, animated: Bool)
@@ -22,4 +20,6 @@ protocol RouterProtocol {
 
     func setViewController(_ controller: UIViewController, isNavigationBarHidden: Bool)
     func setViewController(_ controller: UIViewController)
+
+    func showRootController() -> UINavigationController?
 }

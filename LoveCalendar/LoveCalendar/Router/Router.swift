@@ -8,7 +8,7 @@
 import UIKit
 
 class Router: RouterProtocol {
-    internal var rootController: UINavigationController?
+    private var rootController: UINavigationController?
 
     init(rootController: UINavigationController?) {
         self.rootController = rootController

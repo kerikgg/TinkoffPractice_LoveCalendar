@@ -13,5 +13,4 @@ enum SystemImages {
     static let arrow = UIImage(systemName: "chevron.right")
     static let moon = "moon"
     static let person = "person.circle"
-
 }

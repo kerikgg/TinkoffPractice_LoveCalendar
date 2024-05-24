@@ -10,6 +10,24 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Strings {
+  public enum Alerts {
+    public enum Actions {
+      /// Cancel
+      public static let cancel = Strings.tr("Localizable", "alerts.actions.cancel", fallback: "Cancel")
+      /// Logout
+      public static let logOut = Strings.tr("Localizable", "alerts.actions.logOut", fallback: "Logout")
+    }
+    public enum Messages {
+      /// Are you sure you want to logout?
+      public static let logOut = Strings.tr("Localizable", "alerts.messages.logOut", fallback: "Are you sure you want to logout?")
+    }
+    public enum Titles {
+      /// Error
+      public static let error = Strings.tr("Localizable", "alerts.titles.error", fallback: "Error")
+      /// Logout
+      public static let logOut = Strings.tr("Localizable", "alerts.titles.logOut", fallback: "Logout")
+    }
+  }
   public enum Buttons {
     /// Change Avatar
     public static let changeAvatar = Strings.tr("Localizable", "buttons.changeAvatar", fallback: "Change Avatar")
@@ -109,3 +127,4 @@ private final class BundleToken {
   }()
 }
 // swiftlint:enable convenience_type
+// swiftlint:enable all

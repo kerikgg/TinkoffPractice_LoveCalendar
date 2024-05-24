@@ -31,7 +31,7 @@ class ProfileCoordinator: Coordinator {
             guard let self else { return }
             switch profileStates {
             case .logOut:
-                self.flowCompletionHandler?(.next)
+                self.flowCompletionHandler?(nil)
             case .settings:
                 // TODO: флоу настроек
                 self.runSettingsFlow()

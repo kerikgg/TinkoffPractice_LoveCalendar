@@ -48,3 +48,14 @@
 // Cells
 "cells.darkTheme" = "Dark theme";
 "cells.editProfile" = "Edit profile";
+
+// Alert Titles
+"alerts.titles.logOut" = "Logout";
+"alerts.titles.error" = "Error";
+
+// Alert messages
+"alerts.messages.logOut" = "Are you sure you want to logout?";
+
+// Alert actions
+"alerts.actions.logOut" = "Logout";
+"alerts.actions.cancel" = "Cancel";

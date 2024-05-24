@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
     var completionHandler: ((ProfileStates) -> Void)?
     private let profileView = ProfileView(frame: .zero)
     private let viewModel: ProfileViewModel
+    private let alertFactory = AlertFactory()
     var cancellables = Set<AnyCancellable>()
 
     init(viewModel: ProfileViewModel) {
@@ -49,8 +50,8 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
 extension ProfileViewController {
     private func customLeftBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.logOut()
-            self?.completionHandler?(.logOut)
+            guard let self else { return }
+            self.showLogOutAlert()
         }
 
         let button = UIBarButtonItem(image: SystemImages.logOut, primaryAction: action)
@@ -61,7 +62,8 @@ extension ProfileViewController {
 
     private func customRightBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
-            self?.completionHandler?(.settings)
+            guard let self else { return }
+            self.completionHandler?(.settings)
         }
 
         let button = UIBarButtonItem(image: SystemImages.gearShape, primaryAction: action)
@@ -93,6 +95,16 @@ extension ProfileViewController {
 //        }
 //    }
 // }
+extension ProfileViewController {
+    private func showLogOutAlert() {
+        let alert = alertFactory.makeLogOutAlert { [weak self] _ in
+            guard let self else { return }
+            self.viewModel.logOut()
+            self.completionHandler?(.logOut)
+        }
+        present(alert, animated: true)
+    }
+}
 
 extension ProfileViewController {
     private func setBindings() {

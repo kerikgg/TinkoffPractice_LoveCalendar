@@ -48,3 +48,14 @@
 // Cells
 "cells.darkTheme" = "Темная тема";
 "cells.editProfile" = "Редактировать профиль";
+
+// Alert Titles
+"alerts.titles.logOut" = "Выход";
+"alerts.titles.error" = "Ошибка";
+
+// Alert messages
+"alerts.messages.logOut" = "Вы уверены, что хотите выйти?";
+
+// Alert actions
+"alerts.actions.logOut" = "Выход";
+"alerts.actions.cancel" = "Отмена";

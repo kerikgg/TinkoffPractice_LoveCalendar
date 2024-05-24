@@ -72,6 +72,7 @@
 		BADDEEEB2C00B02300288585 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEA2C00B02300288585 /* EditProfileViewModel.swift */; };
 		BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEC2C00B03800288585 /* EditProfileViewController.swift */; };
 		BADDEEF02C00B7F000288585 /* SettingsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEF2C00B7F000288585 /* SettingsFlowCoordinator.swift */; };
+		BADDEEF22C01467400288585 /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEF12C01467400288585 /* AlertFactory.swift */; };
 		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
 		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
 		BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */; };
@@ -151,6 +152,7 @@
 		BADDEEEA2C00B02300288585 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		BADDEEEC2C00B03800288585 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		BADDEEEF2C00B7F000288585 /* SettingsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowCoordinator.swift; sourceTree = "<group>"; };
+		BADDEEF12C01467400288585 /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
 		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				BAF7C0422BB7464A00581F33 /* Protocols */,
 				BAF7C04E2BB750F900581F33 /* ModuleFactory.swift */,
 				BAF7C0502BB7514900581F33 /* CoordinatorFactory.swift */,
+				BADDEEF12C01467400288585 /* AlertFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
 				BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */,
 				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
+				BADDEEF22C01467400288585 /* AlertFactory.swift in Sources */,
 				BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */,
 				BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */,
 				BADDEEEB2C00B02300288585 /* EditProfileViewModel.swift in Sources */,

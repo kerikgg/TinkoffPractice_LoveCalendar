@@ -33,7 +33,6 @@ class AuthFlowCoordinator: Coordinator {
     }
 
     private func runSignInFlow() {
-        print("SignIn")
         let signInFlowCoordinator = coordinatorFactory.makeSignInFlowCoordinator(router: router)
         signInFlowCoordinator.start()
         addCoordinatorDependency(signInFlowCoordinator)
@@ -53,7 +52,6 @@ class AuthFlowCoordinator: Coordinator {
     }
 
     private func runSignUpFlow() {
-        print("SignUp")
         let registrationFlowCoordinator = coordinatorFactory.makeRegistrationFlowCoordinator(router: router)
         registrationFlowCoordinator.start()
         addCoordinatorDependency(registrationFlowCoordinator)

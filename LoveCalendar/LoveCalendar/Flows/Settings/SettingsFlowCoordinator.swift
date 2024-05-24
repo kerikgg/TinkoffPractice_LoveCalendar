@@ -46,6 +46,7 @@ final class SettingsFlowCoordinator: Coordinator {
             guard let self else { return }
             switch editProfileState {
             case .back:
+                self.router.popToRootController(animated: true)
                 self.flowCompletionHandler?(.back)
             case .save:
                 self.router.pop(animated: true)
