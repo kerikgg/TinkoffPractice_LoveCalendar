@@ -25,7 +25,7 @@ class SettingsTableViewCell: UITableViewCell {
     }()
 
     private lazy var arrowImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
+        let imageView = UIImageView(image: SystemImages.arrow)
         imageView.contentMode = .scaleAspectFill
         imageView.tintColor = .buttonText
 

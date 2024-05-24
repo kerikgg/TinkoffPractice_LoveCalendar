@@ -10,6 +10,8 @@
 "buttons.signIn" = "Sign In";
 "buttons.signUp" = "Sign Up";
 "buttons.ideaForMeeting" = "Idea for meeting";
+"buttons.changeAvatar" = "Change Avatar";
+"buttons.save" = "Save";
 
 // Labels
 "labels.signInLabel" = "Sign In";
@@ -19,6 +21,7 @@
 "textFields.emailPlaceholder" = "Email";
 "textFields.passwordPlaceholder" = "Password";
 "textFields.passwordConfirmationPlaceholder" = "Password confirmation";
+"textFields.namePlaceholder" = "Name";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "The fields should not be empty";
@@ -35,3 +38,13 @@
 "titles.main" = "We together";
 "titles.album" = "Album";
 "titles.profile" = "Profile";
+"titles.settings" = "Settings";
+"titles.editProfile" = "Edit profile";
+
+// Sections
+"sections.profile" = "Profile";
+"sections.appearance" = "Appearance";
+
+// Cells
+"cells.darkTheme" = "Dark theme";
+"cells.editProfile" = "Edit profile";

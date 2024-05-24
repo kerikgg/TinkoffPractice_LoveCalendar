@@ -47,4 +47,8 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeProfileCoordinator(router: any RouterProtocol) -> ProfileCoordinator {
         ProfileCoordinator(router: router)
     }
+
+    func makeSettingsCoordinator(router: any RouterProtocol) -> SettingsFlowCoordinator {
+        SettingsFlowCoordinator(router: router)
+    }
 }

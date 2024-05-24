@@ -39,4 +39,30 @@ class StorageService: StorageServiceProtocol {
             }
         }
     }
+
+    func deleteAvatarData(userId: String, completion: @escaping ((any Error)?) -> Void) {
+        storage.child(userId).delete { error in
+            guard let error else {
+                completion(nil)
+                return
+            }
+            print(error.localizedDescription)
+            completion(error)
+        }
+    }
+
+    func updateAvatarData(userId: String, imageData: Data, completion: @escaping ((any Error)?) -> Void) {
+        deleteAvatarData(userId: userId) { error in
+            if let error {
+                completion(error)
+            }
+        }
+
+        uploadAvatar(userId: userId, imageData: imageData) { error in
+            if let error {
+                completion(error)
+            }
+            completion(nil)
+        }
+    }
 }

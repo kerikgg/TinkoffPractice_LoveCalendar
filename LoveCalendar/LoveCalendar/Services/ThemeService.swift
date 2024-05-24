@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ThemeService {
+final class ThemeService {
     static let shared = ThemeService()
 
     var theme: Theme {

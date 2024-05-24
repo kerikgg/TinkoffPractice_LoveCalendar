@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SettingsViewDelegate: AnyObject {
+    func didTapCell(_ settingsState: SettingsStates)
+}
+
 class SettingsView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -25,10 +29,7 @@ class SettingsView: UIView {
         return tableView
     }()
 
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        makeConstraints()
-//    }
+    weak var delegate: SettingsViewDelegate?
 
     init(frame: CGRect, dataSource: SettingsTableViewDataSource) {
         super.init(frame: frame)
@@ -47,6 +48,13 @@ extension SettingsView: UITableViewDelegate {
         switch indexPath.section {
         case Sections.first.rawValue:
             break
+        case Sections.second.rawValue:
+            switch indexPath.row {
+            case SettingsRows.edit:
+                delegate?.didTapCell(.edit)
+            default:
+                break
+            }
         default:
             break
         }

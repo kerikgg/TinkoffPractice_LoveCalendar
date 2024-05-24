@@ -21,4 +21,7 @@ protocol ModuleFactoryProtocol {
     func makeMainModule() -> MainViewController
     func makeAlbumModule() -> AlbumViewController
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController
+    func makeSettingsModule(viewModel: SettingsViewModel) -> SettingsViewController
+
+    func makeEditProfileModule(viewModel: EditProfileViewModel) -> EditProfileViewController
 }

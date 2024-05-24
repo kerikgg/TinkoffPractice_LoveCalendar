@@ -43,4 +43,12 @@ class ModuleFactory: ModuleFactoryProtocol {
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController {
         ProfileViewController(viewModel: viewModel)
     }
+
+    func makeSettingsModule(viewModel: SettingsViewModel) -> SettingsViewController {
+        SettingsViewController(viewModel: viewModel)
+    }
+
+    func makeEditProfileModule(viewModel: EditProfileViewModel) -> EditProfileViewController {
+        EditProfileViewController(viewModel: viewModel)
+    }
 }

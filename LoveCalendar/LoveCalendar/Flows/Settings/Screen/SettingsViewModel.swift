@@ -17,14 +17,14 @@ class SettingsViewModel {
     init() {
         firstSectionCellModels = [
             .init(
-                image: "moon",
-                title: "Темная тема",
+                image: SystemImages.moon,
+                title: Strings.Cells.darkTheme,
                 isOn: Bool(truncating: themeService.theme.rawValue as NSNumber)
             )
         ]
 
         secondSectionCellModels = [
-            .init(image: "person.circle", title: "Редактировать профиль")
+            .init(image: SystemImages.person, title: Strings.Cells.editProfile)
         ]
         numberOfSection = 2
     }

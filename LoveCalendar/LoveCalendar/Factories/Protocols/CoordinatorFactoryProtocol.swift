@@ -27,4 +27,6 @@ protocol CoordinatorFactoryProtocol {
     func makeAlbumCoordinator(router: RouterProtocol) -> AlbumCoordinator
 
     func makeProfileCoordinator(router: RouterProtocol) -> ProfileCoordinator
+
+    func makeSettingsCoordinator(router: RouterProtocol) -> SettingsFlowCoordinator
 }

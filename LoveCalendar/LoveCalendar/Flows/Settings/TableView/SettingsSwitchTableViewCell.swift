@@ -85,5 +85,4 @@ extension SettingsSwitchTableViewCell {
     @objc private func switchValueChanged() {
         switchAction?(cellSwitch.isOn)
     }
-
 }

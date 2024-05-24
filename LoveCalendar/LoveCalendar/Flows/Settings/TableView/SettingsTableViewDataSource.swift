@@ -12,10 +12,10 @@ enum Sections: Int, CaseIterable {
     case second
 }
 
-// enum SettingsRows {
-//    static let edit = 0
-//    static let theme = 1
-// }
+enum SettingsRows {
+    static let edit = 0
+    static let theme = 1
+}
 
 final class SettingsTableViewDataSource: NSObject, UITableViewDataSource {
     private let viewModel: SettingsViewModel
@@ -42,9 +42,9 @@ final class SettingsTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch Sections(rawValue: section) {
         case .first:
-            return "Внешний вид"
+            return Strings.Sections.appearance
         case .second:
-            return "Профиль"
+            return Strings.Sections.profile
         case .none:
             return nil
         }

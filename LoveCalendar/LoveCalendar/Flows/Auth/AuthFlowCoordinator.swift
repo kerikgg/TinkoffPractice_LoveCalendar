@@ -29,7 +29,7 @@ class AuthFlowCoordinator: Coordinator {
                 self.runSignUpFlow()
             }
         }
-        router.push(authController, animated: true)
+        router.setViewController(authController)
     }
 
     private func runSignInFlow() {

@@ -35,14 +35,14 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setBindings()
-        profileView.delegate = self
-        navigationItem.title = Strings.Titles.profile
+        setupNavigationBar()
+    }
 
-        let leftBarButtonItem = customLeftBarButtonItem()
-        let rightBarButtonItem = customRightBarButtonItem()
-        navigationItem.leftBarButtonItem = leftBarButtonItem
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUserData()
     }
 }
 
@@ -69,35 +69,14 @@ extension ProfileViewController {
 
         return button
     }
-}
 
-extension ProfileViewController: ProfileViewDelegate {
-    func didTapChangeAvatar() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.allowsEditing = false
-        present(imagePickerController, animated: true, completion: nil)
-    }
-}
+    private func setupNavigationBar() {
+        navigationItem.title = Strings.Titles.profile
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(
-        _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
-    ) {
-        if let editedImage = info[.editedImage] as? UIImage {
-            profileView.userImage.image = editedImage
-            viewModel.setUserAvatar(imageData: editedImage.jpegData(compressionQuality: 0.15))
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            profileView.userImage.image = originalImage
-            viewModel.setUserAvatar(imageData: originalImage.jpegData(compressionQuality: 0.15))
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        let leftBarButtonItem = customLeftBarButtonItem()
+        let rightBarButtonItem = customRightBarButtonItem()
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 }
 

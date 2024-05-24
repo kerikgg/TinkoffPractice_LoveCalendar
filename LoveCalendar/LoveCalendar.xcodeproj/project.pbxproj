@@ -68,6 +68,10 @@
 		BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */; };
 		BADDEEE42BFFE27A00288585 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE32BFFE27A00288585 /* Theme.swift */; };
 		BADDEEE62BFFE3BA00288585 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE52BFFE3B900288585 /* ThemeService.swift */; };
+		BADDEEE92C00B01200288585 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE82C00B01200288585 /* EditProfileView.swift */; };
+		BADDEEEB2C00B02300288585 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEA2C00B02300288585 /* EditProfileViewModel.swift */; };
+		BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEC2C00B03800288585 /* EditProfileViewController.swift */; };
+		BADDEEF02C00B7F000288585 /* SettingsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEEF2C00B7F000288585 /* SettingsFlowCoordinator.swift */; };
 		BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA22BB964B200526899 /* ValidationService.swift */; };
 		BAE90FA52BB9712600526899 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA42BB9712600526899 /* AuthService.swift */; };
 		BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */; };
@@ -143,6 +147,10 @@
 		BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BADDEEE32BFFE27A00288585 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BADDEEE52BFFE3B900288585 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
+		BADDEEE82C00B01200288585 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		BADDEEEA2C00B02300288585 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		BADDEEEC2C00B03800288585 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		BADDEEEF2C00B7F000288585 /* SettingsFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowCoordinator.swift; sourceTree = "<group>"; };
 		BAE90FA22BB964B200526899 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		BAE90FA42BB9712600526899 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BAE90FA82BBA9AF800526899 /* SignInFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -424,11 +432,11 @@
 		BADDEECC2BFCED6C00288585 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BADDEEEE2C00B7CD00288585 /* Screen */,
+				BADDEEE72C00AF9D00288585 /* EditProfile */,
 				BADDEEE22BFFE26D00288585 /* Theme */,
 				BADDEED32BFCF32B00288585 /* TableView */,
-				BADDEECD2BFCEDF500288585 /* SettingsViewController.swift */,
-				BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */,
-				BADDEECF2BFCEE0400288585 /* SettingsView.swift */,
+				BADDEEEF2C00B7F000288585 /* SettingsFlowCoordinator.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -450,6 +458,26 @@
 				BADDEEE32BFFE27A00288585 /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		BADDEEE72C00AF9D00288585 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				BADDEEE82C00B01200288585 /* EditProfileView.swift */,
+				BADDEEEA2C00B02300288585 /* EditProfileViewModel.swift */,
+				BADDEEEC2C00B03800288585 /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		BADDEEEE2C00B7CD00288585 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				BADDEECD2BFCEDF500288585 /* SettingsViewController.swift */,
+				BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */,
+				BADDEECF2BFCEE0400288585 /* SettingsView.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		BAE90FA12BB9649500526899 /* Services */ = {
@@ -689,6 +717,7 @@
 				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
 				BA065EDE2BD528910005EE39 /* CalendarViewController.swift in Sources */,
 				BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */,
+				BADDEEEB2C00B02300288585 /* EditProfileViewModel.swift in Sources */,
 				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
@@ -698,6 +727,7 @@
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
 				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
 				BA065EEE2BD529D70005EE39 /* MainCoordinator.swift in Sources */,
+				BADDEEF02C00B7F000288585 /* SettingsFlowCoordinator.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
 				BADDEEC32BFB8EC100288585 /* CoreData.xcdatamodeld in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
@@ -712,12 +742,14 @@
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
 				BADDEECB2BFB8FD400288585 /* CoreDataService.swift in Sources */,
 				BA065EDC2BD524CB0005EE39 /* CalendarFlowCoordinator.swift in Sources */,
+				BADDEEE92C00B01200288585 /* EditProfileView.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
 				BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BA2045362BFA4FB100C0B3BD /* StorageServiceProtocol.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
+				BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */,
 				BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
 				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,

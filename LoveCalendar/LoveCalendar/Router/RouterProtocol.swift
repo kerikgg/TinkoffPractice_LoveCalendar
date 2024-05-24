@@ -8,6 +8,8 @@
 import UIKit
 
 protocol RouterProtocol {
+    var rootController: UINavigationController? { get set }
+
     func present(_ controller: UIViewController, animated: Bool)
 
     func push(_ controller: UIViewController, animated: Bool)

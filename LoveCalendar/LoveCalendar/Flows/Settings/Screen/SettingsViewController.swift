@@ -34,7 +34,34 @@ class SettingsViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Настройки"
+        self.settingsView.delegate = self
+        setupNavigationBar()
         view.backgroundColor = .white
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            completionHandler?(.back)
+        }
+    }
+}
+
+extension SettingsViewController: SettingsViewDelegate {
+    func didTapCell(_ settingsState: SettingsStates) {
+        switch settingsState {
+        case .edit:
+            completionHandler?(.edit)
+        case .theme:
+            break
+        case .back:
+            break
+        }
+    }
+}
+
+extension SettingsViewController {
+    private func setupNavigationBar() {
+        navigationItem.title = Strings.Titles.settings
     }
 }
