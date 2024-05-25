@@ -20,4 +20,6 @@ protocol RouterProtocol {
 
     func setViewController(_ controller: UIViewController, isNavigationBarHidden: Bool)
     func setViewController(_ controller: UIViewController)
+
+    func showRootController() -> UINavigationController?
 }

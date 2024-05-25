@@ -47,4 +47,12 @@ class AuthService {
             }
         }
     }
+
+    func logOut() {
+        do {
+            try auth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
 }

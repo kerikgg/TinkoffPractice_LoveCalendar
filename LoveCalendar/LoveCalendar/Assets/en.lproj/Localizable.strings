@@ -9,6 +9,9 @@
 // Buttons
 "buttons.signIn" = "Sign In";
 "buttons.signUp" = "Sign Up";
+"buttons.ideaForMeeting" = "Idea for meeting";
+"buttons.changeAvatar" = "Change Avatar";
+"buttons.save" = "Save";
 
 // Labels
 "labels.signInLabel" = "Sign In";
@@ -18,6 +21,7 @@
 "textFields.emailPlaceholder" = "Email";
 "textFields.passwordPlaceholder" = "Password";
 "textFields.passwordConfirmationPlaceholder" = "Password confirmation";
+"textFields.namePlaceholder" = "Name";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "The fields should not be empty";
@@ -27,3 +31,31 @@
 "validationErrors.passwordDigitError" = "Password must contain at least 1 digit";
 "validationErrors.passwordLengthError" = "Password length is at least 8 characters";
 "validationErrors.passwordsDontMatch" = "Passwords don't match";
+
+// Titles
+"titles.calendar" = "Calendar";
+"titles.wishlist" = "Wishlist";
+"titles.main" = "We together";
+"titles.album" = "Album";
+"titles.profile" = "Profile";
+"titles.settings" = "Settings";
+"titles.editProfile" = "Edit profile";
+
+// Sections
+"sections.profile" = "Profile";
+"sections.appearance" = "Appearance";
+
+// Cells
+"cells.darkTheme" = "Dark theme";
+"cells.editProfile" = "Edit profile";
+
+// Alert Titles
+"alerts.titles.logOut" = "Logout";
+"alerts.titles.error" = "Error";
+
+// Alert messages
+"alerts.messages.logOut" = "Are you sure you want to logout?";
+
+// Alert actions
+"alerts.actions.logOut" = "Logout";
+"alerts.actions.cancel" = "Cancel";

@@ -8,11 +8,15 @@
 import Foundation
 
 class Coordinator: CoordinatorProtocol {
-    var flowCompletionHandler: (() -> Void)?
+    var flowCompletionHandler: ((FlowCompletionState?) -> Void)?
     var childCoordinators: [CoordinatorProtocol]
+    let coordinatorFactory: CoordinatorFactoryProtocol
+    let moduleFactory: ModuleFactory
 
     init() {
         childCoordinators = []
+        coordinatorFactory = CoordinatorFactory()
+        moduleFactory = ModuleFactory()
     }
 
     func start() {
@@ -24,7 +28,7 @@ class Coordinator: CoordinatorProtocol {
         childCoordinators.append(coordinator)
     }
 
-    func deleteCoordinatorDependency(_ coordinator: CoordinatorProtocol) {
+    func deleteCoordinatorDependency(_ coordinator: CoordinatorProtocol?) {
         guard !childCoordinators.isEmpty else { return }
 
         // Clear child coordinators recursively

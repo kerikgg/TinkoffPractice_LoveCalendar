@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RegistrationViewDelegate: AnyObject {
-    func didPressSignUpButton(_ email: String?, _ password: String?, _ passwordConfirmation: String?)
+    func didPressSignUpButton(_ name: String?, _ email: String?, _ password: String?, _ passwordConfirmation: String?)
 }
 
 final class RegistrationView: UIView {
@@ -21,6 +21,18 @@ final class RegistrationView: UIView {
         label.textColor = UIColor.labelText
 
         return label
+    }()
+
+    private lazy var nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Имя"
+        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .next
+        textField.delegate = self
+        textField.textColor = UIColor.labelText
+        textField.font = .systemFont(ofSize: 18)
+
+        return textField
     }()
 
     private lazy var emailTextField: UITextField = {
@@ -82,7 +94,7 @@ final class RegistrationView: UIView {
         let action = UIAction { [weak self] _ in
             guard let self else { return }
             self.delegate?.didPressSignUpButton(
-                emailTextField.text, passwordTextField.text, passwordConfirmationTextField.text
+                nameTextField.text, emailTextField.text, passwordTextField.text, passwordConfirmationTextField.text
             )
         }
         button.addAction(action, for: .touchUpInside)
@@ -92,6 +104,7 @@ final class RegistrationView: UIView {
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
+            nameTextField,
             emailTextField,
             passwordTextField,
             passwordConfirmationTextField

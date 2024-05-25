@@ -9,13 +9,9 @@ import Foundation
 
 class SignInFlowCoordinator: Coordinator {
     private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var moduleFactory: ModuleFactoryProtocol
 
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, moduleFactory: ModuleFactoryProtocol) {
+    init(router: RouterProtocol) {
         self.router = router
-        self.coordinatorFactory = coordinatorFactory
-        self.moduleFactory = moduleFactory
     }
 
     override func start() {
@@ -24,9 +20,14 @@ class SignInFlowCoordinator: Coordinator {
 
     private func showSignIn() {
         let signInViewController = moduleFactory.makeSignInModule(viewModel: SignInViewModel())
-        signInViewController.completionHandler = { [weak self] in
+        signInViewController.completionHandler = { [weak self] signInState in
             guard let self else { return }
-            self.flowCompletionHandler?()
+            switch signInState {
+            case .back:
+                self.flowCompletionHandler?(.back)
+            case .login:
+                self.flowCompletionHandler?(.next)
+            }
         }
         router.push(signInViewController, animated: true)
     }

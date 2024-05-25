@@ -9,33 +9,47 @@ import Foundation
 
 class AppCoordinator: Coordinator {
     private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var isLogged = false // mock
+    private let authService: AuthService
 
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(router: RouterProtocol) {
         self.router = router
-        self.coordinatorFactory = coordinatorFactory
+        self.authService = AuthService.shared
     }
 
     override func start() {
-        if isLogged {
-            runMainFlow()
-        } else {
+        if authService.currentUser == nil {
             runAuthFlow()
+        } else {
+            runMainFlow()
         }
     }
 
     private func runAuthFlow() {
-        let authFlowCoordinator = AuthFlowCoordinator(
-            router: router,
-            coordinatorFactory: coordinatorFactory,
-            moduleFactory: ModuleFactory()
+        let authFlowCoordinator = coordinatorFactory.makeAuthFlowCoordinator(
+            router: router
         )
         addCoordinatorDependency(authFlowCoordinator)
         authFlowCoordinator.start()
+        authFlowCoordinator.flowCompletionHandler = { [weak self, weak authFlowCoordinator] _ in
+            guard let self else { return }
+            self.runMainFlow()
+            self.deleteCoordinatorDependency(authFlowCoordinator)
+        }
     }
 
     private func runMainFlow() {
-        print("test")
+        let tabBarViewController = moduleFactory.makeTabBarModule()
+        let tabBarFlowCoordinator = coordinatorFactory.makeTabBarCoordinator(
+            controller: tabBarViewController
+        )
+        addCoordinatorDependency(tabBarFlowCoordinator)
+        tabBarFlowCoordinator.flowCompletionHandler = { [weak self, weak tabBarFlowCoordinator] _ in
+            guard let self else { return }
+            runAuthFlow()
+            self.router.showRootController()?.isNavigationBarHidden = false
+            deleteCoordinatorDependency(tabBarFlowCoordinator)
+        }
+        router.setViewController(tabBarViewController, isNavigationBarHidden: true)
+        tabBarFlowCoordinator.start()
     }
 }

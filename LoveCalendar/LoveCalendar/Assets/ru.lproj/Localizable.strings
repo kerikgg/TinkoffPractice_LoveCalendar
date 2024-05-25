@@ -9,6 +9,9 @@
 // Buttons
 "buttons.signIn" = "Вход";
 "buttons.signUp" = "Регистрация";
+"buttons.ideaForMeeting" = "Идея для свидания";
+"buttons.changeAvatar" = "Сменить аватарку";
+"buttons.save" = "Сохранить";
 
 // Labels
 "labels.signInLabel" = "Вход";
@@ -18,6 +21,7 @@
 "textFields.emailPlaceholder" = "Почта";
 "textFields.passwordPlaceholder" = "Пароль";
 "textFields.passwordConfirmationPlaceholder" = "Подтверждение пароля";
+"textFields.namePlaceholder" = "Имя";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
@@ -27,3 +31,31 @@
 "validationErrors.passwordDigitError" = "Пароль должен содержать хотя бы 1 цифру";
 "validationErrors.passwordLengthError" = "Длина пароля минимум 8 символов";
 "validationErrors.passwordsDontMatch" = "Пароли не совпадают";
+
+// Titles
+"titles.calendar" = "Календарь";
+"titles.wishlist" = "Вишлист";
+"titles.main" = "Мы вместе";
+"titles.album" = "Альбом";
+"titles.profile" = "Профиль";
+"titles.settings" = "Настройки";
+"titles.editProfile" = "Редактировать профиль";
+
+// Sections
+"sections.profile" = "Профиль";
+"sections.appearance" = "Внешний вид";
+
+// Cells
+"cells.darkTheme" = "Темная тема";
+"cells.editProfile" = "Редактировать профиль";
+
+// Alert Titles
+"alerts.titles.logOut" = "Выход";
+"alerts.titles.error" = "Ошибка";
+
+// Alert messages
+"alerts.messages.logOut" = "Вы уверены, что хотите выйти?";
+
+// Alert actions
+"alerts.actions.logOut" = "Выход";
+"alerts.actions.cancel" = "Отмена";

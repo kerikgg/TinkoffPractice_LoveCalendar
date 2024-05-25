@@ -10,7 +10,31 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum Strings {
+  public enum Alerts {
+    public enum Actions {
+      /// Cancel
+      public static let cancel = Strings.tr("Localizable", "alerts.actions.cancel", fallback: "Cancel")
+      /// Logout
+      public static let logOut = Strings.tr("Localizable", "alerts.actions.logOut", fallback: "Logout")
+    }
+    public enum Messages {
+      /// Are you sure you want to logout?
+      public static let logOut = Strings.tr("Localizable", "alerts.messages.logOut", fallback: "Are you sure you want to logout?")
+    }
+    public enum Titles {
+      /// Error
+      public static let error = Strings.tr("Localizable", "alerts.titles.error", fallback: "Error")
+      /// Logout
+      public static let logOut = Strings.tr("Localizable", "alerts.titles.logOut", fallback: "Logout")
+    }
+  }
   public enum Buttons {
+    /// Change Avatar
+    public static let changeAvatar = Strings.tr("Localizable", "buttons.changeAvatar", fallback: "Change Avatar")
+    /// Idea for meeting
+    public static let ideaForMeeting = Strings.tr("Localizable", "buttons.ideaForMeeting", fallback: "Idea for meeting")
+    /// Save
+    public static let save = Strings.tr("Localizable", "buttons.save", fallback: "Save")
     /// Localizable.strings
     ///   LoveCalendar
     /// 
@@ -19,19 +43,49 @@ public enum Strings {
     /// Sign Up
     public static let signUp = Strings.tr("Localizable", "buttons.signUp", fallback: "Sign Up")
   }
+  public enum Cells {
+    /// Dark theme
+    public static let darkTheme = Strings.tr("Localizable", "cells.darkTheme", fallback: "Dark theme")
+    /// Edit profile
+    public static let editProfile = Strings.tr("Localizable", "cells.editProfile", fallback: "Edit profile")
+  }
   public enum Labels {
     /// Sign In
     public static let signInLabel = Strings.tr("Localizable", "labels.signInLabel", fallback: "Sign In")
     /// Registration
     public static let signUpLabel = Strings.tr("Localizable", "labels.signUpLabel", fallback: "Registration")
   }
+  public enum Sections {
+    /// Appearance
+    public static let appearance = Strings.tr("Localizable", "sections.appearance", fallback: "Appearance")
+    /// Profile
+    public static let profile = Strings.tr("Localizable", "sections.profile", fallback: "Profile")
+  }
   public enum TextFields {
     /// Email
     public static let emailPlaceholder = Strings.tr("Localizable", "textFields.emailPlaceholder", fallback: "Email")
+    /// Name
+    public static let namePlaceholder = Strings.tr("Localizable", "textFields.namePlaceholder", fallback: "Name")
     /// Password confirmation
     public static let passwordConfirmationPlaceholder = Strings.tr("Localizable", "textFields.passwordConfirmationPlaceholder", fallback: "Password confirmation")
     /// Password
     public static let passwordPlaceholder = Strings.tr("Localizable", "textFields.passwordPlaceholder", fallback: "Password")
+  }
+  public enum Titles {
+    /// Album
+    public static let album = Strings.tr("Localizable", "titles.album", fallback: "Album")
+    /// Calendar
+    public static let calendar = Strings.tr("Localizable", "titles.calendar", fallback: "Calendar")
+    /// Edit profile
+    public static let editProfile = Strings.tr("Localizable", "titles.editProfile", fallback: "Edit profile")
+    /// We together
+    public static let main = Strings.tr("Localizable", "titles.main", fallback: "We together")
+    /// Profile
+    public static let profile = Strings.tr("Localizable", "titles.profile", fallback: "Profile")
+    /// Settings
+    public static let settings = Strings.tr("Localizable", "titles.settings", fallback: "Settings")
+    /// Wishlist
+    public static let wishlist = Strings.tr("Localizable", "titles.wishlist", fallback: "Wishlist")
   }
   public enum ValidationErrors {
     /// Invalid email format

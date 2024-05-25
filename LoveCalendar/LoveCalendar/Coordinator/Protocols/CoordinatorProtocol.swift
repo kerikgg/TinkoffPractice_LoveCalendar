@@ -7,8 +7,12 @@
 
 import Foundation
 
+enum FlowCompletionState {
+    case next, back
+}
+
 protocol CoordinatorProtocol: AnyObject {
-    var flowCompletionHandler: (() -> Void)? {get set}
+    var flowCompletionHandler: ((FlowCompletionState?) -> Void)? {get set}
 
     func start()
 }

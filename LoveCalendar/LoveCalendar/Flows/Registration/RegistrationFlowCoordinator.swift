@@ -9,13 +9,9 @@ import Foundation
 
 class RegistrationFlowCoordinator: Coordinator {
     private var router: RouterProtocol
-    private var coordinatorFactory: CoordinatorFactoryProtocol
-    private var moduleFactory: ModuleFactoryProtocol
 
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol, moduleFactory: ModuleFactoryProtocol) {
+    init(router: RouterProtocol) {
         self.router = router
-        self.coordinatorFactory = coordinatorFactory
-        self.moduleFactory = moduleFactory
     }
 
     override func start() {
@@ -23,10 +19,17 @@ class RegistrationFlowCoordinator: Coordinator {
     }
 
     private func showRegistration() {
-        let registrationViewController = moduleFactory.makeRegistrationModule(viewModel: RegistrationViewModel())
-        registrationViewController.completionHandler = { [weak self] in
+        let registrationViewController = moduleFactory.makeRegistrationModule(
+            viewModel: RegistrationViewModel(firestoreService: FirestoreService.shared)
+        )
+        registrationViewController.completionHandler = { [weak self] registrationState in
             guard let self else { return }
-            self.flowCompletionHandler?()
+            switch registrationState {
+            case .back:
+                self.flowCompletionHandler?(.back)
+            case .register:
+                self.flowCompletionHandler?(.next)
+            }
         }
         router.push(registrationViewController, animated: true)
     }
