@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
     var completionHandler: ((ProfileStates) -> Void)?
     private let profileView = ProfileView(frame: .zero)
     private let viewModel: ProfileViewModel
+    private let alertFactory = AlertFactory()
     var cancellables = Set<AnyCancellable>()
 
     init(viewModel: ProfileViewModel) {
@@ -35,22 +36,22 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setBindings()
-        profileView.delegate = self
-        navigationItem.title = Strings.Titles.profile
+        setupNavigationBar()
+    }
 
-        let leftBarButtonItem = customLeftBarButtonItem()
-        let rightBarButtonItem = customRightBarButtonItem()
-        navigationItem.leftBarButtonItem = leftBarButtonItem
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUserData()
     }
 }
 
 extension ProfileViewController {
     private func customLeftBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
-            self?.viewModel.logOut()
-            self?.completionHandler?(.logOut)
+            guard let self else { return }
+            self.showLogOutAlert()
         }
 
         let button = UIBarButtonItem(image: SystemImages.logOut, primaryAction: action)
@@ -61,7 +62,8 @@ extension ProfileViewController {
 
     private func customRightBarButtonItem() -> UIBarButtonItem {
         let action = UIAction { [weak self] _ in
-            // action
+            guard let self else { return }
+            self.completionHandler?(.settings)
         }
 
         let button = UIBarButtonItem(image: SystemImages.gearShape, primaryAction: action)
@@ -69,35 +71,14 @@ extension ProfileViewController {
 
         return button
     }
-}
 
-extension ProfileViewController: ProfileViewDelegate {
-    func didTapChangeAvatar() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.allowsEditing = false
-        present(imagePickerController, animated: true, completion: nil)
-    }
-}
+    private func setupNavigationBar() {
+        navigationItem.title = Strings.Titles.profile
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(
-        _ picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
-    ) {
-        if let editedImage = info[.editedImage] as? UIImage {
-            profileView.userImage.image = editedImage
-            viewModel.setUserAvatar(imageData: editedImage.jpegData(compressionQuality: 0.15))
-        } else if let originalImage = info[.originalImage] as? UIImage {
-            profileView.userImage.image = originalImage
-            viewModel.setUserAvatar(imageData: originalImage.jpegData(compressionQuality: 0.15))
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        let leftBarButtonItem = customLeftBarButtonItem()
+        let rightBarButtonItem = customRightBarButtonItem()
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 }
 
@@ -114,6 +95,16 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
 //        }
 //    }
 // }
+extension ProfileViewController {
+    private func showLogOutAlert() {
+        let alert = alertFactory.makeLogOutAlert { [weak self] _ in
+            guard let self else { return }
+            self.viewModel.logOut()
+            self.completionHandler?(.logOut)
+        }
+        present(alert, animated: true)
+    }
+}
 
 extension ProfileViewController {
     private func setBindings() {

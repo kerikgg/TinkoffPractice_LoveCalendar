@@ -10,4 +10,5 @@ import Foundation
 protocol FirestoreServiceProtocol {
     func setUserData(user: UserModel, completion: @escaping (Result<UserModel, Error>) -> Void)
     func getUserData(userId: String, completion: @escaping (Result<UserModel, Error>) -> Void)
+    func updateUserData(userId: String, name: String, completion: @escaping (Error?) -> Void)
 }

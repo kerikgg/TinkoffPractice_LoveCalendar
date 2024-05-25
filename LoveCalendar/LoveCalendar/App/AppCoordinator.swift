@@ -45,8 +45,9 @@ class AppCoordinator: Coordinator {
         addCoordinatorDependency(tabBarFlowCoordinator)
         tabBarFlowCoordinator.flowCompletionHandler = { [weak self, weak tabBarFlowCoordinator] _ in
             guard let self else { return }
-            deleteCoordinatorDependency(tabBarFlowCoordinator)
             runAuthFlow()
+            self.router.showRootController()?.isNavigationBarHidden = false
+            deleteCoordinatorDependency(tabBarFlowCoordinator)
         }
         router.setViewController(tabBarViewController, isNavigationBarHidden: true)
         tabBarFlowCoordinator.start()

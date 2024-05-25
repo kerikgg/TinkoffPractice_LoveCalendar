@@ -26,5 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = router.showRootController()
         appCoordinator?.start()
         window?.makeKeyAndVisible()
+        window?.overrideUserInterfaceStyle = ThemeService.shared.theme.getUserInterfaceStyle()
     }
 }

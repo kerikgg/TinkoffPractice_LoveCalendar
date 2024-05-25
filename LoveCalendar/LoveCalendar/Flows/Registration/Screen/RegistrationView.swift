@@ -27,7 +27,6 @@ final class RegistrationView: UIView {
         let textField = UITextField()
         textField.placeholder = "Имя"
         textField.borderStyle = .roundedRect
-        textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
         textField.delegate = self
         textField.textColor = UIColor.labelText

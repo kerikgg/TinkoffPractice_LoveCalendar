@@ -62,4 +62,15 @@ final class FirestoreService: FirestoreServiceProtocol {
             completion(.success(userModel))
         }
     }
+
+    func updateUserData(userId: String, name: String, completion: @escaping ((any Error)?) -> Void) {
+        usersDb.document(userId).updateData(["name": name]) { error in
+            guard let error else {
+                completion(nil)
+                return
+            }
+            print(error.localizedDescription)
+            completion(error)
+        }
+    }
 }

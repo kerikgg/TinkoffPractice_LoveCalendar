@@ -19,7 +19,7 @@ struct UserModel {
         self.email = email
     }
 
-    init(id: String, name: String, email: String, avatarData: Data) {
+    init(id: String, name: String, email: String, avatarData: Data?) {
         self.id = id
         self.name = name
         self.email = email
