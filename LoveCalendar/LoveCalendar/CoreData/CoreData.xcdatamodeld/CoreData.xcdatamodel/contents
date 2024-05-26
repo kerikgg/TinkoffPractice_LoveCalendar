@@ -6,4 +6,10 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="uid" attributeType="String"/>
     </entity>
+    <entity name="WishCoreData" representedClassName="WishCoreData" syncable="YES">
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="userId" attributeType="String"/>
+    </entity>
 </model>

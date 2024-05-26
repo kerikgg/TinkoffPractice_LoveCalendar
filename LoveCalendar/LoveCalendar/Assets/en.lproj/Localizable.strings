@@ -16,12 +16,15 @@
 // Labels
 "labels.signInLabel" = "Sign In";
 "labels.signUpLabel" = "Registration";
+"labels.addWishLabel" = "New gift";
 
 // TextFields
 "textFields.emailPlaceholder" = "Email";
 "textFields.passwordPlaceholder" = "Password";
 "textFields.passwordConfirmationPlaceholder" = "Password confirmation";
 "textFields.namePlaceholder" = "Name";
+"textFields.wishTitlePlaceholder" = "Gift idea";
+"textFields.wishUrlPlaceholder" = "Url";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "The fields should not be empty";
@@ -40,6 +43,7 @@
 "titles.profile" = "Profile";
 "titles.settings" = "Settings";
 "titles.editProfile" = "Edit profile";
+"titles.delete" = "Delete";
 
 // Sections
 "sections.profile" = "Profile";

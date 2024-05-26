@@ -80,9 +80,5 @@ final class SettingsTableViewDataSource: NSObject, UITableViewDataSource {
         case .none:
             return UITableViewCell()
         }
-
-        func numberOfSections(in tableView: UITableView) -> Int {
-            viewModel.numberOfSection
-        }
     }
 }

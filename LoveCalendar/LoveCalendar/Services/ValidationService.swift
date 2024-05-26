@@ -44,6 +44,24 @@ class ValidationService {
         }
     }
 
+    func validateURL(urlString: String?) -> String? {
+        guard let urlString = urlString, !urlString.isEmpty else {
+            return nil
+        }
+
+        if let url = URL(string: urlString), url.scheme != nil {
+            return urlString
+        }
+
+        let prefixedUrlString = "http://" + urlString
+
+        if let url = URL(string: prefixedUrlString), url.scheme != nil {
+            return prefixedUrlString
+        }
+
+        return nil
+    }
+
     private func isValidEmail(_ email: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)

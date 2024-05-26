@@ -33,27 +33,17 @@ class ProfileCoordinator: Coordinator {
             case .logOut:
                 self.flowCompletionHandler?(nil)
             case .settings:
-                // TODO: флоу настроек
                 self.runSettingsFlow()
             }
         }
         router.setViewController(profileViewController)
-        // router.push(profileViewController, animated: true)
     }
-
-//    private func showSettings() {
-//        let settingsViewController = SettingsViewController(viewModel: SettingsViewModel())
-//        router.push(settingsViewController, animated: true)
-////        settingsViewController.completionHandler = { [weak self] settingsStates in
-////            switch()
-////            self?.flowCompletionHandler?()
-////        }
-//    }
 
     private func runSettingsFlow() {
         let settingsFlowCoordinator = coordinatorFactory.makeSettingsCoordinator(router: router)
         settingsFlowCoordinator.start()
         addCoordinatorDependency(settingsFlowCoordinator)
+        // swiftlint:disable:next line_length
         settingsFlowCoordinator.flowCompletionHandler = { [weak self, weak settingsFlowCoordinator] flowCompletionState in
             guard let self else { return }
             switch flowCompletionState {
