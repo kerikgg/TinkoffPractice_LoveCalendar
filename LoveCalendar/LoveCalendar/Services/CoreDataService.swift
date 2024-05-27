@@ -49,7 +49,7 @@ final class CoreDataService: CoreDataServiceProtocol {
         }
     }
 
-    func clearCachedData() {
+    func clearCachedUserData() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserCoreData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
@@ -62,7 +62,7 @@ final class CoreDataService: CoreDataServiceProtocol {
     }
     
     func updateUserData(user: UserModel) {
-        clearCachedData()
+        clearCachedUserData()
         setUser(user: user)
     }
 

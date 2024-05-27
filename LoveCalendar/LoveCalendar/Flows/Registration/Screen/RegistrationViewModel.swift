@@ -73,7 +73,7 @@ class RegistrationViewModel {
     private func setUserData(name: String) {
         guard let currentUser = authService.currentUser else { return }
         guard let email = currentUser.email else { return }
-        var userModel = UserModel(id: currentUser.uid, name: name, email: email)
+        let userModel = UserModel(id: currentUser.uid, name: name, email: email)
 
         firestoreService.setUserData(user: userModel) { [weak self] result in
             guard let self else { return }

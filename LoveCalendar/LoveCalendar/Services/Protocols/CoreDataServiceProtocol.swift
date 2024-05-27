@@ -10,7 +10,7 @@ import Foundation
 protocol CoreDataServiceProtocol {
     func setUser(user: UserModel)
     func getCachedUser() throws -> UserModel?
-    func clearCachedData()
+    func clearCachedUserData()
     func updateUserData(user: UserModel)
 
     func setWish(userId: String, wish: WishlistCellModel)

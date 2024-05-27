@@ -34,6 +34,12 @@ final class EditProfileViewController: UIViewController, FlowControllerWithValue
         view = editProfileView
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUserData()
+        getCurrentUserImage()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
