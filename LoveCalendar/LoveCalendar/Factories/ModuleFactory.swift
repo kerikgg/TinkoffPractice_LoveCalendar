@@ -28,8 +28,8 @@ class ModuleFactory: ModuleFactoryProtocol {
         CalendarViewController()
     }
 
-    func makeWishlistModule() -> WishlistViewController {
-        WishlistViewController()
+    func makeWishlistModule(viewModel: WishlistViewModel) -> WishlistViewController {
+        WishlistViewController(viewModel: viewModel)
     }
 
     func makeMainModule() -> MainViewController {
@@ -50,5 +50,9 @@ class ModuleFactory: ModuleFactoryProtocol {
 
     func makeEditProfileModule(viewModel: EditProfileViewModel) -> EditProfileViewController {
         EditProfileViewController(viewModel: viewModel)
+    }
+
+    func makeAddWishModule(viewModel: AddWishViewModel) -> AddWishViewController {
+        AddWishViewController(viewModel: viewModel)
     }
 }

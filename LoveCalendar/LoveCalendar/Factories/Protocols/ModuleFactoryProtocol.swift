@@ -17,11 +17,12 @@ protocol ModuleFactoryProtocol {
     func makeTabBarModule() -> TabBarViewController
 
     func makeCalendarModule() -> CalendarViewController
-    func makeWishlistModule() -> WishlistViewController
+    func makeWishlistModule(viewModel: WishlistViewModel) -> WishlistViewController
     func makeMainModule() -> MainViewController
     func makeAlbumModule() -> AlbumViewController
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController
     func makeSettingsModule(viewModel: SettingsViewModel) -> SettingsViewController
 
     func makeEditProfileModule(viewModel: EditProfileViewModel) -> EditProfileViewController
+    func makeAddWishModule(viewModel: AddWishViewModel) -> AddWishViewController
 }

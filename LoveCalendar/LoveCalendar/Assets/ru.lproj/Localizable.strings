@@ -16,12 +16,15 @@
 // Labels
 "labels.signInLabel" = "Вход";
 "labels.signUpLabel" = "Регистрация";
+"labels.addWishLabel" = "Новый подарок";
 
 // TextFields
 "textFields.emailPlaceholder" = "Почта";
 "textFields.passwordPlaceholder" = "Пароль";
 "textFields.passwordConfirmationPlaceholder" = "Подтверждение пароля";
 "textFields.namePlaceholder" = "Имя";
+"textFields.wishTitlePlaceholder" = "Идея подарка";
+"textFields.wishUrlPlaceholder" = "Ссылка";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
@@ -40,6 +43,7 @@
 "titles.profile" = "Профиль";
 "titles.settings" = "Настройки";
 "titles.editProfile" = "Редактировать профиль";
+"titles.delete" = "Удалить";
 
 // Sections
 "sections.profile" = "Профиль";

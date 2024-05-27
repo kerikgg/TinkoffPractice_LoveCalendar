@@ -50,6 +50,8 @@ public enum Strings {
     public static let editProfile = Strings.tr("Localizable", "cells.editProfile", fallback: "Edit profile")
   }
   public enum Labels {
+    /// New gift
+    public static let addWishLabel = Strings.tr("Localizable", "labels.addWishLabel", fallback: "New gift")
     /// Sign In
     public static let signInLabel = Strings.tr("Localizable", "labels.signInLabel", fallback: "Sign In")
     /// Registration
@@ -70,12 +72,18 @@ public enum Strings {
     public static let passwordConfirmationPlaceholder = Strings.tr("Localizable", "textFields.passwordConfirmationPlaceholder", fallback: "Password confirmation")
     /// Password
     public static let passwordPlaceholder = Strings.tr("Localizable", "textFields.passwordPlaceholder", fallback: "Password")
+    /// Gift idea
+    public static let wishTitlePlaceholder = Strings.tr("Localizable", "textFields.wishTitlePlaceholder", fallback: "Gift idea")
+    /// Url
+    public static let wishUrlPlaceholder = Strings.tr("Localizable", "textFields.wishUrlPlaceholder", fallback: "Url")
   }
   public enum Titles {
     /// Album
     public static let album = Strings.tr("Localizable", "titles.album", fallback: "Album")
     /// Calendar
     public static let calendar = Strings.tr("Localizable", "titles.calendar", fallback: "Calendar")
+    /// Delete
+    public static let delete = Strings.tr("Localizable", "titles.delete", fallback: "Delete")
     /// Edit profile
     public static let editProfile = Strings.tr("Localizable", "titles.editProfile", fallback: "Edit profile")
     /// We together

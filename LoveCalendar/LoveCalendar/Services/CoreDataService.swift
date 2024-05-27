@@ -77,4 +77,54 @@ final class CoreDataService: CoreDataServiceProtocol {
             }
         }
     }
+
+    func setWish(userId: String, wish: WishlistCellModel) {
+        let wishCd = WishCoreData(context: context)
+        wishCd.userId = userId
+        wishCd.title = wish.title
+        wishCd.url = wish.url
+        wishCd.uid = wish.uid
+        saveContext()
+    }
+
+    func deleteWish(userId: String, wish: WishlistCellModel) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = WishCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "userId == %@ AND title == %@ AND uid == %@", userId, wish.title, wish.uid as CVarArg
+        )
+
+        do {
+            let wishes = try context.fetch(fetchRequest)
+
+            for object in wishes {
+                guard let wishToDelete = object as? NSManagedObject else { continue }
+                context.delete(wishToDelete)
+            }
+            saveContext()
+        } catch {
+            print("Failed to delete wish: \(error)")
+        }
+    }
+
+    func getWishes(userId: String) throws -> [WishlistCellModel] {
+        let fetchRequest: NSFetchRequest<WishCoreData> = WishCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %@", userId)
+        
+        let wishes = try context.fetch(fetchRequest)
+        return wishes.map { wish in
+            WishlistCellModel(title: wish.title, url: wish.url ?? "", uid: wish.uid)
+        }
+    }
+
+    func clearCachedWishesData() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WishCoreData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            saveContext()
+        } catch {
+            print("\(error)")
+        }
+    }
 }
