@@ -19,7 +19,7 @@ protocol ModuleFactoryProtocol {
     func makeCalendarModule(viewModel: CalendarViewModel) -> CalendarViewController
     func makeWishlistModule(viewModel: WishlistViewModel) -> WishlistViewController
     func makeMainModule() -> MainViewController
-    func makeAlbumModule() -> AlbumViewController
+    func makeAlbumModule(viewModel: AlbumViewModel) -> AlbumViewController
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController
     func makeSettingsModule(viewModel: SettingsViewModel) -> SettingsViewController
 

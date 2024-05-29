@@ -19,7 +19,11 @@ class AlbumCoordinator: Coordinator {
     }
 
     private func showAlbum() {
-        let albumViewController = moduleFactory.makeAlbumModule()
+        let albumViewController = moduleFactory.makeAlbumModule(
+            viewModel: AlbumViewModel(
+                coreDataService: CoreDataService.shared
+            )
+        )
         router.setViewController(albumViewController)
     }
 }

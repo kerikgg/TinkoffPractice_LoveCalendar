@@ -51,6 +51,11 @@
 		BA52E0B42C063F9100B7A0BC /* CalendarServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */; };
 		BA52E0B62C063F9B00B7A0BC /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */; };
 		BA52E0B82C0682EF00B7A0BC /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B72C0682EF00B7A0BC /* DateExtensions.swift */; };
+		BA52E0BA2C07A1B200B7A0BC /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B92C07A1B200B7A0BC /* AlbumView.swift */; };
+		BA52E0BC2C07A24600B7A0BC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0BB2C07A24600B7A0BC /* AlbumViewModel.swift */; };
+		BA52E0BF2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0BE2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift */; };
+		BA52E0C12C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0C02C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift */; };
+		BA52E0C42C07B42800B7A0BC /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0C32C07B42800B7A0BC /* PhotoDetailViewController.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
 		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
@@ -161,6 +166,11 @@
 		BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceProtocol.swift; sourceTree = "<group>"; };
 		BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		BA52E0B72C0682EF00B7A0BC /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		BA52E0B92C07A1B200B7A0BC /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
+		BA52E0BB2C07A24600B7A0BC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		BA52E0BE2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		BA52E0C02C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		BA52E0C32C07B42800B7A0BC /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -299,6 +309,8 @@
 		BA065ED82BD522FA0005EE39 /* Album */ = {
 			isa = PBXGroup;
 			children = (
+				BA52E0C22C07B41000B7A0BC /* Detail */,
+				BA52E0BD2C07A31900B7A0BC /* CollectionView */,
 				BA065EE52BD528D60005EE39 /* Screen */,
 				BA065EEF2BD529EA0005EE39 /* AlbumCoordinator.swift */,
 			);
@@ -347,6 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				BA065EE62BD528E00005EE39 /* AlbumViewController.swift */,
+				BA52E0B92C07A1B200B7A0BC /* AlbumView.swift */,
+				BA52E0BB2C07A24600B7A0BC /* AlbumViewModel.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -434,6 +448,23 @@
 				BA52E0B12C06322400B7A0BC /* AddEventViewModel.swift */,
 			);
 			path = AddEvent;
+			sourceTree = "<group>";
+		};
+		BA52E0BD2C07A31900B7A0BC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BA52E0BE2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift */,
+				BA52E0C02C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		BA52E0C22C07B41000B7A0BC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BA52E0C32C07B42800B7A0BC /* PhotoDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
@@ -827,6 +858,8 @@
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
 				BADDEEF92C02378D00288585 /* WishlistTableViewCell.swift in Sources */,
 				BADDEEF42C02336A00288585 /* WishlistView.swift in Sources */,
+				BA52E0BC2C07A24600B7A0BC /* AlbumViewModel.swift in Sources */,
+				BA52E0C12C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift in Sources */,
 				BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */,
 				BA065EF62BD530B10005EE39 /* TabBarViewController.swift in Sources */,
 				BADDEF022C02637800288585 /* AddWishViewController.swift in Sources */,
@@ -868,10 +901,12 @@
 				BADDEEE92C00B01200288585 /* EditProfileView.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BA52E0A52C060D5700B7A0BC /* CalendarTableViewCell.swift in Sources */,
+				BA52E0BA2C07A1B200B7A0BC /* AlbumView.swift in Sources */,
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
 				BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
 				BA2045362BFA4FB100C0B3BD /* StorageServiceProtocol.swift in Sources */,
+				BA52E0C42C07B42800B7A0BC /* PhotoDetailViewController.swift in Sources */,
 				BA52E0AA2C06316D00B7A0BC /* EventCoreData+CoreDataClass.swift in Sources */,
 				BA52E0B22C06322400B7A0BC /* AddEventViewModel.swift in Sources */,
 				BA52E0AB2C06316D00B7A0BC /* EventCoreData+CoreDataProperties.swift in Sources */,
@@ -879,6 +914,7 @@
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */,
 				BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */,
+				BA52E0BF2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
 				BA52E0B02C0631F900B7A0BC /* AddEventViewController.swift in Sources */,
 				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
