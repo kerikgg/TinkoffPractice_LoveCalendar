@@ -14,4 +14,5 @@ enum SystemImages {
     static let share = UIImage(systemName: "arrowshape.turn.up.right.circle")
     static let moon = "moon"
     static let person = "person.circle"
+    static let photo = "photo"
 }

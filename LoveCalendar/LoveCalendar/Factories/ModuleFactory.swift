@@ -24,8 +24,8 @@ class ModuleFactory: ModuleFactoryProtocol {
         TabBarViewController()
     }
 
-    func makeCalendarModule() -> CalendarViewController {
-        CalendarViewController()
+    func makeCalendarModule(viewModel: CalendarViewModel) -> CalendarViewController {
+        CalendarViewController(viewModel: viewModel)
     }
 
     func makeWishlistModule(viewModel: WishlistViewModel) -> WishlistViewController {
@@ -54,5 +54,9 @@ class ModuleFactory: ModuleFactoryProtocol {
 
     func makeAddWishModule(viewModel: AddWishViewModel) -> AddWishViewController {
         AddWishViewController(viewModel: viewModel)
+    }
+
+    func makeAddEventModule(viewModel: AddEventViewModel) -> AddEventViewController {
+        AddEventViewController(viewModel: viewModel)
     }
 }

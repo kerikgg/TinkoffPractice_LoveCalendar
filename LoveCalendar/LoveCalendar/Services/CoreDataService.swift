@@ -5,8 +5,12 @@
 //  Created by kerik on 20.05.2024.
 //
 
-import Foundation
+import UIKit
 import CoreData
+
+enum EventError: Error {
+    case invalidImageData
+}
 
 final class CoreDataService: CoreDataServiceProtocol {
     static let shared = CoreDataService()
@@ -49,7 +53,7 @@ final class CoreDataService: CoreDataServiceProtocol {
         }
     }
 
-    func clearCachedData() {
+    func clearCachedUserData() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserCoreData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
@@ -62,7 +66,7 @@ final class CoreDataService: CoreDataServiceProtocol {
     }
     
     func updateUserData(user: UserModel) {
-        clearCachedData()
+        clearCachedUserData()
         setUser(user: user)
     }
 
@@ -118,6 +122,57 @@ final class CoreDataService: CoreDataServiceProtocol {
 
     func clearCachedWishesData() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "WishCoreData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            saveContext()
+        } catch {
+            print("\(error)")
+        }
+    }
+
+    func setEvent(userId: String, event: EventModel) {
+        let eventCd = EventCoreData(context: context)
+        eventCd.userId = userId
+        eventCd.title = event.title
+        eventCd.uid = event.uid
+        eventCd.date = event.date
+        eventCd.photo = event.image
+        saveContext()
+    }
+
+    func deleteEvent(userId: String, event: EventModel) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = EventCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "userId == %@ AND title == %@ AND uid == %@", userId, event.title, event.uid as CVarArg
+        )
+
+        do {
+            let events = try context.fetch(fetchRequest)
+
+            for object in events {
+                guard let eventToDelete = object as? NSManagedObject else { continue }
+                context.delete(eventToDelete)
+            }
+            saveContext()
+        } catch {
+            print("Failed to delete wish: \(error)")
+        }
+    }
+
+    func getEvents(userId: String) throws -> [EventModel] {
+        let fetchRequest: NSFetchRequest<EventCoreData> = EventCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %@", userId)
+
+        let events = try context.fetch(fetchRequest)
+        return events.map { event in
+            EventModel(uid: event.uid, title: event.title, date: event.date, image: event.photo)
+        }
+    }
+
+    func clearCachedEventsData() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "EventCoreData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
         do {

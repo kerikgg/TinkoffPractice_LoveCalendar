@@ -30,9 +30,34 @@ final class EditProfileViewModel {
     }
 
     func getUserData() {
+        guard let currentUser = authService.currentUser else { return }
+        
         do {
-            guard let user = try coreDataService.getCachedUser() else { return }
-            userModel = user
+            if let user = try coreDataService.getCachedUser() {
+                userModel = user
+            } else {
+                firestoreService.getUserData(userId: currentUser.uid) { result in
+                    switch result {
+                    case .success(let user):
+                        self.userModel.email = user.email
+                        self.userModel.name = user.name
+                        self.userModel.id = user.id
+                        
+                    case .failure(let error):
+                        print(error)
+                        return
+                    }
+                    
+                    self.storageService.getAvatar(userId: currentUser.uid) { result in
+                        switch result {
+                        case .success(let data):
+                            self.userModel.avatarData = data
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                }
+            }
         } catch {
             print(error.localizedDescription)
         }

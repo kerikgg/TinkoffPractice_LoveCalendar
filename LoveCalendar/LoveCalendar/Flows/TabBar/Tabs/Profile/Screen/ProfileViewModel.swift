@@ -26,6 +26,7 @@ class ProfileViewModel {
     }
 
     func logOut() {
+        coreDataService.clearCachedUserData()
         authService.logOut()
     }
 
