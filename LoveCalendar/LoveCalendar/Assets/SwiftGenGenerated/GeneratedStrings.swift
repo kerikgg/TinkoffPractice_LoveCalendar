@@ -18,8 +18,12 @@ public enum Strings {
       public static let logOut = Strings.tr("Localizable", "alerts.actions.logOut", fallback: "Logout")
     }
     public enum Messages {
+      /// You need to choose a date
+      public static let date = Strings.tr("Localizable", "alerts.messages.date", fallback: "You need to choose a date")
       /// Are you sure you want to logout?
       public static let logOut = Strings.tr("Localizable", "alerts.messages.logOut", fallback: "Are you sure you want to logout?")
+      /// You need to choose a photo
+      public static let photo = Strings.tr("Localizable", "alerts.messages.photo", fallback: "You need to choose a photo")
     }
     public enum Titles {
       /// Error
@@ -29,6 +33,8 @@ public enum Strings {
     }
   }
   public enum Buttons {
+    /// Add
+    public static let add = Strings.tr("Localizable", "buttons.add", fallback: "Add")
     /// Change Avatar
     public static let changeAvatar = Strings.tr("Localizable", "buttons.changeAvatar", fallback: "Change Avatar")
     /// Idea for meeting
@@ -52,6 +58,8 @@ public enum Strings {
   public enum Labels {
     /// New gift
     public static let addWishLabel = Strings.tr("Localizable", "labels.addWishLabel", fallback: "New gift")
+    /// All Events
+    public static let allEvents = Strings.tr("Localizable", "labels.allEvents", fallback: "All Events")
     /// Sign In
     public static let signInLabel = Strings.tr("Localizable", "labels.signInLabel", fallback: "Sign In")
     /// Registration
@@ -66,6 +74,8 @@ public enum Strings {
   public enum TextFields {
     /// Email
     public static let emailPlaceholder = Strings.tr("Localizable", "textFields.emailPlaceholder", fallback: "Email")
+    /// Event title
+    public static let eventTitlePlaceholder = Strings.tr("Localizable", "textFields.eventTitlePlaceholder", fallback: "Event title")
     /// Name
     public static let namePlaceholder = Strings.tr("Localizable", "textFields.namePlaceholder", fallback: "Name")
     /// Password confirmation
@@ -88,6 +98,8 @@ public enum Strings {
     public static let editProfile = Strings.tr("Localizable", "titles.editProfile", fallback: "Edit profile")
     /// We together
     public static let main = Strings.tr("Localizable", "titles.main", fallback: "We together")
+    /// New event
+    public static let newEvent = Strings.tr("Localizable", "titles.newEvent", fallback: "New event")
     /// Profile
     public static let profile = Strings.tr("Localizable", "titles.profile", fallback: "Profile")
     /// Settings

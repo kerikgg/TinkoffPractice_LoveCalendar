@@ -12,11 +12,13 @@
 "buttons.ideaForMeeting" = "Идея для свидания";
 "buttons.changeAvatar" = "Сменить аватарку";
 "buttons.save" = "Сохранить";
+"buttons.add" = "Добавить";
 
 // Labels
 "labels.signInLabel" = "Вход";
 "labels.signUpLabel" = "Регистрация";
 "labels.addWishLabel" = "Новый подарок";
+"labels.allEvents" = "Все события";
 
 // TextFields
 "textFields.emailPlaceholder" = "Почта";
@@ -25,6 +27,7 @@
 "textFields.namePlaceholder" = "Имя";
 "textFields.wishTitlePlaceholder" = "Идея подарка";
 "textFields.wishUrlPlaceholder" = "Ссылка";
+"textFields.eventTitlePlaceholder" = "Название события";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
@@ -44,6 +47,7 @@
 "titles.settings" = "Настройки";
 "titles.editProfile" = "Редактировать профиль";
 "titles.delete" = "Удалить";
+"titles.newEvent" = "Новое событие";
 
 // Sections
 "sections.profile" = "Профиль";
@@ -59,6 +63,8 @@
 
 // Alert messages
 "alerts.messages.logOut" = "Вы уверены, что хотите выйти?";
+"alerts.messages.date" = "Нужно выбрать дату";
+"alerts.messages.photo" = "Нужно выбрать фотографию";
 
 // Alert actions
 "alerts.actions.logOut" = "Выход";

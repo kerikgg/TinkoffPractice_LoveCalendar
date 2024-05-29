@@ -12,11 +12,13 @@
 "buttons.ideaForMeeting" = "Idea for meeting";
 "buttons.changeAvatar" = "Change Avatar";
 "buttons.save" = "Save";
+"buttons.add" = "Add";
 
 // Labels
 "labels.signInLabel" = "Sign In";
 "labels.signUpLabel" = "Registration";
 "labels.addWishLabel" = "New gift";
+"labels.allEvents" = "All Events";
 
 // TextFields
 "textFields.emailPlaceholder" = "Email";
@@ -25,6 +27,7 @@
 "textFields.namePlaceholder" = "Name";
 "textFields.wishTitlePlaceholder" = "Gift idea";
 "textFields.wishUrlPlaceholder" = "Url";
+"textFields.eventTitlePlaceholder" = "Event title";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "The fields should not be empty";
@@ -44,6 +47,7 @@
 "titles.settings" = "Settings";
 "titles.editProfile" = "Edit profile";
 "titles.delete" = "Delete";
+"titles.newEvent" = "New event";
 
 // Sections
 "sections.profile" = "Profile";
@@ -59,6 +63,8 @@
 
 // Alert messages
 "alerts.messages.logOut" = "Are you sure you want to logout?";
+"alerts.messages.date" = "You need to choose a date";
+"alerts.messages.photo" = "You need to choose a photo";
 
 // Alert actions
 "alerts.actions.logOut" = "Logout";

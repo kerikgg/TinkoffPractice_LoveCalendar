@@ -19,4 +19,15 @@ final class AlertFactory {
 
         return alert
     }
+
+    func makeErrorAlert(message: String) -> UIAlertController {
+        let alert = UIAlertController(
+            title: "Ошибка",
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Ок", style: .default))
+
+        return alert
+    }
 }
