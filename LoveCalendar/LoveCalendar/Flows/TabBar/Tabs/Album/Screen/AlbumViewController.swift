@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 enum AlbumStates {
+    case add, detail(_ event: EventModel)
 }
 
 final class AlbumViewController: UIViewController, FlowControllerWithValue {
@@ -62,9 +63,7 @@ extension AlbumViewController {
 
 extension AlbumViewController: AlbumCollectionViewDelegate {
     func didSelectEvent(_ event: EventModel) {
-        let detailViewController = PhotoDetailViewController(event: event)
-        detailViewController.modalPresentationStyle = .fullScreen
-        present(detailViewController, animated: true)
+        self.completionHandler?(.detail(event))
     }
 }
 

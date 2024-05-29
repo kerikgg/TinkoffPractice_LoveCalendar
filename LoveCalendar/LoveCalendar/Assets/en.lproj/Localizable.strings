@@ -13,6 +13,7 @@
 "buttons.changeAvatar" = "Change Avatar";
 "buttons.save" = "Save";
 "buttons.add" = "Add";
+"buttons.close" = "Close";
 
 // Labels
 "labels.signInLabel" = "Sign In";
@@ -28,6 +29,9 @@
 "textFields.wishTitlePlaceholder" = "Gift idea";
 "textFields.wishUrlPlaceholder" = "Url";
 "textFields.eventTitlePlaceholder" = "Event title";
+
+// SearchBar
+"searchBar.searchPlaceholder" = "Search";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "The fields should not be empty";

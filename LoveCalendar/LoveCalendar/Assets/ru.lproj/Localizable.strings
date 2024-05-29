@@ -13,6 +13,7 @@
 "buttons.changeAvatar" = "Сменить аватарку";
 "buttons.save" = "Сохранить";
 "buttons.add" = "Добавить";
+"buttons.close" = "Закрыть";
 
 // Labels
 "labels.signInLabel" = "Вход";
@@ -28,6 +29,9 @@
 "textFields.wishTitlePlaceholder" = "Идея подарка";
 "textFields.wishUrlPlaceholder" = "Ссылка";
 "textFields.eventTitlePlaceholder" = "Название события";
+
+// SearchBar
+"searchBar.searchPlaceholder" = "Поиск";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";

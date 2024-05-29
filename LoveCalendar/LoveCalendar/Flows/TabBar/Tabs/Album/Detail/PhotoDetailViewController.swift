@@ -21,6 +21,8 @@ class PhotoDetailViewController: UIViewController {
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .white
         label.backgroundColor = .black
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 
         return label
     }()
@@ -36,7 +38,7 @@ class PhotoDetailViewController: UIViewController {
 
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Закрыть", for: .normal)
+        button.setTitle(Strings.Buttons.close, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor(white: 0, alpha: 0.5)
         button.layer.cornerRadius = 10
@@ -82,6 +84,7 @@ extension PhotoDetailViewController {
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.leading.equalToSuperview().inset(10)
+            make.trailing.lessThanOrEqualTo(dateLabel.snp.leading).offset(-10)
         }
 
         dateLabel.snp.makeConstraints { make in

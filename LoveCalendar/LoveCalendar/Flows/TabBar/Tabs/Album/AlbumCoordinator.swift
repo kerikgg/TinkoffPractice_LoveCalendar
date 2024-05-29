@@ -24,6 +24,20 @@ class AlbumCoordinator: Coordinator {
                 coreDataService: CoreDataService.shared
             )
         )
+        albumViewController.completionHandler = { [weak self] albumStates in
+            switch albumStates {
+            case .detail(let event):
+                self?.showDetail(event: event)
+            case .add:
+                print("add")
+            }
+        }
         router.setViewController(albumViewController)
+    }
+
+    private func showDetail(event: EventModel) {
+        let detailViewController = PhotoDetailViewController(event: event)
+        detailViewController.modalPresentationStyle = .fullScreen
+        router.present(detailViewController, animated: true)
     }
 }

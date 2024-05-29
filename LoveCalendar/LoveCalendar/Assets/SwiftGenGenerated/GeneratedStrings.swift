@@ -37,6 +37,8 @@ public enum Strings {
     public static let add = Strings.tr("Localizable", "buttons.add", fallback: "Add")
     /// Change Avatar
     public static let changeAvatar = Strings.tr("Localizable", "buttons.changeAvatar", fallback: "Change Avatar")
+    /// Close
+    public static let close = Strings.tr("Localizable", "buttons.close", fallback: "Close")
     /// Idea for meeting
     public static let ideaForMeeting = Strings.tr("Localizable", "buttons.ideaForMeeting", fallback: "Idea for meeting")
     /// Save
@@ -64,6 +66,10 @@ public enum Strings {
     public static let signInLabel = Strings.tr("Localizable", "labels.signInLabel", fallback: "Sign In")
     /// Registration
     public static let signUpLabel = Strings.tr("Localizable", "labels.signUpLabel", fallback: "Registration")
+  }
+  public enum SearchBar {
+    /// Search
+    public static let searchPlaceholder = Strings.tr("Localizable", "searchBar.searchPlaceholder", fallback: "Search")
   }
   public enum Sections {
     /// Appearance

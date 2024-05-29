@@ -19,7 +19,10 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
         return viewModel.events.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: AlbumCollectionViewCell.reuseIdentifier,
             for: indexPath
@@ -30,7 +33,6 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
 
         return cell
     }
-
 }
 
 extension AlbumCollectionViewDataSource: UICollectionViewDelegate {

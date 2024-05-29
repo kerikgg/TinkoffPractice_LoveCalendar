@@ -18,7 +18,7 @@ final class AlbumView: UIView {
         searchBar.autocapitalizationType = .none
         searchBar.searchBarStyle = .minimal
         searchBar.returnKeyType = .search
-        searchBar.placeholder = "Поиск"
+        searchBar.placeholder = Strings.SearchBar.searchPlaceholder
         searchBar.searchTextField.delegate = self
 
         return searchBar
