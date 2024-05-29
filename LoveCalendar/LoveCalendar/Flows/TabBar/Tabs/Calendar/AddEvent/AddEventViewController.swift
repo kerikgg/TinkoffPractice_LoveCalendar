@@ -61,7 +61,7 @@ extension AddEventViewController: AddEventViewDelegate {
         }
     }
 
-    func didTapChangeAvatar() {
+    func didTapChoosePhoto() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary

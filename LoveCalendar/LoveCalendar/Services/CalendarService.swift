@@ -22,10 +22,6 @@ class CalendarService: CalendarServiceProtocol {
     func addNewEvent(event: EventModel) {
         events.append(event)
     }
-    
-//    func getEvents() -> [EventModel] {
-//        return events
-//    }
 
     func getEvents() -> [EventModel] {
         events
@@ -34,21 +30,4 @@ class CalendarService: CalendarServiceProtocol {
     func deleteEvent(event: EventModel) {
         events.removeAll(where: { $0.uid == event.uid })
     }
-
-
-//    private static func setEvents() -> [EventModel] {
-//        let currentDate = Date()
-//        let calendar = Calendar.current
-//        let day = calendar.date(byAdding: .month, value: -1, to: currentDate)
-//
-//        let secondDay = calendar.date(byAdding: .day, value: -5, to: currentDate)
-//
-//        let events: [EventModel] = [
-//            .init(uid: UUID(), title: "1", date: Date()),
-//            .init(uid: UUID(), title: "3", date: secondDay ?? Date()),
-//            .init(uid: UUID(), title: "2", date: day ?? Date())
-//        ]
-//
-//        return events
-//    }
 }

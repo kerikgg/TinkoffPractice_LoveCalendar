@@ -9,7 +9,7 @@ import UIKit
 
 protocol AddEventViewDelegate: AnyObject {
     func didTapSave(title: String)
-    func didTapChangeAvatar()
+    func didTapChoosePhoto()
 }
 
 final class AddEventView: UIView {
@@ -25,20 +25,12 @@ final class AddEventView: UIView {
         let image = UIImage(systemName: SystemImages.photo, withConfiguration: config)
         imageView.image = image
 
+        imageView.isUserInteractionEnabled = true
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        imageView.addGestureRecognizer(tapGesture)
+
         return imageView
-    }()
-
-    private lazy var pickImageButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.setTitle("Выбрать фото", for: .normal)
-
-        let action = UIAction { [weak self] _ in
-            guard let self else { return }
-            self.delegate?.didTapChangeAvatar()
-        }
-        button.addAction(action, for: .touchUpInside)
-
-        return button
     }()
 
     private lazy var dateLabel: UILabel = {
@@ -83,12 +75,18 @@ final class AddEventView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubviews(imageView, pickImageButton, dateLabel, titleTextField, saveButton)
+        addSubviews(imageView, dateLabel, titleTextField, saveButton)
         makeConstraints()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AddEventView {
+    @objc private func handleTap() {
+        self.delegate?.didTapChoosePhoto()
     }
 }
 
@@ -105,15 +103,10 @@ extension AddEventView {
             make.top.equalTo(dateLabel).offset(50)
         }
 
-        pickImageButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(imageView.snp_bottomMargin).offset(10)
-        }
-
         titleTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(250)
-            make.top.equalTo(pickImageButton.snp_bottomMargin).offset(50)
+            make.top.equalTo(imageView.snp_bottomMargin).offset(50)
         }
 
         saveButton.snp.makeConstraints { make in
