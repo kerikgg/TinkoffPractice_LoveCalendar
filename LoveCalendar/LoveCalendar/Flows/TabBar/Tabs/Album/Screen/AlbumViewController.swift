@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 enum AlbumStates {
-    case add, detail(_ event: EventModel)
+    case add
 }
 
 final class AlbumViewController: UIViewController, FlowControllerWithValue {
@@ -37,6 +37,7 @@ final class AlbumViewController: UIViewController, FlowControllerWithValue {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.loadEvents()
+        viewModel.loadPhotos()
     }
 
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ final class AlbumViewController: UIViewController, FlowControllerWithValue {
         setBindings()
         albumView.setDelegate(self)
         albumView.setSearchBarDelegate(self)
-        navigationItem.title = Strings.Titles.album
+        setupNavigationBar()
     }
 }
 
@@ -58,22 +59,66 @@ extension AlbumViewController {
                 self.albumView.reloadData()
             }
             .store(in: &cancellables)
+
+        viewModel.$photos
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                self.albumView.reloadData()
+            }
+            .store(in: &cancellables)
+    }
+}
+
+extension AlbumViewController {
+    private func customRightBarButtonItem() -> UIBarButtonItem {
+        let action = UIAction { [weak self] _ in
+            guard let self else { return }
+            self.completionHandler?(.add)
+        }
+
+        let button = UIBarButtonItem(systemItem: .add, primaryAction: action)
+        button.tintColor = .buttonText
+
+        return button
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = Strings.Titles.album
+        let rightBarButtonItem = customRightBarButtonItem()
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 }
 
 extension AlbumViewController: AlbumCollectionViewDelegate {
     func didSelectEvent(_ event: EventModel) {
-        self.completionHandler?(.detail(event))
+        let detailVC = PhotoDetailViewController(displayableItem: event)
+        detailVC.modalPresentationStyle = .fullScreen
+        present(detailVC, animated: true)
+    }
+
+    func didSelectPhoto(_ photo: PhotoModel) {
+        let detailVC = PhotoDetailViewController(displayableItem: photo)
+        detailVC.modalPresentationStyle = .fullScreen
+        detailVC.delegate = self
+        present(detailVC, animated: true)
     }
 }
 
 extension AlbumViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterEvents(with: searchText)
+        viewModel.filter(with: searchText)
         albumView.reloadData()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+}
+
+extension AlbumViewController: PhotoDetailViewControllerDelegate {
+    func didDeletePhoto(_ photo: PhotoModel) {
+        viewModel.delete(model: photo)
+        albumView.reloadData()
     }
 }

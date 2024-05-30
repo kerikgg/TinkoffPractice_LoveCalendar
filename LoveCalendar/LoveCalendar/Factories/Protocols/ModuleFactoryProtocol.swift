@@ -26,4 +26,5 @@ protocol ModuleFactoryProtocol {
     func makeEditProfileModule(viewModel: EditProfileViewModel) -> EditProfileViewController
     func makeAddWishModule(viewModel: AddWishViewModel) -> AddWishViewController
     func makeAddEventModule(viewModel: AddEventViewModel) -> AddEventViewController
+    func makeAddPhotoModule(viewModel: AddPhotoViewModel) -> AddPhotoViewController
 }

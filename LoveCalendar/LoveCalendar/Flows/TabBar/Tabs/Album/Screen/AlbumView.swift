@@ -9,6 +9,7 @@ import UIKit
 
 protocol AlbumCollectionViewDelegate: AnyObject {
     func didSelectEvent(_ event: EventModel)
+    func didSelectPhoto(_ photo: PhotoModel)
 }
 
 final class AlbumView: UIView {
@@ -30,6 +31,12 @@ final class AlbumView: UIView {
         collectionView.register(
             AlbumCollectionViewCell.self,
             forCellWithReuseIdentifier: AlbumCollectionViewCell.reuseIdentifier
+        )
+
+        collectionView.register(
+            AlbumCollectionViewHeader.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: AlbumCollectionViewHeader.reuseIdentifier
         )
 
         return collectionView
@@ -85,10 +92,11 @@ extension AlbumView {
 
     private func setFlowLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 180, height: 180) // Adjust item size as needed
+        layout.itemSize = CGSize(width: 180, height: 180)
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 50)
         return layout
     }
 }

@@ -15,8 +15,17 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
         self.viewModel = viewModel
     }
 
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        viewModel.numberOfSections
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.events.count
+        if viewModel.hasEvents && section == 0 {
+            return viewModel.events.count
+        } else if viewModel.hasPhotos && (viewModel.hasEvents ? section == 1 : section == 0) {
+            return viewModel.photos.count
+        }
+        return 0
     }
     
     func collectionView(
@@ -28,8 +37,13 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
             for: indexPath
         ) as? AlbumCollectionViewCell else { return UICollectionViewCell() }
 
-        let event = viewModel.events[indexPath.item]
-        cell.configure(with: event)
+        if viewModel.hasEvents && indexPath.section == 0 {
+            let event = viewModel.events[indexPath.item]
+            cell.configure(with: event)
+        } else if viewModel.hasPhotos && (viewModel.hasEvents ? indexPath.section == 1 : indexPath.section == 0) {
+            let photo = viewModel.photos[indexPath.item]
+            cell.configure(with: photo)
+        }
 
         return cell
     }
@@ -37,7 +51,32 @@ final class AlbumCollectionViewDataSource: NSObject, UICollectionViewDataSource 
 
 extension AlbumCollectionViewDataSource: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let event = viewModel.events[indexPath.item]
-        delegate?.didSelectEvent(event)
+        if viewModel.hasEvents && indexPath.section == 0 {
+            let event = viewModel.events[indexPath.item]
+            delegate?.didSelectEvent(event)
+        } else if viewModel.hasPhotos && (viewModel.hasEvents ? indexPath.section == 1 : indexPath.section == 0) {
+            let photo = viewModel.photos[indexPath.item]
+            delegate?.didSelectPhoto(photo)
+        }
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        viewForSupplementaryElementOfKind kind: String,
+        at indexPath: IndexPath
+    ) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: AlbumCollectionViewHeader.reuseIdentifier,
+            for: indexPath
+        ) as? AlbumCollectionViewHeader else { return UICollectionReusableView() }
+
+        if viewModel.hasEvents && indexPath.section == 0 {
+            header.titleLabel.text = Strings.Sections.events
+        } else if viewModel.hasPhotos && (viewModel.hasEvents ? indexPath.section == 1 : indexPath.section == 0) {
+            header.titleLabel.text = Strings.Sections.photos
+        }
+
+        return header
     }
 }

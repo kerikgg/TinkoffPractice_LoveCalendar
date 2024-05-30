@@ -7,6 +7,12 @@
         <attribute name="uid" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="userId" attributeType="String"/>
     </entity>
+    <entity name="PhotoCoreData" representedClassName="PhotoCoreData" syncable="YES">
+        <attribute name="photo" attributeType="Binary"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="userId" attributeType="String"/>
+    </entity>
     <entity name="UserCoreData" representedClassName="UserCoreData" syncable="YES">
         <attribute name="avatarData" optional="YES" attributeType="Binary"/>
         <attribute name="email" attributeType="String"/>

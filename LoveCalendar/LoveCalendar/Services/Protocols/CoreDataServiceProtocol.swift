@@ -22,4 +22,9 @@ protocol CoreDataServiceProtocol {
     func deleteEvent(userId: String, event: EventModel)
     func getEvents(userId: String) throws -> [EventModel]
     func clearCachedEventsData()
+
+    func setPhoto(userId: String, photo: PhotoModel)
+    func deletePhoto(userId: String, photo: PhotoModel)
+    func getPhotos(userId: String) throws -> [PhotoModel]
+    func clearCachedPhotosData()
 }

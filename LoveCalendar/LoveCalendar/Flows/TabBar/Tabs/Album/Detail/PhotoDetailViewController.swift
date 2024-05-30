@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol PhotoDetailViewControllerDelegate: AnyObject {
+    func didDeletePhoto(_ photo: PhotoModel)
+}
+
 class PhotoDetailViewController: UIViewController {
-    private let event: EventModel
+    private let displayableItem: Displayable
+    weak var delegate: PhotoDetailViewControllerDelegate?
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -51,8 +56,28 @@ class PhotoDetailViewController: UIViewController {
         return button
     }()
 
-    init(event: EventModel) {
-        self.event = event
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(SystemImages.trash, for: .normal)
+        button.tintColor = .white
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 10
+        button.isHidden = true
+
+        let action = UIAction { [weak self] _ in
+            guard let self else { return }
+            guard let photo = displayableItem as? PhotoModel else { return }
+            self.delegate?.didDeletePhoto(photo)
+            dismiss(animated: true)
+        }
+        button.addAction(action, for: .touchUpInside)
+
+        return button
+    }()
+
+    init(displayableItem: Displayable) {
+        self.displayableItem = displayableItem
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -63,7 +88,7 @@ class PhotoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        addSubviews(imageView, closeButton, titleLabel, dateLabel)
+        addSubviews(imageView, closeButton, deleteButton, titleLabel, dateLabel)
         makeConstraints()
         setupUI()
     }
@@ -81,6 +106,12 @@ extension PhotoDetailViewController {
             make.size.equalTo(CGSize(width: 80, height: 40))
         }
 
+        deleteButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.trailing.equalToSuperview().inset(10)
+            make.size.equalTo(CGSize(width: 40, height: 40))
+        }
+
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.leading.equalToSuperview().inset(10)
@@ -94,8 +125,14 @@ extension PhotoDetailViewController {
     }
 
     private func setupUI() {
-        imageView.image = UIImage(data: event.image)
-        titleLabel.text = event.title
-        dateLabel.text = event.date.toLocalTimeZoneString()
+        imageView.image = UIImage(data: displayableItem.imageData)
+        titleLabel.text = displayableItem.displayTitle
+        if let event = displayableItem as? EventModel {
+            dateLabel.text = event.date.toLocalTimeZoneString()
+            deleteButton.isHidden = true
+        } else {
+            dateLabel.isHidden = true
+            deleteButton.isHidden = false
+        }
     }
 }

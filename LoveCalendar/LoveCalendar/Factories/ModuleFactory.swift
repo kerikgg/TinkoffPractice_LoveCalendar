@@ -59,4 +59,8 @@ class ModuleFactory: ModuleFactoryProtocol {
     func makeAddEventModule(viewModel: AddEventViewModel) -> AddEventViewController {
         AddEventViewController(viewModel: viewModel)
     }
+
+    func makeAddPhotoModule(viewModel: AddPhotoViewModel) -> AddPhotoViewController {
+        AddPhotoViewController(viewModel: viewModel)
+    }
 }

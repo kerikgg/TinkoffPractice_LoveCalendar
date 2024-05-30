@@ -31,6 +31,19 @@ final class CoreDataService: CoreDataServiceProtocol {
 
     private init() {}
 
+    private func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                if let error = error as NSError? {
+                    print(error, error.userInfo)
+                }
+            }
+        }
+    }
+
+    // MARK: - User methods
     func setUser(user: UserModel) {
         let userCD = UserCoreData(context: context)
         userCD.uid = user.id
@@ -70,18 +83,7 @@ final class CoreDataService: CoreDataServiceProtocol {
         setUser(user: user)
     }
 
-    private func saveContext() {
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                if let error = error as NSError? {
-                    print(error, error.userInfo)
-                }
-            }
-        }
-    }
-
+    // MARK: - Wish methods
     func setWish(userId: String, wish: WishlistCellModel) {
         let wishCd = WishCoreData(context: context)
         wishCd.userId = userId
@@ -132,6 +134,7 @@ final class CoreDataService: CoreDataServiceProtocol {
         }
     }
 
+    // MARK: - Event methods
     func setEvent(userId: String, event: EventModel) {
         let eventCd = EventCoreData(context: context)
         eventCd.userId = userId
@@ -157,7 +160,7 @@ final class CoreDataService: CoreDataServiceProtocol {
             }
             saveContext()
         } catch {
-            print("Failed to delete wish: \(error)")
+            print("Failed to delete event: \(error)")
         }
     }
 
@@ -173,6 +176,57 @@ final class CoreDataService: CoreDataServiceProtocol {
 
     func clearCachedEventsData() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "EventCoreData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            saveContext()
+        } catch {
+            print("\(error)")
+        }
+    }
+
+    // MARK: - Photo methods
+    func setPhoto(userId: String, photo: PhotoModel) {
+        let photoCD = PhotoCoreData(context: context)
+        photoCD.userId = userId
+        photoCD.uid = photo.uid
+        photoCD.title = photo.title
+        photoCD.photo = photo.image
+        saveContext()
+    }
+
+    func deletePhoto(userId: String, photo: PhotoModel) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = PhotoCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "userId == %@ AND uid == %@", userId, photo.uid as CVarArg
+        )
+
+        do {
+            let photos = try context.fetch(fetchRequest)
+
+            for object in photos {
+                guard let photoToDelete = object as? NSManagedObject else { continue }
+                context.delete(photoToDelete)
+            }
+            saveContext()
+        } catch {
+            print("Failed to delete photo: \(error)")
+        }
+    }
+
+    func getPhotos(userId: String) throws -> [PhotoModel] {
+        let fetchRequest: NSFetchRequest<PhotoCoreData> = PhotoCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %@", userId)
+
+        let photos = try context.fetch(fetchRequest)
+        return photos.map { photo in
+            PhotoModel(uid: photo.uid, title: photo.title, image: photo.photo)
+        }
+    }
+
+    func clearCachedPhotosData() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PhotoCoreData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
         do {

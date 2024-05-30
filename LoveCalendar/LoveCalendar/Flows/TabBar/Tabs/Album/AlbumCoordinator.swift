@@ -26,18 +26,27 @@ class AlbumCoordinator: Coordinator {
         )
         albumViewController.completionHandler = { [weak self] albumStates in
             switch albumStates {
-            case .detail(let event):
-                self?.showDetail(event: event)
             case .add:
-                print("add")
+                self?.showAddPhoto()
             }
         }
         router.setViewController(albumViewController)
     }
 
-    private func showDetail(event: EventModel) {
-        let detailViewController = PhotoDetailViewController(event: event)
-        detailViewController.modalPresentationStyle = .fullScreen
-        router.present(detailViewController, animated: true)
+    private func showAddPhoto() {
+        let addPhotoViewController = moduleFactory.makeAddPhotoModule(
+            viewModel: AddPhotoViewModel(
+                coreDataService: CoreDataService.shared
+            )
+        )
+        addPhotoViewController.completionHandler = { [weak self] addPhotoStates in
+            switch addPhotoStates {
+            case .save:
+                self?.router.pop(animated: true)
+            case .back:
+                self?.flowCompletionHandler?(.back)
+            }
+        }
+        router.push(addPhotoViewController, animated: true)
     }
 }

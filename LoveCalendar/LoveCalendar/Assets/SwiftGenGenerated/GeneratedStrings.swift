@@ -74,6 +74,10 @@ public enum Strings {
   public enum Sections {
     /// Appearance
     public static let appearance = Strings.tr("Localizable", "sections.appearance", fallback: "Appearance")
+    /// Events
+    public static let events = Strings.tr("Localizable", "sections.events", fallback: "Events")
+    /// Photos
+    public static let photos = Strings.tr("Localizable", "sections.photos", fallback: "Photos")
     /// Profile
     public static let profile = Strings.tr("Localizable", "sections.profile", fallback: "Profile")
   }
@@ -88,6 +92,8 @@ public enum Strings {
     public static let passwordConfirmationPlaceholder = Strings.tr("Localizable", "textFields.passwordConfirmationPlaceholder", fallback: "Password confirmation")
     /// Password
     public static let passwordPlaceholder = Strings.tr("Localizable", "textFields.passwordPlaceholder", fallback: "Password")
+    /// Photo title
+    public static let photoTitlePlaceholder = Strings.tr("Localizable", "textFields.photoTitlePlaceholder", fallback: "Photo title")
     /// Gift idea
     public static let wishTitlePlaceholder = Strings.tr("Localizable", "textFields.wishTitlePlaceholder", fallback: "Gift idea")
     /// Url
@@ -106,6 +112,8 @@ public enum Strings {
     public static let main = Strings.tr("Localizable", "titles.main", fallback: "We together")
     /// New event
     public static let newEvent = Strings.tr("Localizable", "titles.newEvent", fallback: "New event")
+    /// New photo
+    public static let newPhoto = Strings.tr("Localizable", "titles.newPhoto", fallback: "New photo")
     /// Profile
     public static let profile = Strings.tr("Localizable", "titles.profile", fallback: "Profile")
     /// Settings

@@ -32,7 +32,7 @@ final class CalendarTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .systemFont(ofSize: 16)
 
         return label
     }()

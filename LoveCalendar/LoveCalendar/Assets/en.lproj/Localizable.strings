@@ -29,6 +29,7 @@
 "textFields.wishTitlePlaceholder" = "Gift idea";
 "textFields.wishUrlPlaceholder" = "Url";
 "textFields.eventTitlePlaceholder" = "Event title";
+"textFields.photoTitlePlaceholder" = "Photo title";
 
 // SearchBar
 "searchBar.searchPlaceholder" = "Search";
@@ -52,10 +53,13 @@
 "titles.editProfile" = "Edit profile";
 "titles.delete" = "Delete";
 "titles.newEvent" = "New event";
+"titles.newPhoto" = "New photo";
 
 // Sections
 "sections.profile" = "Profile";
 "sections.appearance" = "Appearance";
+"sections.events" = "Events";
+"sections.photos" = "Photos";
 
 // Cells
 "cells.darkTheme" = "Dark theme";

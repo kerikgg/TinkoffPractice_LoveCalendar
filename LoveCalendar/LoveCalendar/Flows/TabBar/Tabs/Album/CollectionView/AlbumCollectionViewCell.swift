@@ -19,7 +19,6 @@ final class AlbumCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = .white
-        label.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         label.textAlignment = .center
         return label
     }()
@@ -58,8 +57,21 @@ extension AlbumCollectionViewCell {
         imageView.image = UIImage(data: event.image)
         if !event.title.isEmpty {
             titleLabel.text = event.title
+            titleLabel.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         } else {
             titleLabel.text = event.date.toLocalTimeZoneString()
+            titleLabel.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        }
+    }
+
+    func configure(with photo: PhotoModel) {
+        imageView.image = UIImage(data: photo.image)
+        if !photo.title.isEmpty {
+            titleLabel.text = photo.title
+            titleLabel.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        } else {
+            titleLabel.backgroundColor = .clear
+            titleLabel.text = ""
         }
     }
 }
