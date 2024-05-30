@@ -25,6 +25,16 @@ final class AlbumView: UIView {
         return searchBar
     }()
 
+    private lazy var norFoundLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Ничего не найдено"
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 18)
+        label.isHidden = true
+
+        return label
+    }()
+
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setFlowLayout())
         collectionView.backgroundColor = .clear
@@ -48,7 +58,7 @@ final class AlbumView: UIView {
         self.dataSource = albumDataSource
         super.init(frame: frame)
         self.setDataSource(albumDataSource: albumDataSource)
-        addSubviews(searchBar, collectionView)
+        addSubviews(searchBar, collectionView, norFoundLabel)
         makeConstraints()
     }
 
@@ -88,6 +98,10 @@ extension AlbumView {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
+
+        norFoundLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
 
     private func setFlowLayout() -> UICollectionViewFlowLayout {
@@ -105,5 +119,11 @@ extension AlbumView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true
+    }
+}
+
+extension AlbumView {
+    func setNotFoundLabel(_ flag: Bool) {
+        norFoundLabel.isHidden = flag
     }
 }

@@ -109,6 +109,8 @@ extension AlbumViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filter(with: searchText)
         albumView.reloadData()
+        var flag = viewModel.hasEvents || viewModel.hasPhotos
+        albumView.setNotFoundLabel(flag)
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
