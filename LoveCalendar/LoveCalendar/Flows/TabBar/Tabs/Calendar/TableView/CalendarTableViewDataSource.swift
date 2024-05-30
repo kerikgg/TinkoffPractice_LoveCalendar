@@ -7,11 +7,6 @@
 
 import UIKit
 
-struct EventSection {
-    let title: String
-    var events: [EventModel]
-}
-
 final class CalendarTableViewDataSource: NSObject, UITableViewDataSource {
     private let viewModel: CalendarViewModel
 

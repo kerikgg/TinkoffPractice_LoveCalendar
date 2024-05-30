@@ -88,8 +88,8 @@ extension CalendarView {
     }
 
     func reloadData() {
-        self.tableView.reloadData()
-        self.calendar.reloadData()
+        tableView.reloadData()
+        calendar.reloadData()
     }
 }
 

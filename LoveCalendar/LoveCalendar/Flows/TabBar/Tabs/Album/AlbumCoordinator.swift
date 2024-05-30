@@ -19,7 +19,34 @@ class AlbumCoordinator: Coordinator {
     }
 
     private func showAlbum() {
-        let albumViewController = moduleFactory.makeAlbumModule()
+        let albumViewController = moduleFactory.makeAlbumModule(
+            viewModel: AlbumViewModel(
+                coreDataService: CoreDataService.shared
+            )
+        )
+        albumViewController.completionHandler = { [weak self] albumStates in
+            switch albumStates {
+            case .add:
+                self?.showAddPhoto()
+            }
+        }
         router.setViewController(albumViewController)
+    }
+
+    private func showAddPhoto() {
+        let addPhotoViewController = moduleFactory.makeAddPhotoModule(
+            viewModel: AddPhotoViewModel(
+                coreDataService: CoreDataService.shared
+            )
+        )
+        addPhotoViewController.completionHandler = { [weak self] addPhotoStates in
+            switch addPhotoStates {
+            case .save:
+                self?.router.pop(animated: true)
+            case .back:
+                self?.flowCompletionHandler?(.back)
+            }
+        }
+        router.push(addPhotoViewController, animated: true)
     }
 }

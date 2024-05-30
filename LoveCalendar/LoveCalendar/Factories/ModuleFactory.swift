@@ -36,8 +36,8 @@ class ModuleFactory: ModuleFactoryProtocol {
         MainViewController()
     }
 
-    func makeAlbumModule() -> AlbumViewController {
-        AlbumViewController()
+    func makeAlbumModule(viewModel: AlbumViewModel) -> AlbumViewController {
+        AlbumViewController(viewModel: viewModel)
     }
 
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController {
@@ -58,5 +58,9 @@ class ModuleFactory: ModuleFactoryProtocol {
 
     func makeAddEventModule(viewModel: AddEventViewModel) -> AddEventViewController {
         AddEventViewController(viewModel: viewModel)
+    }
+
+    func makeAddPhotoModule(viewModel: AddPhotoViewModel) -> AddPhotoViewController {
+        AddPhotoViewController(viewModel: viewModel)
     }
 }

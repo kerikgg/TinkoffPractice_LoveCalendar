@@ -22,6 +22,8 @@ final class CalendarTableViewCell: UITableViewCell {
         label.textColor = .buttonText
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 
         return label
     }()
@@ -30,7 +32,7 @@ final class CalendarTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.font = .systemFont(ofSize: 16)
 
         return label
     }()
@@ -68,6 +70,7 @@ extension CalendarTableViewCell {
         cellTitle.snp.makeConstraints { make in
             make.leading.equalTo(cellImageView.snp_trailingMargin).offset(20)
             make.centerY.equalToSuperview()
+            make.trailing.lessThanOrEqualTo(cellDate.snp.leading).offset(-10)
         }
 
         cellDate.snp.makeConstraints { make in

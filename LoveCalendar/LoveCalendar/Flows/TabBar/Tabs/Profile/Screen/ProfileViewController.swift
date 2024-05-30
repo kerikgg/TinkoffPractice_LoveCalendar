@@ -82,19 +82,6 @@ extension ProfileViewController {
     }
 }
 
-// extension ProfileViewController {
-//    private func getUserData() {
-//        viewModel.getUserData { [weak self] result in
-//            guard let self else { return }
-//            switch result {
-//            case .success(let userModel):
-//                profileView.configureProfile(with: userModel)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-// }
 extension ProfileViewController {
     private func showLogOutAlert() {
         let alert = alertFactory.makeLogOutAlert { [weak self] _ in

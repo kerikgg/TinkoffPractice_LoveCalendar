@@ -13,6 +13,7 @@
 "buttons.changeAvatar" = "Сменить аватарку";
 "buttons.save" = "Сохранить";
 "buttons.add" = "Добавить";
+"buttons.close" = "Закрыть";
 
 // Labels
 "labels.signInLabel" = "Вход";
@@ -28,6 +29,10 @@
 "textFields.wishTitlePlaceholder" = "Идея подарка";
 "textFields.wishUrlPlaceholder" = "Ссылка";
 "textFields.eventTitlePlaceholder" = "Название события";
+"textFields.photoTitlePlaceholder" = "Название фото";
+
+// SearchBar
+"searchBar.searchPlaceholder" = "Поиск";
 
 // ValidationErrors
 "validationErrors.emptyEmailAndPassword" = "Поля не должны быть пустыми";
@@ -48,10 +53,13 @@
 "titles.editProfile" = "Редактировать профиль";
 "titles.delete" = "Удалить";
 "titles.newEvent" = "Новое событие";
+"titles.newPhoto" = "Новое фото";
 
 // Sections
 "sections.profile" = "Профиль";
 "sections.appearance" = "Внешний вид";
+"sections.events" = "События";
+"sections.photos" = "Фото";
 
 // Cells
 "cells.darkTheme" = "Темная тема";
