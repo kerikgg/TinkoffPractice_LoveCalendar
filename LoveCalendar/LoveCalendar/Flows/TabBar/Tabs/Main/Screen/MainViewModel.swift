@@ -28,23 +28,6 @@ final class MainViewModel {
         self.userName = ""
     }
 
-    //    func loadCounter() {
-    //        do {
-    //            guard let user = try coreDataService.getCachedUser() else { return }
-    //            userName = user.name
-    //            switch try coreDataService.getCounter(userId: user.id) {
-    //            case .success(let counter):
-    //                self.counter = counter
-    //                self.hasCounter = true
-    //            case .failure(let error):
-    //                print("Failed to fetch counter: \(error)")
-    //                self.hasCounter = false
-    //            }
-    //        } catch {
-    //            print(error.localizedDescription)
-    //        }
-    //    }
-
     func loadCounter() {
         do {
             if let user = try coreDataService.getCachedUser() {
