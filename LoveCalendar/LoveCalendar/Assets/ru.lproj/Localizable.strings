@@ -68,12 +68,33 @@
 // Alert Titles
 "alerts.titles.logOut" = "Выход";
 "alerts.titles.error" = "Ошибка";
+"alerts.titles.deleteCounter" = "Удалить счетчик";
 
 // Alert messages
 "alerts.messages.logOut" = "Вы уверены, что хотите выйти?";
 "alerts.messages.date" = "Нужно выбрать дату";
 "alerts.messages.photo" = "Нужно выбрать фотографию";
+"alerts.messages.deleteCounter" = "Вы действительно хотите удалить счетчик?";
+"alerts.messages.fetchError" = "Ошибка при получении данных";
 
 // Alert actions
 "alerts.actions.logOut" = "Выход";
 "alerts.actions.cancel" = "Отмена";
+
+// Main screen
+"daysSince" = "Стали парой %@ назад";
+"daysUntilAnniversary" = "Годовщина через %@";
+"days.single" = "день";
+"days.few" = "дня";
+"days.many" = "дней";
+"weeks.single" = "неделя";
+"weeks.few" = "недели";
+"weeks.many" = "недель";
+"months.single" = "месяц";
+"months.few" = "месяца";
+"months.many" = "месяцев";
+"years.single" = "год";
+"years.few" = "года";
+"years.many" = "лет";
+"together" = "вместе";
+"and" = "и";

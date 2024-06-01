@@ -19,7 +19,30 @@ class MainCoordinator: Coordinator {
     }
 
     private func showMain() {
-        let mainViewController = moduleFactory.makeMainModule()
+        let mainViewController = moduleFactory.makeMainModule(
+            viewModel: MainViewModel(coreDataService: CoreDataService.shared)
+        )
+        mainViewController.completionHandler = { [weak self] mainStates in
+            switch mainStates {
+            case .add:
+                self?.showAddCounter()
+            }
+        }
         router.setViewController(mainViewController)
+    }
+
+    private func showAddCounter() {
+        let addCounterViewController = moduleFactory.makeAddCounterModule(
+            viewModel: AddCounterViewModel(coreDataService: CoreDataService.shared)
+        )
+        addCounterViewController.completionHandler = { [weak self] addCounterStates in
+            switch addCounterStates {
+            case .save:
+                self?.router.pop(animated: true)
+            case .back:
+                self?.flowCompletionHandler?(.back)
+            }
+        }
+        router.push(addCounterViewController, animated: true)
     }
 }

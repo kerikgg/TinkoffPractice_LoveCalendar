@@ -12,43 +12,28 @@ class ProfileViewModel {
     private var firestoreService: FirestoreServiceProtocol
     private var storageService: StorageServiceProtocol
     private var coreDataService: CoreDataServiceProtocol
+    private var networkService: NetworkServiceProtocol
     @Published var userModel: UserModel
+    @Published var isLoadingData: Bool
 
     init(
         firestoreService: FirestoreServiceProtocol,
         storageService: StorageServiceProtocol,
-        coreDataService: CoreDataServiceProtocol
+        coreDataService: CoreDataServiceProtocol,
+        networkService: NetworkServiceProtocol
     ) {
         self.firestoreService = firestoreService
         self.storageService = storageService
         self.coreDataService = coreDataService
+        self.networkService = networkService
         self.userModel = UserModel(id: "", name: "", email: "", avatarData: nil)
+        self.isLoadingData = false
     }
 
     func logOut() {
         coreDataService.clearCachedUserData()
         authService.logOut()
     }
-
-//    func getUserData(completion: @escaping (Result<UserModel, Error>) -> Void) {
-//        guard let currentUser = authService.currentUser else { return }
-//        firestoreService.getUserData(userId: currentUser.uid) { result in
-//            switch result {
-//            case .success(let user):
-//                self.getAvatar()
-//
-//                self.userModel.email = user.email
-//                self.userModel.name = user.name
-//                self.userModel.id = user.id
-//
-//                completion(.success(self.userModel))
-//            case .failure(let error):
-//                print(error)
-//                completion(.failure(error))
-//                return
-//            }
-//        }
-//    }
 
     func getUserData() {
         guard let currentUser = authService.currentUser else { return }
@@ -104,6 +89,35 @@ class ProfileViewModel {
         } catch {
             print(error.localizedDescription)
             return nil
+        }
+    }
+
+    func fetchActivity(completion: @escaping ((ActivityModel?) -> Void)) {
+        self.isLoadingData = true
+        networkService.fetchRandomActivity { [weak self] result in
+            guard let self else { return }
+            self.isLoadingData = false
+            switch result {
+            case .success(let activityResponse):
+                networkService.fetchImage(from: activityResponse.imageUrl) { result in
+                    switch result {
+                    case .success(let data):
+                        let activity = ActivityModel(
+                            id: activityResponse.id,
+                            title: activityResponse.title,
+                            description: activityResponse.description,
+                            image: data
+                        )
+                        completion(activity)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                        completion(nil)
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil)
+            }
         }
     }
 }

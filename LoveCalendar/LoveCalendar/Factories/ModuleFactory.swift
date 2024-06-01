@@ -32,8 +32,8 @@ class ModuleFactory: ModuleFactoryProtocol {
         WishlistViewController(viewModel: viewModel)
     }
 
-    func makeMainModule() -> MainViewController {
-        MainViewController()
+    func makeMainModule(viewModel: MainViewModel) -> MainViewController {
+        MainViewController(viewModel: viewModel)
     }
 
     func makeAlbumModule(viewModel: AlbumViewModel) -> AlbumViewController {
@@ -62,5 +62,9 @@ class ModuleFactory: ModuleFactoryProtocol {
 
     func makeAddPhotoModule(viewModel: AddPhotoViewModel) -> AddPhotoViewController {
         AddPhotoViewController(viewModel: viewModel)
+    }
+
+    func makeAddCounterModule(viewModel: AddCounterViewModel) -> AddCounterViewController {
+        AddCounterViewController(viewModel: viewModel)
     }
 }

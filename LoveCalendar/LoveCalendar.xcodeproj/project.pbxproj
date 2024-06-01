@@ -64,6 +64,24 @@
 		BA52E0D12C08A1AA00B7A0BC /* PhotoCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0CF2C08A1AA00B7A0BC /* PhotoCoreData+CoreDataProperties.swift */; };
 		BA52E0D42C08AA6800B7A0BC /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0D32C08AA6800B7A0BC /* Displayable.swift */; };
 		BA52E0D62C08ADBA00B7A0BC /* AlbumCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0D52C08ADBA00B7A0BC /* AlbumCollectionViewHeader.swift */; };
+		BA52E0D82C091BAD00B7A0BC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0D72C091BAD00B7A0BC /* MainView.swift */; };
+		BA52E0DA2C091BC100B7A0BC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0D92C091BC100B7A0BC /* MainViewModel.swift */; };
+		BA52E0DC2C09263B00B7A0BC /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0DB2C09263B00B7A0BC /* CounterModel.swift */; };
+		BA52E0DE2C0939DC00B7A0BC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0DD2C0939DC00B7A0BC /* StringExtensions.swift */; };
+		BA52E0E12C093D7100B7A0BC /* CounterCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0DF2C093D7100B7A0BC /* CounterCoreData+CoreDataClass.swift */; };
+		BA52E0E22C093D7100B7A0BC /* CounterCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0E02C093D7100B7A0BC /* CounterCoreData+CoreDataProperties.swift */; };
+		BA52E0E52C09C73100B7A0BC /* AddCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0E42C09C73100B7A0BC /* AddCounterView.swift */; };
+		BA52E0E72C09C73E00B7A0BC /* AddCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0E62C09C73E00B7A0BC /* AddCounterViewController.swift */; };
+		BA52E0E92C09C74900B7A0BC /* AddCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0E82C09C74900B7A0BC /* AddCounterViewModel.swift */; };
+		BA52E0EB2C09E01400B7A0BC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0EA2C09E01400B7A0BC /* StartView.swift */; };
+		BA52E0ED2C0A693600B7A0BC /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0EC2C0A693600B7A0BC /* IntExtensions.swift */; };
+		BA52E0EF2C0A906C00B7A0BC /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0EE2C0A906C00B7A0BC /* NetworkServiceProtocol.swift */; };
+		BA52E0F12C0A91B300B7A0BC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0F02C0A91B300B7A0BC /* ActivityModel.swift */; };
+		BA52E0F32C0A921700B7A0BC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0F22C0A921700B7A0BC /* NetworkService.swift */; };
+		BA52E0F62C0A940D00B7A0BC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = BA52E0F52C0A940D00B7A0BC /* Moya */; };
+		BA52E0F82C0A967600B7A0BC /* ApiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0F72C0A967600B7A0BC /* ApiTarget.swift */; };
+		BA52E0FB2C0A9F7F00B7A0BC /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0FA2C0A9F7F00B7A0BC /* ActivityView.swift */; };
+		BA52E0FD2C0AAFC300B7A0BC /* ActivityResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0FC2C0AAFC300B7A0BC /* ActivityResponseModel.swift */; };
 		BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */; };
 		BA7ABE842BB57F34009ED03E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE832BB57F34009ED03E /* FirebaseAuth */; };
 		BA7ABE862BB57F34009ED03E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BA7ABE852BB57F34009ED03E /* FirebaseDatabase */; };
@@ -91,7 +109,7 @@
 		BADDEED02BFCEE0400288585 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEECF2BFCEE0400288585 /* SettingsView.swift */; };
 		BADDEED22BFCEE1000288585 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */; };
 		BADDEED52BFD08E100288585 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */; };
-		BADDEED72BFD0F9700288585 /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */; };
+		BADDEED72BFD0F9700288585 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED62BFD0F9700288585 /* SettingsModel.swift */; };
 		BADDEED92BFD12BB00288585 /* SettingsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */; };
 		BADDEEE12BFE778500288585 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */; };
 		BADDEEE42BFFE27A00288585 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEE32BFFE27A00288585 /* Theme.swift */; };
@@ -187,6 +205,23 @@
 		BA52E0CF2C08A1AA00B7A0BC /* PhotoCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BA52E0D32C08AA6800B7A0BC /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
 		BA52E0D52C08ADBA00B7A0BC /* AlbumCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewHeader.swift; sourceTree = "<group>"; };
+		BA52E0D72C091BAD00B7A0BC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BA52E0D92C091BC100B7A0BC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		BA52E0DB2C09263B00B7A0BC /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		BA52E0DD2C0939DC00B7A0BC /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		BA52E0DF2C093D7100B7A0BC /* CounterCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BA52E0E02C093D7100B7A0BC /* CounterCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CounterCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA52E0E42C09C73100B7A0BC /* AddCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterView.swift; sourceTree = "<group>"; };
+		BA52E0E62C09C73E00B7A0BC /* AddCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterViewController.swift; sourceTree = "<group>"; };
+		BA52E0E82C09C74900B7A0BC /* AddCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterViewModel.swift; sourceTree = "<group>"; };
+		BA52E0EA2C09E01400B7A0BC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		BA52E0EC2C0A693600B7A0BC /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		BA52E0EE2C0A906C00B7A0BC /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		BA52E0F02C0A91B300B7A0BC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		BA52E0F22C0A921700B7A0BC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BA52E0F72C0A967600B7A0BC /* ApiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTarget.swift; sourceTree = "<group>"; };
+		BA52E0FA2C0A9F7F00B7A0BC /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		BA52E0FC2C0AAFC300B7A0BC /* ActivityResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityResponseModel.swift; sourceTree = "<group>"; };
 		BA8F13272BB57A35001F5526 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA95BB442BD7140A00B458B4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		BABB7A9D2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -208,7 +243,7 @@
 		BADDEECF2BFCEE0400288585 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BADDEED12BFCEE1000288585 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
-		BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		BADDEED62BFD0F9700288585 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDataSource.swift; sourceTree = "<group>"; };
 		BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		BADDEEE32BFFE27A00288585 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -257,6 +292,7 @@
 				BA20453B2BFA53DB00C0B3BD /* FirebaseStorage in Frameworks */,
 				BA52E09A2C05038400B7A0BC /* FSCalendar in Frameworks */,
 				BA8F13222BB573D6001F5526 /* SnapKit in Frameworks */,
+				BA52E0F62C0A940D00B7A0BC /* Moya in Frameworks */,
 				BA8F13242BB573D6001F5526 /* SnapKit-Dynamic in Frameworks */,
 				BA7ABE822BB57F34009ED03E /* FirebaseAnalytics in Frameworks */,
 				BA7ABE8D2BB58088009ED03E /* AlamofireDynamic in Frameworks */,
@@ -316,6 +352,7 @@
 		BA065ED72BD522E80005EE39 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BA52E0E32C09C70300B7A0BC /* AddCounter */,
 				BA065EE22BD528C40005EE39 /* Screen */,
 				BA065EED2BD529D70005EE39 /* MainCoordinator.swift */,
 			);
@@ -337,6 +374,7 @@
 		BA065ED92BD523020005EE39 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BA52E0F92C0A9F6E00B7A0BC /* Activity */,
 				BA065EE82BD528E60005EE39 /* Screen */,
 				BA065EF12BD52A050005EE39 /* ProfileCoordinator.swift */,
 			);
@@ -368,6 +406,9 @@
 			isa = PBXGroup;
 			children = (
 				BA065EE32BD528D10005EE39 /* MainViewController.swift */,
+				BA52E0D72C091BAD00B7A0BC /* MainView.swift */,
+				BA52E0D92C091BC100B7A0BC /* MainViewModel.swift */,
+				BA52E0EA2C09E01400B7A0BC /* StartView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -399,6 +440,7 @@
 				BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */,
 				BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */,
 				BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */,
+				BA52E0EE2C0A906C00B7A0BC /* NetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -410,6 +452,10 @@
 				BA2045312BFA493B00C0B3BD /* UserModel.swift */,
 				BA52E0A62C060F4400B7A0BC /* EventModel.swift */,
 				BA52E0CC2C08A0C200B7A0BC /* PhotoModel.swift */,
+				BADDEED62BFD0F9700288585 /* SettingsModel.swift */,
+				BA52E0DB2C09263B00B7A0BC /* CounterModel.swift */,
+				BA52E0F02C0A91B300B7A0BC /* ActivityModel.swift */,
+				BA52E0FC2C0AAFC300B7A0BC /* ActivityResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -446,6 +492,8 @@
 				BA4FBE622BC568020066CFE7 /* UIViewControllerExtensions.swift */,
 				BA0FDECB2BC9CB180010D0FA /* UIViewExtensions.swift */,
 				BA52E0B72C0682EF00B7A0BC /* DateExtensions.swift */,
+				BA52E0DD2C0939DC00B7A0BC /* StringExtensions.swift */,
+				BA52E0EC2C0A693600B7A0BC /* IntExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +551,24 @@
 				BA52E0D32C08AA6800B7A0BC /* Displayable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BA52E0E32C09C70300B7A0BC /* AddCounter */ = {
+			isa = PBXGroup;
+			children = (
+				BA52E0E42C09C73100B7A0BC /* AddCounterView.swift */,
+				BA52E0E62C09C73E00B7A0BC /* AddCounterViewController.swift */,
+				BA52E0E82C09C74900B7A0BC /* AddCounterViewModel.swift */,
+			);
+			path = AddCounter;
+			sourceTree = "<group>";
+		};
+		BA52E0F92C0A9F6E00B7A0BC /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				BA52E0FA2C0A9F7F00B7A0BC /* ActivityView.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		BABB7A9B2BB85A8200BAC60C /* Registration */ = {
@@ -574,6 +640,8 @@
 		BADDEEC02BFB8E6F00288585 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BA52E0DF2C093D7100B7A0BC /* CounterCoreData+CoreDataClass.swift */,
+				BA52E0E02C093D7100B7A0BC /* CounterCoreData+CoreDataProperties.swift */,
 				BA52E0CE2C08A1AA00B7A0BC /* PhotoCoreData+CoreDataClass.swift */,
 				BA52E0CF2C08A1AA00B7A0BC /* PhotoCoreData+CoreDataProperties.swift */,
 				BA52E0A82C06316D00B7A0BC /* EventCoreData+CoreDataClass.swift */,
@@ -603,7 +671,6 @@
 			isa = PBXGroup;
 			children = (
 				BADDEED42BFD08E100288585 /* SettingsSwitchTableViewCell.swift */,
-				BADDEED62BFD0F9700288585 /* SettingsCellModel.swift */,
 				BADDEED82BFD12BB00288585 /* SettingsTableViewDataSource.swift */,
 				BADDEEE02BFE778500288585 /* SettingsTableViewCell.swift */,
 			);
@@ -669,6 +736,8 @@
 				BADDEECA2BFB8FD400288585 /* CoreDataService.swift */,
 				BADDEEE52BFFE3B900288585 /* ThemeService.swift */,
 				BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */,
+				BA52E0F22C0A921700B7A0BC /* NetworkService.swift */,
+				BA52E0F72C0A967600B7A0BC /* ApiTarget.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -799,6 +868,7 @@
 				BA7ABE8C2BB58088009ED03E /* AlamofireDynamic */,
 				BA20453A2BFA53DB00C0B3BD /* FirebaseStorage */,
 				BA52E0992C05038400B7A0BC /* FSCalendar */,
+				BA52E0F52C0A940D00B7A0BC /* Moya */,
 			);
 			productName = LoveCalendar;
 			productReference = BADB26F62BB36E2500AC96BA /* LoveCalendar.app */;
@@ -834,6 +904,7 @@
 				BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BA52E0982C05038400B7A0BC /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				BA52E0F42C0A940D00B7A0BC /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = BADB26F72BB36E2500AC96BA /* Products */;
 			projectDirPath = "";
@@ -888,9 +959,11 @@
 			files = (
 				BA065EF42BD52F5A0005EE39 /* TabBarFlowCoordinator.swift in Sources */,
 				BADDEEC62BFB8F0500288585 /* UserCoreData+CoreDataClass.swift in Sources */,
+				BA52E0EB2C09E01400B7A0BC /* StartView.swift in Sources */,
 				BADDEEC72BFB8F0500288585 /* UserCoreData+CoreDataProperties.swift in Sources */,
 				BADDEEFB2C0237A900288585 /* WishlistTableViewDataSource.swift in Sources */,
 				BADDEED22BFCEE1000288585 /* SettingsViewModel.swift in Sources */,
+				BA52E0DA2C091BC100B7A0BC /* MainViewModel.swift in Sources */,
 				BA0FDECE2BC9D48F0010D0FA /* BackgroundView.swift in Sources */,
 				BADDEEE62BFFE3BA00288585 /* ThemeService.swift in Sources */,
 				BA52E0CB2C089BAB00B7A0BC /* AddPhotoViewModel.swift in Sources */,
@@ -899,6 +972,7 @@
 				BADB26FE2BB36E2500AC96BA /* AuthViewController.swift in Sources */,
 				BADDEEF92C02378D00288585 /* WishlistTableViewCell.swift in Sources */,
 				BADDEEF42C02336A00288585 /* WishlistView.swift in Sources */,
+				BA52E0DC2C09263B00B7A0BC /* CounterModel.swift in Sources */,
 				BA52E0BC2C07A24600B7A0BC /* AlbumViewModel.swift in Sources */,
 				BA52E0C12C07A70900B7A0BC /* AlbumCollectionViewDataSource.swift in Sources */,
 				BA3B4C852BD7D89F0009E006 /* SystemImages.swift in Sources */,
@@ -913,13 +987,18 @@
 				BADDEEEB2C00B02300288585 /* EditProfileViewModel.swift in Sources */,
 				BA0F4D322BCC2F7E00C02D07 /* RegistrationView.swift in Sources */,
 				BABB7AA22BB85AF300BAC60C /* RegistrationViewModel.swift in Sources */,
+				BA52E0F12C0A91B300B7A0BC /* ActivityModel.swift in Sources */,
 				BADB26FA2BB36E2500AC96BA /* AppDelegate.swift in Sources */,
+				BA52E0E12C093D7100B7A0BC /* CounterCoreData+CoreDataClass.swift in Sources */,
+				BA52E0E22C093D7100B7A0BC /* CounterCoreData+CoreDataProperties.swift in Sources */,
+				BA52E0ED2C0A693600B7A0BC /* IntExtensions.swift in Sources */,
 				BADDEED52BFD08E100288585 /* SettingsSwitchTableViewCell.swift in Sources */,
 				BAE90FAD2BBA9B2300526899 /* SignInViewModel.swift in Sources */,
 				BA065EF22BD52A050005EE39 /* ProfileCoordinator.swift in Sources */,
 				BAF7C04D2BB7481200581F33 /* AppCoordinator.swift in Sources */,
 				BA52E0A72C060F4400B7A0BC /* EventModel.swift in Sources */,
 				BA0F4D342BCC459E00C02D07 /* SignInView.swift in Sources */,
+				BA52E0FB2C0A9F7F00B7A0BC /* ActivityView.swift in Sources */,
 				BA065EEE2BD529D70005EE39 /* MainCoordinator.swift in Sources */,
 				BA52E0B82C0682EF00B7A0BC /* DateExtensions.swift in Sources */,
 				BADDEEF02C00B7F000288585 /* SettingsFlowCoordinator.swift in Sources */,
@@ -941,6 +1020,7 @@
 				BAE90FA52BB9712600526899 /* AuthService.swift in Sources */,
 				BADDEECB2BFB8FD400288585 /* CoreDataService.swift in Sources */,
 				BA065EDC2BD524CB0005EE39 /* CalendarFlowCoordinator.swift in Sources */,
+				BA52E0DE2C0939DC00B7A0BC /* StringExtensions.swift in Sources */,
 				BADDEEE92C00B01200288585 /* EditProfileView.swift in Sources */,
 				BAF7C04F2BB750F900581F33 /* ModuleFactory.swift in Sources */,
 				BA52E0A52C060D5700B7A0BC /* CalendarTableViewCell.swift in Sources */,
@@ -948,6 +1028,7 @@
 				BAE90FA32BB964B200526899 /* ValidationService.swift in Sources */,
 				BA065ED32BD521CC0005EE39 /* TabBarDelegate.swift in Sources */,
 				BAF7C0402BB7437F00581F33 /* Router.swift in Sources */,
+				BA52E0E72C09C73E00B7A0BC /* AddCounterViewController.swift in Sources */,
 				BA2045362BFA4FB100C0B3BD /* StorageServiceProtocol.swift in Sources */,
 				BA52E0C42C07B42800B7A0BC /* PhotoDetailViewController.swift in Sources */,
 				BA52E0AA2C06316D00B7A0BC /* EventCoreData+CoreDataClass.swift in Sources */,
@@ -955,21 +1036,27 @@
 				BA52E0AB2C06316D00B7A0BC /* EventCoreData+CoreDataProperties.swift in Sources */,
 				BADDEEFD2C0237C500288585 /* WishlistCellModel.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
+				BA52E0FD2C0AAFC300B7A0BC /* ActivityResponseModel.swift in Sources */,
 				BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */,
 				BA065EE12BD528BE0005EE39 /* WishlistViewController.swift in Sources */,
 				BA52E0BF2C07A6F400B7A0BC /* AlbumCollectionViewCell.swift in Sources */,
 				BAF7C04B2BB747AA00581F33 /* CoordinatorFactoryProtocol.swift in Sources */,
+				BA52E0D82C091BAD00B7A0BC /* MainView.swift in Sources */,
 				BA52E0B02C0631F900B7A0BC /* AddEventViewController.swift in Sources */,
 				BA0FDECC2BC9CB180010D0FA /* UIViewExtensions.swift in Sources */,
+				BA52E0F82C0A967600B7A0BC /* ApiTarget.swift in Sources */,
 				BA20452F2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift in Sources */,
 				BA0FDECA2BC9C82B0010D0FA /* AuthView.swift in Sources */,
 				BA4FBE632BC568020066CFE7 /* UIViewControllerExtensions.swift in Sources */,
+				BA52E0F32C0A921700B7A0BC /* NetworkService.swift in Sources */,
 				BADDEEF62C02337800288585 /* WishlistViewModel.swift in Sources */,
 				BABB7A9E2BB85AC600BAC60C /* RegistrationFlowCoordinator.swift in Sources */,
 				BAF7C0512BB7514900581F33 /* CoordinatorFactory.swift in Sources */,
+				BA52E0EF2C0A906C00B7A0BC /* NetworkServiceProtocol.swift in Sources */,
 				BA52E0D02C08A1AA00B7A0BC /* PhotoCoreData+CoreDataClass.swift in Sources */,
+				BA52E0E92C09C74900B7A0BC /* AddCounterViewModel.swift in Sources */,
 				BA52E0D12C08A1AA00B7A0BC /* PhotoCoreData+CoreDataProperties.swift in Sources */,
-				BADDEED72BFD0F9700288585 /* SettingsCellModel.swift in Sources */,
+				BADDEED72BFD0F9700288585 /* SettingsModel.swift in Sources */,
 				BA21E4C22BCE87AE00F9916F /* GeneratedStrings.swift in Sources */,
 				BAF7C0352BB7401C00581F33 /* CoordinatorProtocol.swift in Sources */,
 				BA52E0A02C0607F500B7A0BC /* CalendarDataSource.swift in Sources */,
@@ -989,6 +1076,7 @@
 				BAF7C0392BB7427200581F33 /* FlowController.swift in Sources */,
 				BA065EF02BD529EA0005EE39 /* AlbumCoordinator.swift in Sources */,
 				BA52E0CD2C08A0C200B7A0BC /* PhotoModel.swift in Sources */,
+				BA52E0E52C09C73100B7A0BC /* AddCounterView.swift in Sources */,
 				BAF7C0492BB7475900581F33 /* AuthFlowCoordinator.swift in Sources */,
 				BA52E0D42C08AA6800B7A0BC /* Displayable.swift in Sources */,
 				BA52E0AE2C0631ED00B7A0BC /* AddEventView.swift in Sources */,
@@ -1230,6 +1318,14 @@
 				minimumVersion = 2.8.4;
 			};
 		};
+		BA52E0F42C0A940D00B7A0BC /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1266,6 +1362,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BA52E0982C05038400B7A0BC /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		BA52E0F52C0A940D00B7A0BC /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA52E0F42C0A940D00B7A0BC /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 		BA7ABE812BB57F34009ED03E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

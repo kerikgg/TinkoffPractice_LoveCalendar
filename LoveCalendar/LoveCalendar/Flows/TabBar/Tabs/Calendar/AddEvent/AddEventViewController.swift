@@ -36,7 +36,6 @@ final class AddEventViewController: UIViewController, FlowControllerWithValue {
         super.viewDidLoad()
         self.addEventView.delegate = self
         self.addEventView.configureDateLabel(with: viewModel.getPickedDate())
-        view.backgroundColor = .white
         self.navigationItem.title = Strings.Titles.newEvent
     }
 

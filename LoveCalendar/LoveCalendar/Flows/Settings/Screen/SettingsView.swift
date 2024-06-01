@@ -33,6 +33,7 @@ class SettingsView: UIView {
 
     init(frame: CGRect, dataSource: SettingsTableViewDataSource) {
         super.init(frame: frame)
+        backgroundColor = .background
         self.setDataSource(with: dataSource)
         addSubviews(tableView)
         makeConstraints()

@@ -33,7 +33,8 @@ extension TabBarViewController {
         tabBar.unselectedItemTintColor = UIColor.systemGray3
         tabBar.tintColor = UIColor.buttonText
         delegate = self
-        view.backgroundColor = .white
+        tabBar.backgroundColor = .background
+//        view.backgroundColor = .white
     }
 
     private func setupTabs() {

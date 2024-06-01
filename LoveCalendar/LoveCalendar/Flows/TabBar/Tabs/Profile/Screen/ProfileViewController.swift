@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        profileView.delegate = self
         setBindings()
         setupNavigationBar()
     }
@@ -102,5 +102,29 @@ extension ProfileViewController {
                 self.profileView.configureProfile(with: user)
             }
             .store(in: &cancellables)
+
+        viewModel.$isLoadingData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isLoading in
+                self?.profileView.setLoading(isLoading)
+            }
+            .store(in: &cancellables)
+    }
+}
+
+extension ProfileViewController: ProfileViewDelegate {
+    func didTapRandomActivityButton() {
+        viewModel.fetchActivity { activity in
+            guard let activity else {
+                let alert = self.alertFactory.makeErrorAlert(message: Strings.Alerts.Messages.fetchError)
+                self.present(alert, animated: true)
+                return
+            }
+            self.displayActivity(activity)
+        }
+    }
+
+    func displayActivity(_ activity: ActivityModel) {
+        profileView.displayActivity(activity)
     }
 }

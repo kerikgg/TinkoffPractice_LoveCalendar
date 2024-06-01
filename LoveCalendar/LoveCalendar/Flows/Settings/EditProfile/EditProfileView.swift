@@ -69,6 +69,7 @@ final class EditProfileView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         addSubviews(userImage, changeAvatarButton, nameTextField, saveButton)
         makeConstraints()
     }

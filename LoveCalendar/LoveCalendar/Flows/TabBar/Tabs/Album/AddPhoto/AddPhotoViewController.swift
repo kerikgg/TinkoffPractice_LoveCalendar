@@ -35,7 +35,6 @@ final class AddPhotoViewController: UIViewController, FlowControllerWithValue {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addPhotoView.delegate = self
-        view.backgroundColor = .white
         self.navigationItem.title = Strings.Titles.newPhoto
     }
 

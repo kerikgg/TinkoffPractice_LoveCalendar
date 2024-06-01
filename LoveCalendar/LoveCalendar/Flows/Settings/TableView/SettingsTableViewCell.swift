@@ -68,7 +68,7 @@ extension SettingsTableViewCell {
 }
 
 extension SettingsTableViewCell {
-    func configureCell(cellModel: SettingsCellModel) {
+    func configureCell(cellModel: SettingsModel) {
         cellImageView.image = UIImage(systemName: cellModel.image)
         cellTitle.text = cellModel.title
     }

@@ -14,7 +14,7 @@ protocol AuthViewDelegate: AnyObject {
 
 final class AuthView: UIView {
     weak var delegate: AuthViewDelegate?
-    private let backgroundView = BackgroundView(frame: .zero)
+    private let backgroundView = BackgroundView(frame: .zero, image: UIImage.background)
 
     private lazy var logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage.logo)
@@ -69,6 +69,7 @@ final class AuthView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         addSubviews(backgroundView, logoImage, stackView)
         makeConstraints()
     }
