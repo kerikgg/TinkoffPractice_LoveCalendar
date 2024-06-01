@@ -9,12 +9,20 @@ import UIKit
 
 final class MainViewModel {
     private var coreDataService: CoreDataServiceProtocol
+    private var firestoreService: FirestoreServiceProtocol
+    private var storageService: StorageServiceProtocol
     @Published var counter: CounterModel?
     @Published var hasCounter: Bool
     @Published var userName: String
 
-    init(coreDataService: CoreDataServiceProtocol) {
+    init(
+        coreDataService: CoreDataServiceProtocol,
+        firestoreService: FirestoreServiceProtocol,
+        storageService: StorageServiceProtocol
+    ) {
         self.coreDataService = coreDataService
+        self.firestoreService = firestoreService
+        self.storageService = storageService
         self.counter = nil
         self.hasCounter = false
         self.userName = ""
@@ -22,21 +30,59 @@ final class MainViewModel {
 
     func loadCounter() {
         do {
-            guard let user = try coreDataService.getCachedUser() else { return }
-            userName = user.name
-            switch try coreDataService.getCounter(userId: user.id) {
-            case .success(let counter):
-                self.counter = counter
-                self.hasCounter = true
-            case .failure(let error):
-                print("Failed to fetch counter: \(error)")
-                self.hasCounter = false
+            if let user = try coreDataService.getCachedUser() {
+                handleUser(user: user)
+            } else {
+                fetchUserDataFromNetwork()
             }
         } catch {
             print(error.localizedDescription)
         }
     }
 
+    private func fetchUserDataFromNetwork() {
+        guard let currentUser = AuthService.shared.currentUser else { return }
+
+        firestoreService.getUserData(userId: currentUser.uid) { result in
+            switch result {
+            case .success(let user):
+                self.handleUser(user: user)
+                self.fetchUserAvatar(user: user, userId: currentUser.uid)
+            case .failure(let error):
+                print("Failed to fetch user data: \(error)")
+            }
+        }
+    }
+
+    private func fetchUserAvatar(user: UserModel, userId: String) {
+        storageService.getAvatar(userId: userId) { result in
+            switch result {
+            case .success(let data):
+                var updatedUser = user
+                updatedUser.avatarData = data
+                self.coreDataService.setUser(user: updatedUser)
+            case .failure(let error):
+                print("Failed to fetch avatar: \(error)")
+                // Cache user without avatar data
+                self.coreDataService.setUser(user: user)
+            }
+        }
+    }
+
+    private func handleUser(user: UserModel) {
+        self.userName = user.name
+        switch try? coreDataService.getCounter(userId: user.id) {
+        case .success(let counter):
+            self.counter = counter
+            self.hasCounter = true
+        case .failure(let error):
+            print("Failed to fetch counter: \(error)")
+            self.hasCounter = false
+        case .none:
+            self.hasCounter = false
+        }
+    }
+    
     func delete() {
         coreDataService.clearCachedCounterData()
         loadCounter()

@@ -20,7 +20,11 @@ class MainCoordinator: Coordinator {
 
     private func showMain() {
         let mainViewController = moduleFactory.makeMainModule(
-            viewModel: MainViewModel(coreDataService: CoreDataService.shared)
+            viewModel: MainViewModel(
+                coreDataService: CoreDataService.shared,
+                firestoreService: FirestoreService.shared,
+                storageService: StorageService.shared
+            )
         )
         mainViewController.completionHandler = { [weak self] mainStates in
             switch mainStates {

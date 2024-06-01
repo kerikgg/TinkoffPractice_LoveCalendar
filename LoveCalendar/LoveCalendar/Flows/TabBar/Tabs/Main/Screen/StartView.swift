@@ -20,7 +20,7 @@ final class StartView: UIView {
         label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Не помните сколько вы вместе?"
+        label.text = Strings.Labels.welcomeLabel
         label.isHidden = false
 
         return label
@@ -32,7 +32,7 @@ final class StartView: UIView {
         label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "Начните счетчик ваших отношений прямо сейчас!"
+        label.text = Strings.Labels.startLabel
         label.isHidden = false
 
         return label
@@ -42,7 +42,7 @@ final class StartView: UIView {
         let button = UIButton(type: .roundedRect)
         button.layer.cornerRadius = 20
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
-        button.setTitle("Начать", for: .normal)
+        button.setTitle(Strings.Buttons.start, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = UIColor.buttonText
         button.isHidden = false

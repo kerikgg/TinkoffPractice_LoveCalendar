@@ -14,12 +14,15 @@
 "buttons.save" = "Save";
 "buttons.add" = "Add";
 "buttons.close" = "Close";
+"buttons.start" = "Start";
 
 // Labels
 "labels.signInLabel" = "Sign In";
 "labels.signUpLabel" = "Registration";
 "labels.addWishLabel" = "New gift";
 "labels.allEvents" = "All Events";
+"labels.welcomeLabel" = "Do you remember how long you've been dating?";
+"labels.startLabel" = "Start counting your relationships right now!";
 
 // TextFields
 "textFields.emailPlaceholder" = "Email";
@@ -78,6 +81,7 @@
 "alerts.messages.photo" = "You need to choose a photo";
 "alerts.messages.deleteCounter" = "Are you sure you want to delete counter?";
 "alerts.messages.fetchError" = "Error while fetching data";
+"alerts.messages.partnerName" = "Partner name cannot be empty";
 
 // Alert actions
 "alerts.actions.logOut" = "Logout";

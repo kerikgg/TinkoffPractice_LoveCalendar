@@ -38,6 +38,8 @@ public enum Strings {
       public static let fetchError = Strings.tr("Localizable", "alerts.messages.fetchError", fallback: "Error while fetching data")
       /// Are you sure you want to logout?
       public static let logOut = Strings.tr("Localizable", "alerts.messages.logOut", fallback: "Are you sure you want to logout?")
+      /// Partner name cannot be empty
+      public static let partnerName = Strings.tr("Localizable", "alerts.messages.partnerName", fallback: "Partner name cannot be empty")
       /// You need to choose a photo
       public static let photo = Strings.tr("Localizable", "alerts.messages.photo", fallback: "You need to choose a photo")
     }
@@ -68,6 +70,8 @@ public enum Strings {
     public static let signIn = Strings.tr("Localizable", "buttons.signIn", fallback: "Sign In")
     /// Sign Up
     public static let signUp = Strings.tr("Localizable", "buttons.signUp", fallback: "Sign Up")
+    /// Start
+    public static let start = Strings.tr("Localizable", "buttons.start", fallback: "Start")
   }
   public enum Cells {
     /// Dark theme
@@ -92,6 +96,10 @@ public enum Strings {
     public static let signInLabel = Strings.tr("Localizable", "labels.signInLabel", fallback: "Sign In")
     /// Registration
     public static let signUpLabel = Strings.tr("Localizable", "labels.signUpLabel", fallback: "Registration")
+    /// Start counting your relationships right now!
+    public static let startLabel = Strings.tr("Localizable", "labels.startLabel", fallback: "Start counting your relationships right now!")
+    /// Do you remember how long you've been dating?
+    public static let welcomeLabel = Strings.tr("Localizable", "labels.welcomeLabel", fallback: "Do you remember how long you've been dating?")
   }
   public enum Months {
     /// months

@@ -15,13 +15,13 @@ enum MainStates {
 class MainViewController: UIViewController, FlowControllerWithValue {
     var completionHandler: ((MainStates) -> Void)?
     private let mainView = MainView(frame: .zero)
-    private let viewModel: MainViewModel
+    private let mainViewModel: MainViewModel
     private var cancellables = Set<AnyCancellable>()
     private var userName = ""
     private let alertFactory = AlertFactory()
 
     init(viewModel: MainViewModel) {
-        self.viewModel = viewModel
+        self.mainViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -38,7 +38,7 @@ class MainViewController: UIViewController, FlowControllerWithValue {
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainScreen]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
 
-        viewModel.loadCounter()
+        mainViewModel.loadCounter()
     }
 
     override func viewDidLoad() {
@@ -53,7 +53,7 @@ class MainViewController: UIViewController, FlowControllerWithValue {
 
 extension MainViewController {
     private func setBindings() {
-        viewModel.$counter
+        mainViewModel.$counter
             .receive(on: DispatchQueue.main)
             .sink { [weak self] counter in
                 self?.updateView()
@@ -65,14 +65,14 @@ extension MainViewController {
             }
             .store(in: &cancellables)
 
-        viewModel.$userName
+        mainViewModel.$userName
             .receive(on: DispatchQueue.main)
             .sink { [weak self] name in
                 self?.userName = name
             }
             .store(in: &cancellables)
 
-        viewModel.$hasCounter
+        mainViewModel.$hasCounter
             .receive(on: DispatchQueue.main)
             .sink { [weak self] hasCounter in
                 self?.mainView.displayStartView(flag: hasCounter)
@@ -107,7 +107,7 @@ extension MainViewController {
     private func showDeletelert() {
         let alert = alertFactory.makeDeleteCounterAlert { [weak self] _ in
             guard let self else { return }
-            self.viewModel.delete()
+            self.mainViewModel.delete()
         }
         present(alert, animated: true)
     }
@@ -135,27 +135,27 @@ extension MainViewController {
     }
 
     private func updateDaysSinceLabel() {
-        let daysSinceStart = viewModel.daysSinceStart() ?? 0
+        let daysSinceStart = mainViewModel.daysSinceStart() ?? 0
         mainView.updateDaysSinceLabel(with: Strings.daysSince(daysSinceStart.days()))
     }
 
     private func updateWeeksSinceLabel() {
-        let weeksSinceStart = viewModel.weeksSinceStart() ?? 0
+        let weeksSinceStart = mainViewModel.weeksSinceStart() ?? 0
         mainView.updateWeeksSinceLabel(with: Strings.together + " " + weeksSinceStart.weeks())
     }
 
     private func updateMonthsSinceLabel() {
-        let monthsSinceStart = viewModel.monthsSinceStart() ?? 0
+        let monthsSinceStart = mainViewModel.monthsSinceStart() ?? 0
         mainView.updateMonthsSinceLabel(with: Strings.together + " " + monthsSinceStart.months())
     }
 
     private func updateYearsSinceLabel() {
-        let yearsSinceStart = viewModel.yearsSinceStart() ?? 0
+        let yearsSinceStart = mainViewModel.yearsSinceStart() ?? 0
         mainView.updateYearsSinceLabel(with: Strings.together + " " + yearsSinceStart.years())
     }
 
     private func updateDaysUntilAnniversaryLabel() {
-        let daysUntilAnniversary = viewModel.daysUntilNextAnniversary() ?? 0
+        let daysUntilAnniversary = mainViewModel.daysUntilNextAnniversary() ?? 0
         mainView.updateDaysUntilAnniversaryLabel(with: Strings.daysUntilAnniversary(daysUntilAnniversary.days()))
     }
 }
