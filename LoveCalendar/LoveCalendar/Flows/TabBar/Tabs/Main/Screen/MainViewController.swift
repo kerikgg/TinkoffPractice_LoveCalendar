@@ -35,7 +35,7 @@ class MainViewController: UIViewController, FlowControllerWithValue {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainScreen] // Замените на нужный вам цвет
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainScreen]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
 
         viewModel.loadCounter()

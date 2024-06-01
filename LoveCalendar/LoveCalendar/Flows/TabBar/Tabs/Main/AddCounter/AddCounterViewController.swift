@@ -32,10 +32,16 @@ final class AddCounterViewController: UIViewController, FlowControllerWithValue 
         view = addCounterView
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.labelText]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addCounterView.delegate = self
-        self.navigationItem.title = "Новый счетчик"
+        self.navigationItem.title = Strings.Titles.newCounter
     }
 
     override func viewWillDisappear(_ animated: Bool) {

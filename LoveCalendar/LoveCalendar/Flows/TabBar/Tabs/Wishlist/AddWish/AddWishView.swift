@@ -12,18 +12,9 @@ protocol AddWishViewDelegate: AnyObject {
 }
 
 final class AddWishView: UIView {
-//    private lazy var viewLabel: UILabel = {
-//        let label = UILabel()
-//        label.text = Strings.Labels.addWishLabel
-//        label.font = .systemFont(ofSize: 17, weight: .semibold)
-//        label.textColor = .black
-//
-//        return label
-//    }()
-
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = .labelText
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.placeholder = Strings.TextFields.wishTitlePlaceholder
@@ -36,7 +27,7 @@ final class AddWishView: UIView {
 
     private lazy var urlTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = .labelText
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.placeholder = Strings.TextFields.wishUrlPlaceholder

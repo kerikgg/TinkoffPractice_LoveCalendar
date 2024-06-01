@@ -17,7 +17,7 @@ final class StartView: UIView {
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = "Не помните сколько вы вместе?"
@@ -29,7 +29,7 @@ final class StartView: UIView {
     private lazy var startLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = "Начните счетчик ваших отношений прямо сейчас!"

@@ -35,7 +35,7 @@ final class AddPhotoView: UIView {
 
     private lazy var titleTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = .labelText
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.placeholder = Strings.TextFields.photoTitlePlaceholder

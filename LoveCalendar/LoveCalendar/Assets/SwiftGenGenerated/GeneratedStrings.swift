@@ -122,6 +122,8 @@ public enum Strings {
     public static let eventTitlePlaceholder = Strings.tr("Localizable", "textFields.eventTitlePlaceholder", fallback: "Event title")
     /// Name
     public static let namePlaceholder = Strings.tr("Localizable", "textFields.namePlaceholder", fallback: "Name")
+    /// Partner name
+    public static let partnerNamePlaceholder = Strings.tr("Localizable", "textFields.partnerNamePlaceholder", fallback: "Partner name")
     /// Password confirmation
     public static let passwordConfirmationPlaceholder = Strings.tr("Localizable", "textFields.passwordConfirmationPlaceholder", fallback: "Password confirmation")
     /// Password
@@ -144,6 +146,8 @@ public enum Strings {
     public static let editProfile = Strings.tr("Localizable", "titles.editProfile", fallback: "Edit profile")
     /// We together
     public static let main = Strings.tr("Localizable", "titles.main", fallback: "We together")
+    /// New counter
+    public static let newCounter = Strings.tr("Localizable", "titles.newCounter", fallback: "New counter")
     /// New event
     public static let newEvent = Strings.tr("Localizable", "titles.newEvent", fallback: "New event")
     /// New photo
