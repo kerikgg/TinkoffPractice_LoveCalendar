@@ -30,6 +30,7 @@
 "textFields.wishUrlPlaceholder" = "Url";
 "textFields.eventTitlePlaceholder" = "Event title";
 "textFields.photoTitlePlaceholder" = "Photo title";
+"textFields.partnerNamePlaceholder" = "Partner name";
 
 // SearchBar
 "searchBar.searchPlaceholder" = "Search";
@@ -54,6 +55,7 @@
 "titles.delete" = "Delete";
 "titles.newEvent" = "New event";
 "titles.newPhoto" = "New photo";
+"titles.newCounter" = "New counter";
 
 // Sections
 "sections.profile" = "Profile";

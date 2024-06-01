@@ -50,10 +50,10 @@ final class AddCounterView: UIView {
 
     private lazy var partnerNameTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .black
+        textField.textColor = .labelText
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .words
-        textField.placeholder = "Имя партнера"
+        textField.placeholder = Strings.TextFields.partnerNamePlaceholder
         textField.delegate = self
         textField.borderStyle = .roundedRect
 

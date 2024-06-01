@@ -30,6 +30,7 @@
 "textFields.wishUrlPlaceholder" = "Ссылка";
 "textFields.eventTitlePlaceholder" = "Название события";
 "textFields.photoTitlePlaceholder" = "Название фото";
+"textFields.partnerNamePlaceholder" = "Имя партнера";
 
 // SearchBar
 "searchBar.searchPlaceholder" = "Поиск";
@@ -54,6 +55,7 @@
 "titles.delete" = "Удалить";
 "titles.newEvent" = "Новое событие";
 "titles.newPhoto" = "Новое фото";
+"titles.newCounter" = "Новый счетчик";
 
 // Sections
 "sections.profile" = "Профиль";

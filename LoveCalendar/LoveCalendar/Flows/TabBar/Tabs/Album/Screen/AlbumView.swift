@@ -17,6 +17,7 @@ final class AlbumView: UIView {
         let searchBar = UISearchBar()
         searchBar.autocorrectionType = .no
         searchBar.autocapitalizationType = .none
+        searchBar.searchTextField.textColor = .labelText
         searchBar.searchBarStyle = .minimal
         searchBar.returnKeyType = .search
         searchBar.placeholder = Strings.SearchBar.searchPlaceholder
@@ -28,7 +29,7 @@ final class AlbumView: UIView {
     private lazy var norFoundLabel: UILabel = {
         let label = UILabel()
         label.text = "Ничего не найдено"
-        label.textColor = .black
+        label.textColor = .labelText
         label.font = .systemFont(ofSize: 18)
         label.isHidden = true
 
