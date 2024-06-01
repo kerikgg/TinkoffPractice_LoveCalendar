@@ -35,6 +35,8 @@ class MainViewController: UIViewController, FlowControllerWithValue {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainScreen] // Замените на нужный вам цвет
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
 
         viewModel.loadCounter()
     }
@@ -93,7 +95,7 @@ extension MainViewController {
         }
 
         let button = UIBarButtonItem(systemItem: .trash, primaryAction: action)
-        button.tintColor = .black
+        button.tintColor = .mainScreen
 
         return button
     }

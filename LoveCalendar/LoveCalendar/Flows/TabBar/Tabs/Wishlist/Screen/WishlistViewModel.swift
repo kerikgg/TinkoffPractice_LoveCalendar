@@ -9,7 +9,7 @@ import Foundation
 
 final class WishlistViewModel {
     private let coreDataService: CoreDataServiceProtocol
-    @Published var cellModels: [WishlistCellModel]
+    @Published var cellModels: [WishListModel]
 
     init(coreDataService: CoreDataServiceProtocol) {
         cellModels = []
@@ -26,7 +26,7 @@ final class WishlistViewModel {
         }
     }
 
-    func deleteWish(model: WishlistCellModel) {
+    func deleteWish(model: WishListModel) {
         do {
             guard let user = try coreDataService.getCachedUser() else { return }
             coreDataService.deleteWish(userId: user.id, wish: model)

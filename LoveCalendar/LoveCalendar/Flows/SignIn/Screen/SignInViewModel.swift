@@ -9,9 +9,14 @@ import Foundation
 
 class SignInViewModel {
     @Published var isSuccessfullyLoggedIn = false
-    @Published var validationError: String = ""
-    @Published var firebaseError: String = ""
+    @Published var validationError: String
+    @Published var firebaseError: String
     private let authService = AuthService.shared
+
+    init() {
+        self.validationError = ""
+        self.firebaseError = ""
+    }
 
     func signInUser(email: String?, password: String?) {
         guard let email, let password else { return }

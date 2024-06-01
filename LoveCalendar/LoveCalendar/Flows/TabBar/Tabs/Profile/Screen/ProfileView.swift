@@ -28,7 +28,7 @@ final class ProfileView: UIView {
     private lazy var userNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .black
+        label.textColor = .labelText
         
         return label
     }()
@@ -36,8 +36,8 @@ final class ProfileView: UIView {
     private lazy var userEmailLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .black
-        
+        label.textColor = .labelText
+
         return label
     }()
     

@@ -13,9 +13,9 @@ protocol CoreDataServiceProtocol {
     func clearCachedUserData()
     func updateUserData(user: UserModel)
 
-    func setWish(userId: String, wish: WishlistCellModel)
-    func deleteWish(userId: String, wish: WishlistCellModel)
-    func getWishes(userId: String) throws -> [WishlistCellModel]
+    func setWish(userId: String, wish: WishListModel)
+    func deleteWish(userId: String, wish: WishListModel)
+    func getWishes(userId: String) throws -> [WishListModel]
     func clearCachedWishesData()
 
     func setEvent(userId: String, event: EventModel)

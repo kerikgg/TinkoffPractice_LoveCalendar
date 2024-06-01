@@ -17,6 +17,7 @@ class SignInViewController: UIViewController, FlowControllerWithValue {
     var completionHandler: ((SignInState) -> Void)?
     private let signInView = SignInView(frame: .zero)
     private let viewModel: SignInViewModel
+    private let alertFactory = AlertFactory()
     var cancellables = Set<AnyCancellable>()
 
     init(viewModel: SignInViewModel) {
@@ -68,9 +69,11 @@ extension SignInViewController {
 
         viewModel.$firebaseError
             .receive(on: DispatchQueue.main)
+            .dropFirst(1)
             .sink { [weak self] firebaseError in
                 guard let self = self else { return }
-                self.signInView.setErrors(firebaseError)
+                let alert = alertFactory.makeErrorAlert(message: firebaseError)
+                self.present(alert, animated: true)
             }
             .store(in: &cancellables)
     }

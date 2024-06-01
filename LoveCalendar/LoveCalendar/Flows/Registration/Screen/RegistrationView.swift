@@ -25,7 +25,7 @@ final class RegistrationView: UIView {
 
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Имя"
+        textField.placeholder = Strings.TextFields.namePlaceholder
         textField.borderStyle = .roundedRect
         textField.returnKeyType = .next
         textField.delegate = self
@@ -41,6 +41,7 @@ final class RegistrationView: UIView {
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
+        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
@@ -54,6 +55,7 @@ final class RegistrationView: UIView {
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
+        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
@@ -67,6 +69,7 @@ final class RegistrationView: UIView {
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
+        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
@@ -163,6 +166,8 @@ extension RegistrationView {
 extension RegistrationView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
+        case nameTextField:
+            emailTextField.becomeFirstResponder()
         case emailTextField:
             passwordTextField.becomeFirstResponder()
         case passwordTextField:

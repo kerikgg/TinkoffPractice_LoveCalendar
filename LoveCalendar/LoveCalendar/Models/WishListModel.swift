@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct WishlistCellModel {
+struct WishListModel {
     var title: String
     var url: String?
     var uid: UUID

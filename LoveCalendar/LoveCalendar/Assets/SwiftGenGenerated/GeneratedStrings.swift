@@ -12,13 +12,13 @@ import Foundation
 public enum Strings {
   /// and
   public static let and = Strings.tr("Localizable", "and", fallback: "and")
-  /// Became a couple %@ ago
+  /// Became a couple: %@ ago
   public static func daysSince(_ p1: Any) -> String {
-    return Strings.tr("Localizable", "daysSince", String(describing: p1), fallback: "Became a couple %@ ago")
+    return Strings.tr("Localizable", "daysSince", String(describing: p1), fallback: "Became a couple: %@ ago")
   }
-  /// Anniversary in %@
+  /// Anniversary in: %@
   public static func daysUntilAnniversary(_ p1: Any) -> String {
-    return Strings.tr("Localizable", "daysUntilAnniversary", String(describing: p1), fallback: "Anniversary in %@")
+    return Strings.tr("Localizable", "daysUntilAnniversary", String(describing: p1), fallback: "Anniversary in: %@")
   }
   /// together
   public static let together = Strings.tr("Localizable", "together", fallback: "together")

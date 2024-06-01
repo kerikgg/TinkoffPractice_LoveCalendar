@@ -8,14 +8,15 @@
 import UIKit
 
 protocol WishlistViewDelegate: AnyObject {
-    func didTapCell(with model: WishlistCellModel)
-    func didSwipeToDelete(with model: WishlistCellModel)
+    func didTapCell(with model: WishListModel)
+    func didSwipeToDelete(with model: WishListModel)
 }
 
 final class WishlistView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .clear
+        tableView.separatorColor = .labelText
         tableView.separatorInset = .zero
         tableView.delegate = self
         tableView.register(

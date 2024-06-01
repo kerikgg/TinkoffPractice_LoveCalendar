@@ -18,7 +18,7 @@ class SettingsTableViewCell: UITableViewCell {
 
     private lazy var cellTitle: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .labelText
         label.font = .systemFont(ofSize: 20, weight: .semibold)
 
         return label
