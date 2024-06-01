@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SettingsCellModel {
+struct SettingsModel {
     var image: String
     var title: String
     var isOn: Bool?
