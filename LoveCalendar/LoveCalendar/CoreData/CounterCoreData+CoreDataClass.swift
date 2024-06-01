@@ -9,7 +9,9 @@
 import Foundation
 import CoreData
 
+// swiftlint:disable all
 @objc(CounterCoreData)
 public class CounterCoreData: NSManagedObject {
 
 }
+// swiftlint:enable all

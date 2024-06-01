@@ -57,6 +57,7 @@ final class AlbumView: UIView {
     init(frame: CGRect, albumDataSource: AlbumCollectionViewDataSource) {
         self.dataSource = albumDataSource
         super.init(frame: frame)
+        backgroundColor = .background
         self.setDataSource(albumDataSource: albumDataSource)
         addSubviews(searchBar, collectionView, norFoundLabel)
         makeConstraints()

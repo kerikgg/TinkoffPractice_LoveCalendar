@@ -236,4 +236,58 @@ final class CoreDataService: CoreDataServiceProtocol {
             print("\(error)")
         }
     }
+
+    // MARK: - Counter methods
+    func setCounter(userId: String, counter: CounterModel) {
+        let counterCd = CounterCoreData(context: context)
+        counterCd.userId = userId
+        counterCd.uid = counter.uid
+        counterCd.image = counter.image
+        counterCd.startDate = counter.startDate
+        counterCd.partnerName = counter.partnerName
+        saveContext()
+    }
+
+    func getCounter(userId: String) throws -> Result<CounterModel, Error> {
+        let fetchRequest: NSFetchRequest<CounterCoreData> = CounterCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "userId == %@", userId)
+        fetchRequest.fetchLimit = 1
+
+        do {
+            let results = try context.fetch(fetchRequest)
+            if let counterEntity = results.first {
+                let counterModel = CounterModel(
+                    uid: counterEntity.uid,
+                    partnerName: counterEntity.partnerName,
+                    image: counterEntity.image,
+                    startDate: counterEntity.startDate
+                )
+                return .success(counterModel)
+            } else {
+                return .failure(NSError(
+                    domain: "",
+                    code: -1,
+                    userInfo: [NSLocalizedDescriptionKey: "Counter not found"]
+                ))
+            }
+        } catch {
+            return .failure(error)
+        }
+//        let counters = try context.fetch(fetchRequest)
+//        guard let counter = counters.first else { return nil }
+//
+//        return CounterModel(uid: counter.uid, partnerName: counter.partnerName, image: counter.image, startDate: counter.startDate)
+    }
+
+    func clearCachedCounterData() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "CounterCoreData")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try context.execute(deleteRequest)
+            saveContext()
+        } catch {
+            print("\(error)")
+        }
+    }
 }

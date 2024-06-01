@@ -68,12 +68,33 @@
 // Alert Titles
 "alerts.titles.logOut" = "Logout";
 "alerts.titles.error" = "Error";
+"alerts.titles.deleteCounter" = "Delete counter";
 
 // Alert messages
 "alerts.messages.logOut" = "Are you sure you want to logout?";
 "alerts.messages.date" = "You need to choose a date";
 "alerts.messages.photo" = "You need to choose a photo";
+"alerts.messages.deleteCounter" = "Are you sure you want to delete counter?";
+"alerts.messages.fetchError" = "Error while fetching data";
 
 // Alert actions
 "alerts.actions.logOut" = "Logout";
 "alerts.actions.cancel" = "Cancel";
+
+// Main screen
+"daysSince" = "Became a couple %@ ago";
+"daysUntilAnniversary" = "Anniversary in %@";
+"days.single" = "day";
+"days.few" = "days";
+"days.many" = "days";
+"weeks.single" = "week";
+"weeks.few" = "weeks";
+"weeks.many" = "weeks";
+"months.single" = "month";
+"months.few" = "months";
+"months.many" = "months";
+"years.single" = "year";
+"years.few" = "years";
+"years.many" = "years";
+"together" = "together";
+"and" = "and";

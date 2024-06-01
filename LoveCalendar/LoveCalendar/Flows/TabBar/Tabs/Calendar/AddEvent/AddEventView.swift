@@ -75,6 +75,7 @@ final class AddEventView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         addSubviews(imageView, dateLabel, titleTextField, saveButton)
         makeConstraints()
     }

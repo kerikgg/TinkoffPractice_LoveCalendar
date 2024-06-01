@@ -27,4 +27,8 @@ protocol CoreDataServiceProtocol {
     func deletePhoto(userId: String, photo: PhotoModel)
     func getPhotos(userId: String) throws -> [PhotoModel]
     func clearCachedPhotosData()
+
+    func setCounter(userId: String, counter: CounterModel)
+    func getCounter(userId: String) throws -> Result<CounterModel, Error>
+    func clearCachedCounterData()
 }

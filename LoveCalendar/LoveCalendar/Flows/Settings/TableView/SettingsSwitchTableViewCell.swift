@@ -68,7 +68,7 @@ extension SettingsSwitchTableViewCell {
 }
 
 extension SettingsSwitchTableViewCell {
-    func configureCell(cellModel: SettingsCellModel, switchAction: ((Bool) -> Void)?) {
+    func configureCell(cellModel: SettingsModel, switchAction: ((Bool) -> Void)?) {
         cellImageView.image = UIImage(systemName: cellModel.image)
         cellTitle.text = cellModel.title
         self.switchAction = switchAction
@@ -77,7 +77,7 @@ extension SettingsSwitchTableViewCell {
         self.switchAction = switchAction
     }
 
-    func configureCell(cellModel: SettingsCellModel) {
+    func configureCell(cellModel: SettingsModel) {
         cellImageView.image = UIImage(systemName: cellModel.image)
         cellTitle.text = cellModel.title
     }

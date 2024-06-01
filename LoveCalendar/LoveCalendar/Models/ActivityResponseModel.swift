@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct ActivityResponseModel: Decodable {
+    let id: Int
+    let title: String
+    let description: String
+    let imageUrl: String
+}

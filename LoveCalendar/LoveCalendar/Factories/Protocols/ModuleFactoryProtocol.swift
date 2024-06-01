@@ -18,7 +18,7 @@ protocol ModuleFactoryProtocol {
 
     func makeCalendarModule(viewModel: CalendarViewModel) -> CalendarViewController
     func makeWishlistModule(viewModel: WishlistViewModel) -> WishlistViewController
-    func makeMainModule() -> MainViewController
+    func makeMainModule(viewModel: MainViewModel) -> MainViewController
     func makeAlbumModule(viewModel: AlbumViewModel) -> AlbumViewController
     func makeProfileModule(viewModel: ProfileViewModel) -> ProfileViewController
     func makeSettingsModule(viewModel: SettingsViewModel) -> SettingsViewController
@@ -27,4 +27,5 @@ protocol ModuleFactoryProtocol {
     func makeAddWishModule(viewModel: AddWishViewModel) -> AddWishViewController
     func makeAddEventModule(viewModel: AddEventViewModel) -> AddEventViewController
     func makeAddPhotoModule(viewModel: AddPhotoViewModel) -> AddPhotoViewController
+    func makeAddCounterModule(viewModel: AddCounterViewModel) -> AddCounterViewController
 }

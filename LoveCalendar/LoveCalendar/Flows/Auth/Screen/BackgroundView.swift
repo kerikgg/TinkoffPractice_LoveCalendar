@@ -8,15 +8,18 @@
 import UIKit
 
 class BackgroundView: UIView {
+    private var backgroundImage: UIImage
+
     private lazy var background: UIImageView = {
-        let image = UIImageView(image: UIImage.background)
+        let image = UIImageView(image: backgroundImage)
         image.contentMode = .scaleAspectFill
         image.backgroundColor = .clear
 
         return image
     }()
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, image: UIImage) {
+        self.backgroundImage = image
         super.init(frame: frame)
         addSubview(background)
     }

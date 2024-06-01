@@ -69,6 +69,7 @@ final class AddWishView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         addSubviews(titleTextField, urlTextField, saveButton)
         makeConstraints()
     }

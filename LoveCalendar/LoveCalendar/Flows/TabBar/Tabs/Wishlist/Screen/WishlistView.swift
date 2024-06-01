@@ -29,6 +29,7 @@ final class WishlistView: UIView {
 
     init(frame: CGRect, dataSource: WishlistTableViewDataSource) {
         super.init(frame: frame)
+        backgroundColor = .background
         self.setDataSource(with: dataSource)
         addSubviews(tableView)
         makeConstraints()

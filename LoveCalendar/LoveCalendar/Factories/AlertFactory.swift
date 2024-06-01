@@ -30,4 +30,16 @@ final class AlertFactory {
 
         return alert
     }
+
+    func makeDeleteCounterAlert(action: @escaping ((UIAlertAction) -> Void)) -> UIAlertController {
+        let alert = UIAlertController(
+            title: Strings.Alerts.Titles.deleteCounter,
+            message: Strings.Alerts.Messages.deleteCounter,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: Strings.Alerts.Actions.cancel, style: .cancel))
+        alert.addAction(UIAlertAction(title: Strings.Titles.delete, style: .destructive, handler: action))
+
+        return alert
+    }
 }

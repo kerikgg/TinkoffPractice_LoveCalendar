@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CounterCoreData" representedClassName="CounterCoreData" syncable="YES">
+        <attribute name="image" attributeType="Binary"/>
+        <attribute name="partnerName" attributeType="String"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uid" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="userId" attributeType="String"/>
+    </entity>
     <entity name="EventCoreData" representedClassName="EventCoreData" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>

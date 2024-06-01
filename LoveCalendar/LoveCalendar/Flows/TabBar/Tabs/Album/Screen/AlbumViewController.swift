@@ -42,7 +42,6 @@ final class AlbumViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setBindings()
         albumView.setDelegate(self)
         albumView.setSearchBarDelegate(self)
@@ -109,7 +108,7 @@ extension AlbumViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.filter(with: searchText)
         albumView.reloadData()
-        var flag = viewModel.hasEvents || viewModel.hasPhotos
+        let flag = viewModel.hasEvents || viewModel.hasPhotos
         albumView.setNotFoundLabel(flag)
     }
 

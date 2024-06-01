@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol NetworkServiceProtocol {
+    func fetchRandomActivity(completion: @escaping (Result<ActivityResponseModel, Error>) -> Void)
+    func fetchImage(from urlString: String, completion: @escaping (Result<Data, Error>) -> Void)
+}

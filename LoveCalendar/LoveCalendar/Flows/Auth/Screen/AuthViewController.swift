@@ -18,7 +18,6 @@ class AuthViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         authView.delegate = self
     }
 

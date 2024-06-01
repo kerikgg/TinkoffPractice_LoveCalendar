@@ -7,17 +7,9 @@
 
 import Foundation
 
-//struct Activity: Decodable {
-//    let id: Int
-//    let title: String
-//    let description: String
-//    let imageUrl: String
-//}
-
-struct Activity: Decodable {
+struct ActivityModel: Decodable {
     let id: Int
     let title: String
     let description: String
     let image: Data
 }
-

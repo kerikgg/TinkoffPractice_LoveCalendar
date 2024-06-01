@@ -33,7 +33,6 @@ final class AddWishViewController: UIViewController, FlowControllerWithValue {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addWishView.delegate = self
-        view.backgroundColor = .white
         self.navigationItem.title = Strings.Labels.addWishLabel
     }
     

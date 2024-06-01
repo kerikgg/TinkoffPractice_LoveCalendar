@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 class SettingsViewModel {
-    var firstSectionCellModels: [SettingsCellModel]
-    var secondSectionCellModels: [SettingsCellModel]
+    var firstSectionCellModels: [SettingsModel]
+    var secondSectionCellModels: [SettingsModel]
     private var themeService = ThemeService.shared
     var numberOfSection: Int
 

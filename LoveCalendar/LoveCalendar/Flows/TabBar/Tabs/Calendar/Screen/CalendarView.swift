@@ -52,6 +52,7 @@ final class CalendarView: UIView {
 
     init(frame: CGRect, calendarDataSource: CalendarDataSource, tableViewDataSource: CalendarTableViewDataSource) {
         super.init(frame: frame)
+        backgroundColor = .background
         self.setDataSource(calendarDataSource: calendarDataSource, tableViewDataSource: tableViewDataSource)
         addSubviews(calendar, tableViewLabel, tableView)
         makeConstraints()

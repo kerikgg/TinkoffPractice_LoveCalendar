@@ -85,6 +85,7 @@ final class SignInView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         addSubviews(signInLabel, stackView, errorsLabel, signInButton)
         makeConstraints()
     }

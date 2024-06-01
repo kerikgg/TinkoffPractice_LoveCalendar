@@ -42,7 +42,6 @@ final class EditProfileViewController: UIViewController, FlowControllerWithValue
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         editProfileView.delegate = self
         setupNavigationBar()
         setBindings()

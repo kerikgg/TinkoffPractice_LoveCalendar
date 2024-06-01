@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct CounterModel {
+    var uid: UUID
+    var partnerName: String
+    var image: Data
+    var startDate: Date
+}

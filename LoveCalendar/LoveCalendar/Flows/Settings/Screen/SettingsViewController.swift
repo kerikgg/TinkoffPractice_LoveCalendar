@@ -36,7 +36,6 @@ class SettingsViewController: UIViewController, FlowControllerWithValue {
         super.viewDidLoad()
         self.settingsView.delegate = self
         setupNavigationBar()
-        view.backgroundColor = .white
     }
 
     override func viewWillDisappear(_ animated: Bool) {

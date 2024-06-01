@@ -43,7 +43,6 @@ final class WishlistViewController: UIViewController, FlowControllerWithValue {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.wishlistView.delegate = self
-        view.backgroundColor = .white
         setBindings()
         setupNavigationBar()
     }

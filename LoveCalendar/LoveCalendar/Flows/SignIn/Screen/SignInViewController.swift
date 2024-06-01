@@ -34,7 +34,6 @@ class SignInViewController: UIViewController, FlowControllerWithValue {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         signInView.delegate = self
         setBindings()
     }
