@@ -55,7 +55,7 @@ final class AddCounterViewController: UIViewController, FlowControllerWithValue 
 extension AddCounterViewController: AddCounterViewDelegate {
     func didTapSave(partnerName: String?, date: Date) {
         guard let partnerName = partnerName, !partnerName.isEmpty else {
-            let alert = alertFactory.makeErrorAlert(message: "Partner name cannot be empty.")
+            let alert = alertFactory.makeErrorAlert(message: Strings.Alerts.Messages.partnerName)
             present(alert, animated: true)
             return
         }

@@ -21,8 +21,8 @@ class TabBarViewController: UITabBarController, TabBarDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if let mainController = viewControllers?[2] as? UINavigationController {
-            onViewDidAppear?(mainController)
+        if let controller = viewControllers?[2] as? UINavigationController {
+            onViewDidAppear?(controller)
         }
     }
 }

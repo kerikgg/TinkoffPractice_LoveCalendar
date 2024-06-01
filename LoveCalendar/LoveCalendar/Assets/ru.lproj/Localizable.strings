@@ -14,12 +14,15 @@
 "buttons.save" = "Сохранить";
 "buttons.add" = "Добавить";
 "buttons.close" = "Закрыть";
+"buttons.start" = "Начать";
 
 // Labels
 "labels.signInLabel" = "Вход";
 "labels.signUpLabel" = "Регистрация";
 "labels.addWishLabel" = "Новый подарок";
 "labels.allEvents" = "Все события";
+"labels.welcomeLabel" = "Не помните сколько вы вместе?";
+"labels.startLabel" = "Начните счетчик ваших отношений прямо сейчас!";
 
 // TextFields
 "textFields.emailPlaceholder" = "Почта";
@@ -78,6 +81,7 @@
 "alerts.messages.photo" = "Нужно выбрать фотографию";
 "alerts.messages.deleteCounter" = "Вы действительно хотите удалить счетчик?";
 "alerts.messages.fetchError" = "Ошибка при получении данных";
+"alerts.messages.partnerName" = "Нужно ввести имя партнера";
 
 // Alert actions
 "alerts.actions.logOut" = "Выход";

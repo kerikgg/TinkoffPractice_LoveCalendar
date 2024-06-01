@@ -22,7 +22,7 @@ final class AlertFactory {
 
     func makeErrorAlert(message: String) -> UIAlertController {
         let alert = UIAlertController(
-            title: "Ошибка",
+            title: Strings.Alerts.Titles.error,
             message: message,
             preferredStyle: .alert
         )

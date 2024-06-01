@@ -63,6 +63,7 @@ class ProfileViewModel {
                             self.userModel.avatarData = data
                             self.coreDataService.setUser(user: self.userModel)
                         case .failure(let error):
+                            self.coreDataService.setUser(user: self.userModel)
                             print(error)
                         }
                     }
