@@ -16,6 +16,7 @@ final class AlbumCollectionViewHeader: UICollectionReusableView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .labelText
+        
         return label
     }()
 

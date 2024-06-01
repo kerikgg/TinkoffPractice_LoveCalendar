@@ -36,7 +36,7 @@ final class AddEventView: UIView {
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .labelText
 
         return label
     }()

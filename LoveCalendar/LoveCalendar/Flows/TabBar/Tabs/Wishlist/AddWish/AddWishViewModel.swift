@@ -19,7 +19,7 @@ final class AddWishViewModel {
         do {
             guard let user = try coreDataService.getCachedUser() else { return }
             let validatedURL = validationService.validateURL(urlString: url)
-            let wish = WishlistCellModel(title: title, url: validatedURL, uid: UUID())
+            let wish = WishListModel(title: title, url: validatedURL, uid: UUID())
             coreDataService.setWish(userId: user.id, wish: wish)
         } catch {
             print(error.localizedDescription)

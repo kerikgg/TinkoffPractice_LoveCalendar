@@ -82,8 +82,8 @@
 "alerts.actions.cancel" = "Cancel";
 
 // Main screen
-"daysSince" = "Became a couple %@ ago";
-"daysUntilAnniversary" = "Anniversary in %@";
+"daysSince" = "Became a couple: %@ ago";
+"daysUntilAnniversary" = "Anniversary in: %@";
 "days.single" = "day";
 "days.few" = "days";
 "days.many" = "days";

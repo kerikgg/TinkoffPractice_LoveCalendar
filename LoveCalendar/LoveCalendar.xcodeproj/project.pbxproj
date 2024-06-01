@@ -48,8 +48,6 @@
 		BA52E0AE2C0631ED00B7A0BC /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0AD2C0631ED00B7A0BC /* AddEventView.swift */; };
 		BA52E0B02C0631F900B7A0BC /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0AF2C0631F900B7A0BC /* AddEventViewController.swift */; };
 		BA52E0B22C06322400B7A0BC /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B12C06322400B7A0BC /* AddEventViewModel.swift */; };
-		BA52E0B42C063F9100B7A0BC /* CalendarServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */; };
-		BA52E0B62C063F9B00B7A0BC /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */; };
 		BA52E0B82C0682EF00B7A0BC /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B72C0682EF00B7A0BC /* DateExtensions.swift */; };
 		BA52E0BA2C07A1B200B7A0BC /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0B92C07A1B200B7A0BC /* AlbumView.swift */; };
 		BA52E0BC2C07A24600B7A0BC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E0BB2C07A24600B7A0BC /* AlbumViewModel.swift */; };
@@ -123,7 +121,7 @@
 		BADDEEF62C02337800288585 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEF52C02337800288585 /* WishlistViewModel.swift */; };
 		BADDEEF92C02378D00288585 /* WishlistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEF82C02378D00288585 /* WishlistTableViewCell.swift */; };
 		BADDEEFB2C0237A900288585 /* WishlistTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEFA2C0237A900288585 /* WishlistTableViewDataSource.swift */; };
-		BADDEEFD2C0237C500288585 /* WishlistCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEFC2C0237C500288585 /* WishlistCellModel.swift */; };
+		BADDEEFD2C0237C500288585 /* WishListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEFC2C0237C500288585 /* WishListModel.swift */; };
 		BADDEF002C02636C00288585 /* AddWishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEEFF2C02636C00288585 /* AddWishView.swift */; };
 		BADDEF022C02637800288585 /* AddWishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEF012C02637800288585 /* AddWishViewController.swift */; };
 		BADDEF042C02649E00288585 /* AddWishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADDEF032C02649E00288585 /* AddWishViewModel.swift */; };
@@ -189,8 +187,6 @@
 		BA52E0AD2C0631ED00B7A0BC /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		BA52E0AF2C0631F900B7A0BC /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		BA52E0B12C06322400B7A0BC /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
-		BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarServiceProtocol.swift; sourceTree = "<group>"; };
-		BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		BA52E0B72C0682EF00B7A0BC /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		BA52E0B92C07A1B200B7A0BC /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		BA52E0BB2C07A24600B7A0BC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
@@ -257,7 +253,7 @@
 		BADDEEF52C02337800288585 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		BADDEEF82C02378D00288585 /* WishlistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewCell.swift; sourceTree = "<group>"; };
 		BADDEEFA2C0237A900288585 /* WishlistTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTableViewDataSource.swift; sourceTree = "<group>"; };
-		BADDEEFC2C0237C500288585 /* WishlistCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistCellModel.swift; sourceTree = "<group>"; };
+		BADDEEFC2C0237C500288585 /* WishListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListModel.swift; sourceTree = "<group>"; };
 		BADDEEFF2C02636C00288585 /* AddWishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishView.swift; sourceTree = "<group>"; };
 		BADDEF012C02637800288585 /* AddWishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishViewController.swift; sourceTree = "<group>"; };
 		BADDEF032C02649E00288585 /* AddWishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWishViewModel.swift; sourceTree = "<group>"; };
@@ -439,7 +435,6 @@
 				BA20452E2BFA2EFB00C0B3BD /* FirestoreServiceProtocol.swift */,
 				BA2045352BFA4FB100C0B3BD /* StorageServiceProtocol.swift */,
 				BADDEEC82BFB8F5D00288585 /* CoreDataServiceProtocol.swift */,
-				BA52E0B32C063F9100B7A0BC /* CalendarServiceProtocol.swift */,
 				BA52E0EE2C0A906C00B7A0BC /* NetworkServiceProtocol.swift */,
 			);
 			path = Protocols;
@@ -456,6 +451,7 @@
 				BA52E0DB2C09263B00B7A0BC /* CounterModel.swift */,
 				BA52E0F02C0A91B300B7A0BC /* ActivityModel.swift */,
 				BA52E0FC2C0AAFC300B7A0BC /* ActivityResponseModel.swift */,
+				BADDEEFC2C0237C500288585 /* WishListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -710,7 +706,6 @@
 			children = (
 				BADDEEF82C02378D00288585 /* WishlistTableViewCell.swift */,
 				BADDEEFA2C0237A900288585 /* WishlistTableViewDataSource.swift */,
-				BADDEEFC2C0237C500288585 /* WishlistCellModel.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -735,7 +730,6 @@
 				BA2045372BFA503700C0B3BD /* StorageService.swift */,
 				BADDEECA2BFB8FD400288585 /* CoreDataService.swift */,
 				BADDEEE52BFFE3B900288585 /* ThemeService.swift */,
-				BA52E0B52C063F9B00B7A0BC /* CalendarService.swift */,
 				BA52E0F22C0A921700B7A0BC /* NetworkService.swift */,
 				BA52E0F72C0A967600B7A0BC /* ApiTarget.swift */,
 			);
@@ -905,6 +899,7 @@
 				BA7ABE892BB58088009ED03E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				BA52E0982C05038400B7A0BC /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				BA52E0F42C0A940D00B7A0BC /* XCRemoteSwiftPackageReference "Moya" */,
+				BA52E0FE2C0ABBE100B7A0BC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = BADB26F72BB36E2500AC96BA /* Products */;
 			projectDirPath = "";
@@ -1003,11 +998,9 @@
 				BA52E0B82C0682EF00B7A0BC /* DateExtensions.swift in Sources */,
 				BADDEEF02C00B7F000288585 /* SettingsFlowCoordinator.swift in Sources */,
 				BAF7C0442BB7466600581F33 /* ModuleFactoryProtocol.swift in Sources */,
-				BA52E0B42C063F9100B7A0BC /* CalendarServiceProtocol.swift in Sources */,
 				BADDEEC32BFB8EC100288585 /* CoreData.xcdatamodeld in Sources */,
 				BAE90FA92BBA9AF800526899 /* SignInFlowCoordinator.swift in Sources */,
 				BA065EE72BD528E00005EE39 /* AlbumViewController.swift in Sources */,
-				BA52E0B62C063F9B00B7A0BC /* CalendarService.swift in Sources */,
 				BADDEEE42BFFE27A00288585 /* Theme.swift in Sources */,
 				BAF7C03E2BB7433000581F33 /* RouterProtocol.swift in Sources */,
 				BA95BB452BD7140A00B458B4 /* ProfileViewModel.swift in Sources */,
@@ -1034,7 +1027,7 @@
 				BA52E0AA2C06316D00B7A0BC /* EventCoreData+CoreDataClass.swift in Sources */,
 				BA52E0B22C06322400B7A0BC /* AddEventViewModel.swift in Sources */,
 				BA52E0AB2C06316D00B7A0BC /* EventCoreData+CoreDataProperties.swift in Sources */,
-				BADDEEFD2C0237C500288585 /* WishlistCellModel.swift in Sources */,
+				BADDEEFD2C0237C500288585 /* WishListModel.swift in Sources */,
 				BABB7AA02BB85AE400BAC60C /* RegistrationViewController.swift in Sources */,
 				BA52E0FD2C0AAFC300B7A0BC /* ActivityResponseModel.swift in Sources */,
 				BADDEEED2C00B03800288585 /* EditProfileViewController.swift in Sources */,
@@ -1324,6 +1317,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 15.0.3;
+			};
+		};
+		BA52E0FE2C0ABBE100B7A0BC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
 			};
 		};
 		BA7ABE802BB57F34009ED03E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {

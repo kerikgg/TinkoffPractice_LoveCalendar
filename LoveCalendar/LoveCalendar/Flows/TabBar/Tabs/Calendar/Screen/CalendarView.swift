@@ -23,7 +23,10 @@ final class CalendarView: UIView {
         calendar.appearance.selectionColor = .buttonText
         calendar.appearance.todayColor = .systemGray3
         calendar.appearance.eventDefaultColor = .buttonText
-
+        calendar.appearance.eventSelectionColor = .labelText
+        calendar.appearance.titleDefaultColor = .labelText
+        calendar.backgroundColor = .background
+        calendar.appearance.titlePlaceholderColor = .calendarPlaceholder
         calendar.delegate = self
         
         return calendar
@@ -41,6 +44,7 @@ final class CalendarView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .clear
+        tableView.separatorColor = .labelText
         tableView.separatorInset = .zero
         tableView.delegate = self
         tableView.register(CalendarTableViewCell.self, forCellReuseIdentifier: CalendarTableViewCell.reuseIdentifier)

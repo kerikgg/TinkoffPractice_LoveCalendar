@@ -34,7 +34,7 @@ final class WishlistTableViewDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
-    func getModels() -> [WishlistCellModel] {
+    func getModels() -> [WishListModel] {
         return viewModel.cellModels
     }
 }

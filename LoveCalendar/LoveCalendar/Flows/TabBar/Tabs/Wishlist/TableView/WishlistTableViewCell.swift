@@ -10,7 +10,7 @@ import UIKit
 final class WishlistTableViewCell: UITableViewCell {
     private lazy var cellTitle: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .labelText
         label.numberOfLines = 1
         label.lineBreakMode = .byTruncatingMiddle
         label.font = .systemFont(ofSize: 16, weight: .semibold)
@@ -76,7 +76,7 @@ extension WishlistTableViewCell {
 }
 
 extension WishlistTableViewCell {
-    func configureCell(cellModel: WishlistCellModel) {
+    func configureCell(cellModel: WishListModel) {
         cellTitle.text = cellModel.title
         cellUrl.text = cellModel.url
     }

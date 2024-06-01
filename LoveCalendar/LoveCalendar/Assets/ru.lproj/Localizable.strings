@@ -82,8 +82,8 @@
 "alerts.actions.cancel" = "Отмена";
 
 // Main screen
-"daysSince" = "Стали парой %@ назад";
-"daysUntilAnniversary" = "Годовщина через %@";
+"daysSince" = "Стали парой: %@ назад";
+"daysUntilAnniversary" = "Годовщина через: %@";
 "days.single" = "день";
 "days.few" = "дня";
 "days.many" = "дней";

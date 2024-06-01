@@ -69,7 +69,7 @@ extension WishlistViewController {
 }
 
 extension WishlistViewController: WishlistViewDelegate {
-    func didTapCell(with model: WishlistCellModel) {
+    func didTapCell(with model: WishListModel) {
         let urlString = model.url ?? ""
 
         let item = urlString.isEmpty ? model.title : model.title + "\n" + urlString
@@ -79,7 +79,7 @@ extension WishlistViewController: WishlistViewDelegate {
         self.present(activityViewControler, animated: true)
     }
 
-    func didSwipeToDelete(with model: WishlistCellModel) {
+    func didSwipeToDelete(with model: WishListModel) {
         viewModel.deleteWish(model: model)
     }
 }

@@ -19,21 +19,25 @@ final class ActivityView: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.mask = createTopRoundedMask(for: imageView.bounds, radius: 10)
+
         return imageView
     }()
 
     private lazy var activityTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.textColor = .black
+        label.textColor = .labelText
+
         return label
     }()
 
     private lazy var activityDescriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.textColor = .gray
+        label.textColor = .activityDescription
         label.numberOfLines = 0
+
         return label
     }()
 
@@ -42,7 +46,7 @@ final class ActivityView: UIView {
         button.setTitle("X", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .bold)
         button.setTitleColor(.black, for: .normal)
-        
+
         let action = UIAction { [weak self] _ in
             self?.delegate?.didTapCloseButton()
         }
@@ -55,6 +59,7 @@ final class ActivityView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .background
         setupView()
     }
 
@@ -62,13 +67,18 @@ final class ActivityView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        activityImageView.layer.mask = createTopRoundedMask(for: activityImageView.bounds, radius: 10)
+    }
+}
+extension ActivityView {
     private func setupView() {
-        backgroundColor = .white
         layer.cornerRadius = 10
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.1
+        layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 0, height: 5)
-        layer.shadowRadius = 10
+        layer.shadowRadius = 15
 
         addSubviews(activityImageView, activityTitleLabel, activityDescriptionLabel, closeButton)
         makeConstraints()
@@ -102,5 +112,16 @@ final class ActivityView: UIView {
         activityTitleLabel.text = activity.title
         activityDescriptionLabel.text = activity.description
         activityImageView.image = UIImage(data: activity.image)
+    }
+
+    private func createTopRoundedMask(for bounds: CGRect, radius: CGFloat) -> CAShapeLayer {
+        let path = UIBezierPath(
+            roundedRect: bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        return mask
     }
 }

@@ -21,7 +21,7 @@ final class MainView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 1
         imageView.layer.cornerRadius = 10
-        imageView.layer.borderColor = UIColor.labelText.cgColor
+        imageView.layer.borderColor = UIColor.mainScreen.cgColor
         imageView.contentMode = .scaleAspectFill
         imageView.isHidden = true
 
@@ -31,7 +31,7 @@ final class MainView: UIView {
     private lazy var namesLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 25, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.isHidden = true
 
         return label
@@ -40,7 +40,7 @@ final class MainView: UIView {
     private lazy var daysSinceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .left
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleAdditionalLabels))
@@ -54,7 +54,7 @@ final class MainView: UIView {
     private let weeksSinceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .left
         label.alpha = 0.0
@@ -64,7 +64,7 @@ final class MainView: UIView {
     private let monthsSinceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .left
         label.alpha = 0.0
@@ -74,7 +74,7 @@ final class MainView: UIView {
     private let yearsSinceLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .left
         label.alpha = 0.0
@@ -84,7 +84,7 @@ final class MainView: UIView {
     private lazy var daysUntilAnniversaryLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .labelText
+        label.textColor = .mainScreen
         label.numberOfLines = 0
         label.textAlignment = .left
         label.isUserInteractionEnabled = true

@@ -84,7 +84,7 @@ final class CoreDataService: CoreDataServiceProtocol {
     }
 
     // MARK: - Wish methods
-    func setWish(userId: String, wish: WishlistCellModel) {
+    func setWish(userId: String, wish: WishListModel) {
         let wishCd = WishCoreData(context: context)
         wishCd.userId = userId
         wishCd.title = wish.title
@@ -93,7 +93,7 @@ final class CoreDataService: CoreDataServiceProtocol {
         saveContext()
     }
 
-    func deleteWish(userId: String, wish: WishlistCellModel) {
+    func deleteWish(userId: String, wish: WishListModel) {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = WishCoreData.fetchRequest()
         fetchRequest.predicate = NSPredicate(
             format: "userId == %@ AND title == %@ AND uid == %@", userId, wish.title, wish.uid as CVarArg
@@ -112,13 +112,13 @@ final class CoreDataService: CoreDataServiceProtocol {
         }
     }
 
-    func getWishes(userId: String) throws -> [WishlistCellModel] {
+    func getWishes(userId: String) throws -> [WishListModel] {
         let fetchRequest: NSFetchRequest<WishCoreData> = WishCoreData.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %@", userId)
         
         let wishes = try context.fetch(fetchRequest)
         return wishes.map { wish in
-            WishlistCellModel(title: wish.title, url: wish.url ?? "", uid: wish.uid)
+            WishListModel(title: wish.title, url: wish.url ?? "", uid: wish.uid)
         }
     }
 
@@ -273,10 +273,6 @@ final class CoreDataService: CoreDataServiceProtocol {
         } catch {
             return .failure(error)
         }
-//        let counters = try context.fetch(fetchRequest)
-//        guard let counter = counters.first else { return nil }
-//
-//        return CounterModel(uid: counter.uid, partnerName: counter.partnerName, image: counter.image, startDate: counter.startDate)
     }
 
     func clearCachedCounterData() {

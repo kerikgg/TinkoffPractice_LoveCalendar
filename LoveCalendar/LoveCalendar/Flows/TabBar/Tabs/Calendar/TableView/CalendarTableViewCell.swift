@@ -30,7 +30,7 @@ final class CalendarTableViewCell: UITableViewCell {
 
     private lazy var cellDate: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .labelText
         label.numberOfLines = 1
         label.font = .systemFont(ofSize: 16)
 

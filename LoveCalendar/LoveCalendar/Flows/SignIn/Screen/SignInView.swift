@@ -29,6 +29,7 @@ final class SignInView: UIView {
         textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.returnKeyType = .next
+        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)
@@ -42,6 +43,7 @@ final class SignInView: UIView {
         textField.borderStyle = .roundedRect
         textField.isSecureTextEntry = true
         textField.returnKeyType = .next
+        textField.autocapitalizationType = .none
         textField.delegate = self
         textField.textColor = UIColor.labelText
         textField.font = .systemFont(ofSize: 18)

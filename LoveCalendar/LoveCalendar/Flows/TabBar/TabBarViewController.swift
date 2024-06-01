@@ -30,11 +30,10 @@ class TabBarViewController: UITabBarController, TabBarDelegate {
 extension TabBarViewController {
     private func configure() {
         setupTabs()
-        tabBar.unselectedItemTintColor = UIColor.systemGray3
-        tabBar.tintColor = UIColor.buttonText
-        delegate = self
+        tabBar.unselectedItemTintColor = .tabBarUnselected
+        tabBar.tintColor = .buttonText
         tabBar.backgroundColor = .background
-//        view.backgroundColor = .white
+        delegate = self
     }
 
     private func setupTabs() {

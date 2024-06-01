@@ -3,6 +3,16 @@
     {
       "filename" : "Profile Screen (unlogged)-2.png",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "background_black.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {
