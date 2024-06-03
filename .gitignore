@@ -89,3 +89,16 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+.idea/
+
+.DS_Store
+
+[Bb]in/
+[Oo]bj/
+
+
+# Generated files
+project.lock.json
+.vs/
+
